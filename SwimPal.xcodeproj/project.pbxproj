@@ -11,8 +11,8 @@
 		8C69410F2844E05F005E64F9 /* View+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69410E2844E05F005E64F9 /* View+Padding.swift */; };
 		8C6941172844E3C2005E64F9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6941162844E3C2005E64F9 /* HomeCoordinator.swift */; };
 		8C6941192844E3F3005E64F9 /* TrainingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6941182844E3F3005E64F9 /* TrainingsCoordinator.swift */; };
-		8C69411B2844E422005E64F9 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69411A2844E422005E64F9 /* ProfileCoordinator.swift */; };
 		8C69411D2844E59D005E64F9 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69411C2844E59D005E64F9 /* TypeAliases.swift */; };
+		8C9684D72853D0270070C6E2 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684D62853D0270070C6E2 /* ProfileCoordinator.swift */; };
 		8CE6C0B4283D63490037BB6E /* SwimPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */; };
 		8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */; };
 		8CE6C0B8283D634A0037BB6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B7283D634A0037BB6E /* Assets.xcassets */; };
@@ -42,8 +42,8 @@
 		8C69410E2844E05F005E64F9 /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
 		8C6941162844E3C2005E64F9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		8C6941182844E3F3005E64F9 /* TrainingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsCoordinator.swift; sourceTree = "<group>"; };
-		8C69411A2844E422005E64F9 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		8C69411C2844E59D005E64F9 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		8C9684D62853D0270070C6E2 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		8CE6C0B0283D63490037BB6E /* SwimPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimPalApp.swift; sourceTree = "<group>"; };
 		8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 		8C6941152844E3AB005E64F9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				8C69411A2844E422005E64F9 /* ProfileCoordinator.swift */,
 				8CFD3DBE2849437900C684B4 /* ProfileView.swift */,
 				8CFD3DC2284943A300C684B4 /* ProfileVIewModel.swift */,
+				8C9684D62853D0270070C6E2 /* ProfileCoordinator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -348,7 +348,6 @@
 				8CE6C0D5283D660D0037BB6E /* PersistenceService.swift in Sources */,
 				8C69410D2844DF9E005E64F9 /* ErrorScreen.swift in Sources */,
 				8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */,
-				8C69411B2844E422005E64F9 /* ProfileCoordinator.swift in Sources */,
 				8CFD3DCB2849449C00C684B4 /* HomeViewModel.swift in Sources */,
 				8CFD3DD3284946FD00C684B4 /* View+Navigation.swift in Sources */,
 				8C6941192844E3F3005E64F9 /* TrainingsCoordinator.swift in Sources */,
@@ -361,6 +360,7 @@
 				8CE6C0DF283D68BD0037BB6E /* OnboardingCoordinator.swift in Sources */,
 				8C69411D2844E59D005E64F9 /* TypeAliases.swift in Sources */,
 				8CFD3DC92849443200C684B4 /* TrainingsViewModel.swift in Sources */,
+				8C9684D72853D0270070C6E2 /* ProfileCoordinator.swift in Sources */,
 				8CE6C0CA283D64E00037BB6E /* DependencyContainer.swift in Sources */,
 				8CE6C0DD283D67C40037BB6E /* AuthorizationCoordinator.swift in Sources */,
 				8CE6C0B4283D63490037BB6E /* SwimPalApp.swift in Sources */,
