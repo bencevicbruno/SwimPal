@@ -43,7 +43,6 @@ extension View {
                 destination(item)
             } else {
                 EmptyView()
-                    .background(.green)
             }
         })
     }

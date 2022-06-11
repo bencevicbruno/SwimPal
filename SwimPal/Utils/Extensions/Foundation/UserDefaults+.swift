@@ -11,26 +11,26 @@ extension UserDefaults {
  
     func load<T>(_ key: PersistenceKey) -> T? where T: Decodable {
         guard let data = self.object(forKey: "\(key)") as? Data else {
-            print("Unable to load \(key).")
+            debug("Unable to load \(key).")
             return nil
         }
         
         guard let t = try? JSONDecoder().decode(T.self, from: data) else {
-            print("Unable to decode \(key).")
+            debug("Unable to decode \(key).")
             return nil
         }
         
-        print("Successfully loaded \(key).")
+        debug("Successfully loaded \(key).")
         return t
     }
     
     func save<T>(_ t: T, _ key: PersistenceKey) where T: Encodable {
         guard let data = try? JSONEncoder().encode(t) else {
-            print("Unable to encode \(key).");
+            debug("Unable to encode \(key).");
             return
         }
         
         self.set(data, forKey: "\(key)")
-        print("Sucessfully saved \(key).")
+        debug("Sucessfully saved \(key).")
     }
 }

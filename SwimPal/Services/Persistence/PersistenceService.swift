@@ -9,6 +9,15 @@ import Foundation
 
 final class PersistenceService: PersistenceServiceProtocol {
     
+    var language: Language {
+        get {
+            UserDefaults.standard.load(.language) ?? .english
+        }
+        set {
+            UserDefaults.standard.save(newValue, .language)
+        }
+    }
+    
     var didShowOnboarding: Bool {
         get {
             UserDefaults.standard.load(.didShowOnboarding) ?? false

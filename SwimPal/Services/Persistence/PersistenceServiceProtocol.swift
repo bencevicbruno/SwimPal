@@ -9,6 +9,7 @@ import Foundation
 
 protocol PersistenceServiceProtocol {
     
+    var language: Language { get set }
     var didShowOnboarding: Bool { get set }
     var user: UserData? { get set }
 }

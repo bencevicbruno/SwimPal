@@ -13,6 +13,16 @@
 		8C6941192844E3F3005E64F9 /* TrainingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6941182844E3F3005E64F9 /* TrainingsCoordinator.swift */; };
 		8C69411D2844E59D005E64F9 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69411C2844E59D005E64F9 /* TypeAliases.swift */; };
 		8C9684D72853D0270070C6E2 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684D62853D0270070C6E2 /* ProfileCoordinator.swift */; };
+		8C9684DB2853D11B0070C6E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C9684DD2853D11B0070C6E2 /* Localizable.strings */; };
+		8C9684DF2853D1330070C6E2 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684DE2853D1330070C6E2 /* Localizable.swift */; };
+		8C9684E12853D1D10070C6E2 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684E02853D1D10070C6E2 /* Language.swift */; };
+		8C9684E62853D33F0070C6E2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684E52853D33F0070C6E2 /* LoginViewModel.swift */; };
+		8C9684E82853D35B0070C6E2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684E72853D35B0070C6E2 /* LoginView.swift */; };
+		8C9684ED2853DD280070C6E2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684EC2853DD280070C6E2 /* RegisterView.swift */; };
+		8C9684EF2853DD320070C6E2 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684EE2853DD320070C6E2 /* RegisterViewModel.swift */; };
+		8C9684F12853DE520070C6E2 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684F02853DE520070C6E2 /* PasswordField.swift */; };
+		8C9684F328548AAC0070C6E2 /* View+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684F228548AAC0070C6E2 /* View+Utils.swift */; };
+		8C9684F528548B4C0070C6E2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9684F428548B4B0070C6E2 /* Utils.swift */; };
 		8CE6C0B4283D63490037BB6E /* SwimPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */; };
 		8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */; };
 		8CE6C0B8283D634A0037BB6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B7283D634A0037BB6E /* Assets.xcassets */; };
@@ -44,6 +54,16 @@
 		8C6941182844E3F3005E64F9 /* TrainingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsCoordinator.swift; sourceTree = "<group>"; };
 		8C69411C2844E59D005E64F9 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		8C9684D62853D0270070C6E2 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		8C9684DC2853D11B0070C6E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C9684DE2853D1330070C6E2 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		8C9684E02853D1D10070C6E2 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		8C9684E52853D33F0070C6E2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8C9684E72853D35B0070C6E2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8C9684EC2853DD280070C6E2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8C9684EE2853DD320070C6E2 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		8C9684F02853DE520070C6E2 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		8C9684F228548AAC0070C6E2 /* View+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Utils.swift"; sourceTree = "<group>"; };
+		8C9684F428548B4B0070C6E2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8CE6C0B0283D63490037BB6E /* SwimPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimPalApp.swift; sourceTree = "<group>"; };
 		8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -84,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8C69410C2844DF9E005E64F9 /* ErrorScreen.swift */,
+				8C9684F02853DE520070C6E2 /* PasswordField.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -92,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				8CE6C0DC283D67C40037BB6E /* AuthorizationCoordinator.swift */,
+				8C9684E22853D3320070C6E2 /* Login */,
+				8C9684E92853DD030070C6E2 /* Register */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -143,6 +166,33 @@
 				8C9684D62853D0270070C6E2 /* ProfileCoordinator.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		8C9684D82853D1050070C6E2 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				8C9684DE2853D1330070C6E2 /* Localizable.swift */,
+				8C9684DD2853D11B0070C6E2 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		8C9684E22853D3320070C6E2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8C9684E72853D35B0070C6E2 /* LoginView.swift */,
+				8C9684E52853D33F0070C6E2 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8C9684E92853DD030070C6E2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8C9684EC2853DD280070C6E2 /* RegisterView.swift */,
+				8C9684EE2853DD320070C6E2 /* RegisterViewModel.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		8CE6C0A7283D63480037BB6E = {
@@ -211,6 +261,7 @@
 				8C69411C2844E59D005E64F9 /* TypeAliases.swift */,
 				8CE6C0C8283D64C50037BB6E /* Dependency Injection */,
 				8CE6C0C1283D64510037BB6E /* Extensions */,
+				8C9684F428548B4B0070C6E2 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -235,6 +286,7 @@
 			children = (
 				8CFD3DD2284946FD00C684B4 /* View+Navigation.swift */,
 				8C69410E2844E05F005E64F9 /* View+Padding.swift */,
+				8C9684F228548AAC0070C6E2 /* View+Utils.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -251,6 +303,7 @@
 		8CE6C0CD283D65360037BB6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C9684D82853D1050070C6E2 /* Localizable */,
 				8CE6C0B7283D634A0037BB6E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -271,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				8CE6C0D2283D65D30037BB6E /* UserData.swift */,
+				8C9684E02853D1D10070C6E2 /* Language.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CE6C0B8283D634A0037BB6E /* Assets.xcassets in Resources */,
+				8C9684DB2853D11B0070C6E2 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,25 +402,34 @@
 				8CE6C0D7283D663E0037BB6E /* UserDefaults+.swift in Sources */,
 				8CE6C0D5283D660D0037BB6E /* PersistenceService.swift in Sources */,
 				8C69410D2844DF9E005E64F9 /* ErrorScreen.swift in Sources */,
+				8C9684E12853D1D10070C6E2 /* Language.swift in Sources */,
+				8C9684F328548AAC0070C6E2 /* View+Utils.swift in Sources */,
+				8C9684EF2853DD320070C6E2 /* RegisterViewModel.swift in Sources */,
 				8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */,
 				8CFD3DCB2849449C00C684B4 /* HomeViewModel.swift in Sources */,
 				8CFD3DD3284946FD00C684B4 /* View+Navigation.swift in Sources */,
 				8C6941192844E3F3005E64F9 /* TrainingsCoordinator.swift in Sources */,
+				8C9684F12853DE520070C6E2 /* PasswordField.swift in Sources */,
+				8C9684F528548B4C0070C6E2 /* Utils.swift in Sources */,
 				8C6941172844E3C2005E64F9 /* HomeCoordinator.swift in Sources */,
 				8CE6C0D9283D66530037BB6E /* PersistenceKey.swift in Sources */,
 				8CE6C0D0283D659C0037BB6E /* PersistenceServiceProtocol.swift in Sources */,
 				8CFD3DC72849442900C684B4 /* TrainingsView.swift in Sources */,
 				8C69410F2844E05F005E64F9 /* View+Padding.swift in Sources */,
+				8C9684ED2853DD280070C6E2 /* RegisterView.swift in Sources */,
 				8CE6C0E1283D68F90037BB6E /* MainCoordinator.swift in Sources */,
 				8CE6C0DF283D68BD0037BB6E /* OnboardingCoordinator.swift in Sources */,
 				8C69411D2844E59D005E64F9 /* TypeAliases.swift in Sources */,
 				8CFD3DC92849443200C684B4 /* TrainingsViewModel.swift in Sources */,
+				8C9684E62853D33F0070C6E2 /* LoginViewModel.swift in Sources */,
 				8C9684D72853D0270070C6E2 /* ProfileCoordinator.swift in Sources */,
 				8CE6C0CA283D64E00037BB6E /* DependencyContainer.swift in Sources */,
 				8CE6C0DD283D67C40037BB6E /* AuthorizationCoordinator.swift in Sources */,
 				8CE6C0B4283D63490037BB6E /* SwimPalApp.swift in Sources */,
+				8C9684E82853D35B0070C6E2 /* LoginView.swift in Sources */,
 				8CFD3DBF2849437900C684B4 /* ProfileView.swift in Sources */,
 				8CFD3DD5284948DD00C684B4 /* AppDelegate.swift in Sources */,
+				8C9684DF2853D1330070C6E2 /* Localizable.swift in Sources */,
 				8CE6C0D3283D65D30037BB6E /* UserData.swift in Sources */,
 				8CFD3DCF284944BB00C684B4 /* HomeView.swift in Sources */,
 				8CFD3DC3284943A300C684B4 /* ProfileVIewModel.swift in Sources */,
@@ -375,6 +439,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C9684DD2853D11B0070C6E2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C9684DC2853D11B0070C6E2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8CE6C0BC283D634A0037BB6E /* Debug */ = {
@@ -507,6 +582,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,6 +612,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

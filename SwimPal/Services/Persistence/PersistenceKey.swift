@@ -8,6 +8,7 @@
 import Foundation
 
 enum PersistenceKey {
+    case language
     case didShowOnboarding
     case userData
 }
