@@ -15,18 +15,37 @@ final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var hidePassword = true
+    @Published var infoData: InfoData?
+    
+    @Dependency private var authorizationService: AuthorizationServiceProtocol
+    @Dependency private var persistenceService: PersistenceServiceProtocol
     
     init() {
-        
+        setupCallbacks()
     }
     
     // MARK: - User Interactions
     
     func loginTapped() {
-        onGoToMain?()
+        authorizationService.login { [weak self] userData in
+            guard let self = self else { return }
+            self.persistenceService.user = userData
+            self.onGoToMain?()
+            
+        }
+//        onGoToMain?()
     }
     
-    func registerTapped() {
-        onGoToRegister?()
+    
+}
+
+private extension LoginViewModel {
+    
+    func setupCallbacks() {
+        authorizationService.onError = { [weak self] error in
+            guard let self = self else { return }
+            
+            self.infoData = .init(title: "Error", message: error.localizedDescription)
+        }
     }
 }

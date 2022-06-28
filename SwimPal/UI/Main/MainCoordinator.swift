@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum MainTab {
-    case home
-    case trainings
-    case profile
-}
-
 final class MainCoordinator: ObservableObject {
     
     @Published var homeCoordinator = HomeCoordinator()
@@ -20,11 +14,25 @@ final class MainCoordinator: ObservableObject {
     @Published var profileCoordinator = ProfileCoordinator()
     
     @Published var currentTab: MainTab = .home
+    @Published var isTabBarHidden = false
     
-    var onSignedOut: EmptyCallback?
+    var onGoToAuthorization: EmptyCallback?
     
-    init() {
+    private init() {
+        profileCoordinator.onGoToAuthorization = { [weak self] in
+            self?.onGoToAuthorization?()
+        }
+    }
+    
+    private static var instance = MainCoordinator()
+    
+    static func getInstance(createNew: Bool = false) -> MainCoordinator {
+        if createNew {
+            let newInstance = MainCoordinator()
+            Self.instance = newInstance
+        }
         
+        return Self.instance
     }
 }
 
@@ -34,28 +42,35 @@ struct MainCoordinatorView: View {
     
     var body: some View {
         NavigationView {
-            TabView(selection: $coordinator.currentTab) {
-                HomeCoordinatorView(coordinator.homeCoordinator)
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-                    .tag(MainTab.home)
+            ZStack(alignment: .bottom) {
+                TabView(selection: $coordinator.currentTab) {
+                    HomeCoordinatorView(coordinator.homeCoordinator)
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
+                        .tag(MainTab.home)
+                    
+                    TrainingsCoordinatorView(coordinator.trainingCoordinator)
+                        .tabItem {
+                            Image(systemName: "timer")
+                            Text("Trainings")
+                        }
+                        .tag(MainTab.trainings)
+                    
+                    ProfileCoordinatorView(coordinator.profileCoordinator)
+                        .tabItem {
+                            Image(systemName: "person")
+                            Text("Profile")
+                        }
+                        .tag(MainTab.profile)
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .removeNavigationBar()
                 
-                TrainingsCoordinatorView(coordinator.trainingCoordinator)
-                    .tabItem {
-                        Image(systemName: "timer")
-                        Text("Trainings")
-                    }
-                    .tag(MainTab.trainings)
-                
-                ProfileCoordinatorView(coordinator.profileCoordinator)
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
-                    .tag(MainTab.profile)
+                MainTabBar(currentTab: $coordinator.currentTab, isHidden: $coordinator.isTabBarHidden)
             }
+            .edgesIgnoringSafeArea(.bottom)
         }
         .navigationViewStyle(.stack)
     }

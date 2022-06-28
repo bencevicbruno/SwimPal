@@ -13,8 +13,17 @@ final class RootCoordinator: ObservableObject {
     @Published var authorizationCoordinator: AuthorizationCoordinator?
     @Published var mainCoordinator: MainCoordinator?
     
+    @Dependency private var persistenceService: PersistenceServiceProtocol
+    
     init() {
-        goToOnboarding()
+        if !persistenceService.didShowOnboarding {
+            goToOnboarding()
+            persistenceService.didShowOnboarding = true
+        } else if persistenceService.user == nil {
+            goToAuthorization()
+        } else {
+            goToMain()
+        }
     }
     
     func goToOnboarding() {
@@ -38,11 +47,11 @@ final class RootCoordinator: ObservableObject {
     }
     
     func goToMain() {
-        mainCoordinator = MainCoordinator()
+        mainCoordinator = MainCoordinator.getInstance(createNew: true)
         onboardingCoordinator = nil
         authorizationCoordinator = nil
         
-        mainCoordinator!.onSignedOut = { [weak self] in
+        mainCoordinator!.onGoToAuthorization = { [weak self] in
             self?.goToAuthorization()
         }
     }
@@ -50,7 +59,7 @@ final class RootCoordinator: ObservableObject {
 
 struct RootCoordinatorView: View {
     
-    @ObservedObject var coordinator = RootCoordinator()
+    @ObservedObject var coordinator: RootCoordinator
     
     var body: some View {
         if let coordinator = coordinator.onboardingCoordinator {
@@ -60,7 +69,7 @@ struct RootCoordinatorView: View {
         } else if let coordinator = coordinator.mainCoordinator {
             MainCoordinatorView(coordinator)
         } else {
-            ErrorScreen(forCoordinator: "\(self)")
+            ErrorScreen(for: "\(self)")
         }
     }
 }

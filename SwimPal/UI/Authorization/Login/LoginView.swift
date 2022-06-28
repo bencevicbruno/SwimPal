@@ -12,57 +12,44 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
-        VStack {
-            Image(systemName: "person")
+        VStack(spacing: 0) {
+            title
+                .padding(.top, 10)
+            
+            Spacer(minLength: 10)
+            
+            Image("illustration_noInternet")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 150, height: 150)
+                .padding(.horizontal, 50)
             
-            emailField
+            Spacer(minLength: 10)
             
-            PasswordField(title: Localizable.password, text: $viewModel.password, hidePassword: $viewModel.hidePassword)
-            //
-            loginButton
-            //
-            signupMessage
+            continueWithGoogleButton
+                .padding(.bottom, 10)
         }
+        .padding(20)
+        .background(.white)
     }
 }
 
 private extension LoginView {
     
-    var emailField: some View {
-        TextField(Localizable.email, text: $viewModel.email)
-            .padding(10, .standard)
-            .background(RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray, lineWidth: 2))
+    var title: some View {
+        Text(Localizable.welcome_to)
+            .style(.roboto(.display1, .bold), .brand, .center)
     }
     
-    var loginButton: some View {
-        Text(Localizable.login)
-            .foregroundColor(.white)
+    var continueWithGoogleButton: some View {
+        Text(Localizable.continue_with_google)
+            .style(.roboto(.body, .medium), .white)
             .padding(10, .standard)
-            .background(RoundedRectangle(cornerRadius: 10)
-                .fill(.blue))
+            .frame(maxWidth: .infinity)
+            .frame(height: 60).background(RoundedRectangle(cornerRadius: 10)
+                .fill(Color.brand))
             .onTapGesture {
                 viewModel.loginTapped()
             }
-    }
-    
-    var signupMessage: some View {
-        Group {
-            Text(Localizable.register_msg)
-            +
-            Text(" ")
-            +
-            Text(Localizable.register)
-                .foregroundColor(.blue)
-            
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            viewModel.registerTapped()
-        }
     }
 }
 

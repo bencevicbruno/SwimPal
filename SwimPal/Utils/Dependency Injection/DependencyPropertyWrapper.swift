@@ -20,6 +20,7 @@ struct Dependency<Service> {
     }
     
     var wrappedValue: Service {
-        self.service
+        get { self.service }
+        mutating set { service = newValue }
     }
 }

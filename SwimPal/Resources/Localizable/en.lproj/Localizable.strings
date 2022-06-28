@@ -1,1 +1,38 @@
 
+"welcome_to" = "Welcome to";
+"continue_with_google" = "Continue with Google";
+
+"not_available_abbr" = "N/A";
+
+"onboarding_title_first" = "Welcome!";
+"onboarding_title_second" = "Track Progress!";
+"onboarding_title_third" = "Most importantly...";
+"onboarding_message_first" = "Use SwimPal as your personal assistant! Mark your trainings for easier training tracking. Every mile counts!";
+"onboarding_message_second" = "SwimPal offers you visual presentation of your progress providing you with all sorts of graphs and data you would not have time to track yourself.";
+"onboarding_message_third" = "Nothing is better than the feeling of improvement and success. Have fun with SwimPal and just keep swimming!";
+
+"no_internet" = "No Internet";
+"no_internet_msg" = "Sorry, but it seems there's no connection to the internet. Please try again.";
+"no_statistics" = "No Statistics available";
+"no_statistics_msg" = "There are no trainings recorded. Start a new training and track your progress!";
+"achievements" = "Achievements";
+"no_achievements" = "No Achivements available";
+"no_achievements_msg" = "Just keep swimmin', just keep swimmin'...";
+
+"training" = "Training";
+"trainings" = "Trainings";
+"training_category_lifeguard" = "Lifeguard";
+"training_category_everything4x" = "4x Everything";
+"training_category_endurance" = "Endurance";
+"training_category_tooFastForYou" = "2Fast4You";
+"training_category_random" = "Random";
+"training_category_custom" = "Custom";
+
+"start_training" = "Start Training";
+
+"settings" = "Settings";
+
+"select_language" = "Select Language";
+
+"log_out" = "Log Out";
+"log_out_msg" = "Are you sure you want to log out?";

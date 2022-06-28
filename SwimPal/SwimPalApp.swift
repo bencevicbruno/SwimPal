@@ -11,10 +11,13 @@ import SwiftUI
 struct SwimPalApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var rootCoordinator = RootCoordinator()
     
     var body: some Scene {
         WindowGroup {
-            RootCoordinatorView()
+            ZStack {
+                RootCoordinatorView(coordinator: rootCoordinator)
+            }
         }
     }
 }

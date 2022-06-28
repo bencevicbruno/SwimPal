@@ -10,13 +10,21 @@ import Foundation
 struct UserData: Identifiable, Codable {
     let id: UUID
     var name: String
-    var lastName: String
     var email: String
+    var avatarURL: URL?
     
-    init(name: String, lastName: String, email: String) {
-        id = UUID()
+    init(id: String? = nil, name: String, email: String, avatarURL: URL? = nil) {
+        self.id = Self.createUUID(id: id)
         self.name = name
-        self.lastName = lastName
         self.email = email
+        self.avatarURL = avatarURL
+    }
+    
+    static func createUUID(id: String?) -> UUID {
+        if let id = id {
+            return UUID(uuidString: id) ?? UUID()
+        }
+        
+        return UUID()
     }
 }

@@ -12,11 +12,50 @@ struct TrainingsView: View {
     @ObservedObject var viewModel: TrainingsViewModel
     
     var body: some View {
-        Text("Hello, Trainings!")
+        VStack(spacing: 0) {
+            title
+            
+            content
+        }
+        .padding(.horizontal, 10)
+        .removeNavigationBar()
     }
     
     init(_ viewModel: TrainingsViewModel) {
         self.viewModel = viewModel
+    }
+}
+
+private extension TrainingsView {
+    
+    var title: some View {
+        HStack(spacing: 0) {
+            Text(Localizable.trainings)
+                .style(.roboto(.display1, .bold), .brand)
+            
+            Spacer()
+        }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        if viewModel.isActivityRunning {
+            Text("Loading...")
+        } else if let error = viewModel.error {
+            ErrorScreen(error)
+        } else {
+            if viewModel.trainings.isEmpty {
+                EmptyStateScreen(.init(title: "No Trainings", message: "Start swimmin man!", illustrationName: "illustration_noStatistics"))
+            } else {
+                ScrollView(.vertical) {
+                    LazyVStack(spacing: 8) {
+                        ForEach(viewModel.trainings, id: \.name) {
+                            TrainingCell(training: $0)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

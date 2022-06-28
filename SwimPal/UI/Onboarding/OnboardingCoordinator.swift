@@ -11,11 +11,18 @@ final class OnboardingCoordinator: ObservableObject {
     
     var onGoToAuthorization: EmptyCallback?
     
+    @Published var viewModel = OnboardingViewModel()
+    
+    @Dependency var persistenceService: PersistenceServiceProtocol
+    
     init() {
-        
+        viewModel.onGoToAuthorization = { [weak self] in
+            self?.goToAuthorization()
+        }
     }
     
     func goToAuthorization() {
+        persistenceService.didShowOnboarding = true
         onGoToAuthorization?()
     }
 }
@@ -25,9 +32,7 @@ struct OnboardingCoordinatorView: View {
     @ObservedObject var coordinator: OnboardingCoordinator
     
     var body: some View {
-        Button("Go to login") {
-            coordinator.goToAuthorization()
-        }
+        OnboardingView(viewModel: coordinator.viewModel)
     }
     
     init(_ coordinator: OnboardingCoordinator) {

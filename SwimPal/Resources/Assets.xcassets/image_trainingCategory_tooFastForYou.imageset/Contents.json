@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "image_trainingCategory_tooFastForYou.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

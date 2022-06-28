@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "image_trainingCategory_lifeguard.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

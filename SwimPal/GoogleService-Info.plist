@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>506951509186-9cql2m4d66536lnt7aelbmjlqfg2ha8b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.506951509186-9cql2m4d66536lnt7aelbmjlqfg2ha8b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC5L5MnqCQ0frpIWuYbvcWE4CFtEtsjAhM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>506951509186</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.bb.SwimPal</string>
+	<key>PROJECT_ID</key>
+	<string>bb-swimpal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bb-swimpal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:506951509186:ios:2f501c8f62e10a53c7c75b</string>
+</dict>
+</plist>

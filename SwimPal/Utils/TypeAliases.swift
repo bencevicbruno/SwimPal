@@ -8,3 +8,4 @@
 import Foundation
 
 typealias EmptyCallback = () -> Void
+typealias ErrorCallback = (Error) -> Void
