@@ -22,6 +22,7 @@ struct OnboardingView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             
             nextButton
+                .padding(.bottom, 12)
         }
         .padding(.horizontal, 12)
         .background(.white)

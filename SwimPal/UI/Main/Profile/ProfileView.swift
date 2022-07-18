@@ -14,18 +14,19 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                profileDetails
-                    .padding(.vertical, 10)
+                aboutYouTitle
+                    .padding(.bottom, 10)
                 
-                createSection("About you")
+                profileDetails
+                    .padding(.bottom, 10)
                 
                 createButton("Statistics", onTapped: viewModel.goToStatistics)
                 
                 createButton("Achievements", onTapped: viewModel.goToAchievements)
                 
-                createButton("Settings", onTapped: viewModel.goToSettings)
-                
                 createSection("Other")
+                
+                createButton("Settings", onTapped: viewModel.goToSettings)
                 
                 createButton("About", onTapped: viewModel.goToAbout)
                 
@@ -33,7 +34,8 @@ struct ProfileView: View {
                 
                 Spacer()
             }
-            .padding(10)
+            .padding([.top, .leading, .trailing], 10)
+            .padding(.bottom, MainTabBar.height)
         }
         .removeNavigationBar()
         .background(.white)
@@ -46,6 +48,11 @@ struct ProfileView: View {
 }
 
 private extension ProfileView {
+    
+    var aboutYouTitle: some View {
+        Text("About you...")
+            .style(.roboto(.display1, .bold), .brand, .leading)
+    }
     
     var avatar: some View {
         AsyncImage(url: viewModel.userData?.avatarURL) { image in

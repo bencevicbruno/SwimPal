@@ -31,7 +31,7 @@ struct NavigationBar: View {
             Spacer()
             
             Text(verbatim: title)
-                .style(.roboto(.display1, .bold), .brand)
+                .style(.roboto(.headline2, .bold), .brand)
             
             Spacer()
             
@@ -39,7 +39,7 @@ struct NavigationBar: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(.brand)
-                .frame(width: 24, height: 24)
+                .frame(width: 18, height: 18)
                 .frame(width: 40, height: 40)
                 .onTapGesture {
                     onXTapped?()
@@ -47,6 +47,7 @@ struct NavigationBar: View {
                 .padding(.horizontal, 10)
                 .isVisible(onXTapped != nil)
         }
+        .padding(.horizontal, 10)
         .frame(height: Self.height)
         .frame(maxWidth: .infinity)
         .background(.white)
@@ -58,8 +59,19 @@ struct NavigationBar: View {
         self.onXTapped = onXTapped
     }
 }
+
+extension NavigationBar {
+    
+    func addShadow(color: Color = .shadow, radius: CGFloat = 10, offset: CGFloat = 5) -> some View {
+        self.clipped()
+            .shadow(color: .shadow, radius: radius, y: offset)
+            .mask(Rectangle().padding(.bottom, -2 * radius))
+    }
+}
+
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBar("Test", onXTapped: {})
+            .addShadow()
     }
 }

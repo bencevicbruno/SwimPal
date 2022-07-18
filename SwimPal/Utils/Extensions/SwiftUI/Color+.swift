@@ -14,4 +14,6 @@ extension Color {
     
     static let gray142 = Color(uiColor: .gray142)
     static let gray242 = Color(uiColor: .gray242)
+    
+    static let shadow = Color(uiColor: .shadow)
 }

@@ -44,6 +44,13 @@ enum Localizable {
     static var training_category_random: String { "training_category_random".localized() }
     static var training_category_custom: String { "training_category_custom".localized() }
     
+    static var training_category_lifeguard_description: String { "training_category_lifeguard_description".localized() }
+    static var training_category_everything4x_description: String { "training_category_everything4x_description".localized() }
+    static var training_category_endurance_description: String { "training_category_endurance_description".localized() }
+    static var training_category_tooFastForYou_description: String { "training_category_tooFastForYou_description".localized() }
+    static var training_category_random_description: String { "training_category_random_description".localized() }
+    static var training_category_custom_description: String { "training_category_custom_description".localized() }
+    
     static var no_internet: String { "no_internet".localized() }
     static var no_internet_msg: String { "no_internet_msg".localized() }
     

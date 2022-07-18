@@ -10,6 +10,7 @@ import SwiftUI
 final class ProfileCoordinator: ObservableObject {
     
     var onGoToAuthorization: EmptyCallback?
+    var onStartTraining: ((Training.Category) -> Void)?
     
     @Published var viewModel = ProfileViewModel()
     @Published var statisticsViewModel: StatisticsViewModel?
@@ -45,6 +46,10 @@ final class ProfileCoordinator: ObservableObject {
         statisticsViewModel!.onDismissed = { [weak self] in
             self?.statisticsViewModel = nil
         }
+        
+        statisticsViewModel!.onStartTraining = { [weak self] category in
+            self?.onStartTraining?(category)
+        }
     }
     
     func goToAchievements() {
@@ -52,6 +57,10 @@ final class ProfileCoordinator: ObservableObject {
         
         achievementsViewModel!.onDismissed = { [weak self] in
             self?.achievementsViewModel = nil
+        }
+        
+        achievementsViewModel!.onStartTraining = { [weak self] category in
+            self?.onStartTraining?(category)
         }
     }
     

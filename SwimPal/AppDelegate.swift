@@ -13,7 +13,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         setupDependencyContainer()
-        printFonts()
+//        printFonts()
         
         FirebaseApp.configure()
         
@@ -28,8 +28,11 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 private extension AppDelegate {
     
     func setupDependencyContainer() {
-        DependencyContainer.register(type: PersistenceServiceProtocol.self, PersistenceService())
         DependencyContainer.register(type: AuthorizationServiceProtocol.self, AuthorizationService())
+        DependencyContainer.register(type: DatabaseServiceProtocol.self, LocalDatabaseService())
+        DependencyContainer.register(type: FileManagerService.self, FileManagerService())
+        DependencyContainer.register(type: LocationService.self, LocationService())
+        DependencyContainer.register(type: PersistenceServiceProtocol.self, PersistenceService())
     }
     
     func printFonts() {

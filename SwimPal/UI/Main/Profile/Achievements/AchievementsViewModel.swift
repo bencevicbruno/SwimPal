@@ -26,7 +26,9 @@ final class AchievementsViewModel: ObservableObject {
     
     func showTrainingSelection() {
         trainingSelectionData = .init(onCategorySelected: { [weak self] category in
-            self?.onStartTraining?(category)
+            guard let self = self else { return }
+            self.onDismissed?()
+            self.onStartTraining?(category)
         })
     }
 }

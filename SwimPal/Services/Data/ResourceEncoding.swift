@@ -7,10 +7,7 @@
 
 import Foundation
 
-extension Resource {
-    
-    enum Encoding {
-        case json
-        case urlEncodedInUrl
-    }
+enum ResourceEncoding: String {
+    case urlEncoded
+    case json
 }

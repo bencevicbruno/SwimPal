@@ -17,7 +17,7 @@ struct TrainingCard: View {
             
             HStack(spacing: 0) {
                 Text(category.title)
-                    .style(.roboto(.headline1, .bold), .white, .leading)
+                    .style(.roboto(.headline2, .bold), .white, .leading)
                 
                 Spacer(minLength: 0)
             }

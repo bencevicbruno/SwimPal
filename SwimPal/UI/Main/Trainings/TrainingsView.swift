@@ -13,12 +13,15 @@ struct TrainingsView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            title
+//            title
+//                .padding(10)
             
             content
         }
-        .padding(.horizontal, 10)
         .removeNavigationBar()
+        .trainingSelectionSheet($viewModel.trainingSelectionData)
+        .optionsSheet($viewModel.optionsData)
+        .confirmationSheet($viewModel.confirmationData)
     }
     
     init(_ viewModel: TrainingsViewModel) {
@@ -47,12 +50,57 @@ private extension TrainingsView {
             if viewModel.trainings.isEmpty {
                 EmptyStateScreen(.init(title: "No Trainings", message: "Start swimmin man!", illustrationName: "illustration_noStatistics"))
             } else {
-                ScrollView(.vertical) {
-                    LazyVStack(spacing: 8) {
-                        ForEach(viewModel.trainings, id: \.name) {
-                            TrainingCell(training: $0)
-                        }
+                ZStack(alignment: .bottomTrailing) {
+                    trainingList
+                }
+            }
+        }
+    }
+    
+    var newTrainingButton: some View {
+        ZStack {
+            Circle()
+                .fill(Color.brand)
+            
+            Text("+")
+                .style(.roboto(.display1, .bold), .white)
+                .padding(5)
+        }
+        .frame(60)
+        .clipShape(Circle())
+        .onTapGesture {
+            viewModel.showTrainingOptions()
+        }
+        .shadow(color: .black.opacity(0.1), radius: 4)
+    }
+    
+    var trainingList: some View {
+        ZStack {
+            ScrollView(.vertical) {
+                LazyVStack(spacing: 8) {
+                    title
+                        .padding(.top, 10)
+                    
+                    ForEach(0..<viewModel.trainings.count) { index in
+                        TrainingCell(training: viewModel.trainings[index], onTapped: { viewModel.trainingOptionsTapped(index: index) })
+                            .onTapGesture {
+                                viewModel.trainingTapped(index: index)
+                            }
                     }
+                }
+                .padding(.horizontal, 10)
+                .padding(.bottom, MainTabBar.height)
+            }
+            
+            VStack(spacing: 0) {
+                Spacer()
+                
+                HStack(spacing: 0) {
+                    Spacer()
+                    
+                    newTrainingButton
+                        .padding(.bottom, MainTabBar.height)
+                        .padding(.trailing, 10)
                 }
             }
         }

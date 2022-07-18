@@ -11,161 +11,31 @@ struct InfoSheet: View {
     
     @Binding var isVisible: Bool
     
-    @State private var sheetHeight: CGFloat = 0
-    @State private var didAppear = false
-    @State private var dragOffset: CGFloat = 0
-    
-    @State private var initialDragPosition: CGFloat = 0
-    @State private var didSetInitialDragPosition = false
-    
     private let data: InfoData
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            overlay
-                .edgesIgnoringSafeArea(.top)
-            
-            GeometryReader { geo in
-                VStack(spacing: 0) {
-                    Spacer()
-                    
-                    SheetNotch()
-                    
-                    sheetContent
-                        .background(.white)
-                }
-                .offset(x: 0, y: (didAppear ? 0 : sheetHeight) + dragOffset)
-                .gesture(
-                    dragGesture
-                )
-                .onAppear {
-                    viewWillAppear(height: geo.size.height)
-                }
-                .onDisappear {
-                    viewWillDisappear()
+        SheetBase($isVisible) { dismiss in
+            VStack(spacing: 0) {
+                SheetTitle(data.title)
+                    .padding(.vertical, 24)
+                
+                SheetDescription(data.message)
+                    .padding(.bottom, 24)
+                
+                SheetButton(data.okTitle) {
+                    dismiss {
+                        data.action?()
+                    }
                 }
             }
         }
-        .edgesIgnoringSafeArea(.all)
+        .padding(.horizontal, SheetUtils.horizontalPadding)
+        .padding(.bottom, SheetUtils.bottomContentPadding)
     }
     
     init(_ isVisible: Binding<Bool>, data: InfoData) {
         self._isVisible = isVisible
         self.data = data
-    }
-}
-
-private extension InfoSheet {
-    
-    // MARK: - UI Components
-    
-    var overlay: some View {
-        Rectangle()
-            .fill(Material.thin)
-            .opacity(didAppear ? 1 : 0)
-            .onTapGesture {
-                viewWillDisappear()
-            }
-    }
-    
-    var sheetContent: some View {
-        VStack(spacing: 0) {
-            Text(data.title)
-                .fontWeight(.bold)
-                .foregroundColor(.brand)
-                .padding(.vertical, 24)
-            
-            Text(data.message)
-                .fontWeight(.regular)
-                .foregroundColor(.black)
-                .padding(.bottom, 24)
-            
-            HStack(spacing: 24) {
-                okButton
-            }
-        }
-        .padding(.horizontal, 12)
-        .padding(.bottom, max(12, UIScreen.bottomUnsafePadding))
-        .background(Color.white)
-        .multilineTextAlignment(.center)
-    }
-    
-    var okButton: some View {
-        Text(data.okTitle.uppercased())
-            .fontWeight(.bold)
-            .foregroundColor(.white)
-            .frame(height: 60)
-            .frame(maxWidth: .infinity).background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.brand)
-            )
-            .onTapGesture {
-                viewWillDisappear(performAction: true)
-            }
-    }
-    
-    // MARK: - User Interaction
-    
-    func viewWillAppear(height: CGFloat) {
-        sheetHeight = height
-        
-        animate(0.4) {
-            didAppear = true
-            MainCoordinator.getInstance().isTabBarHidden.toggle()
-        }
-    }
-    
-    func viewWillDisappear(performAction: Bool = false) {
-        guard didAppear else { return }
-        
-        animate(0.4) {
-            didAppear = false
-            MainCoordinator.getInstance().isTabBarHidden.toggle()
-        } completion: {
-            isVisible = false
-            
-            if performAction {
-                data.action?()
-            }
-        }
-    }
-    
-    func animate(_ duration: Double, _ body: EmptyCallback, completion: EmptyCallback? = nil) {
-        withAnimation(.linear(duration: duration)) {
-            body()
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-            completion?()
-        }
-    }
-    
-    // MARK: - Drag Gesture
-    
-    var dragGesture: some Gesture {
-        DragGesture()
-            .onChanged { value in
-                if !didSetInitialDragPosition {
-                    didSetInitialDragPosition = true
-                    initialDragPosition = value.location.y
-                }
-                withAnimation {
-                    self.dragOffset = max(value.translation.height, 0)
-                }
-            }
-            .onEnded { value in
-                didSetInitialDragPosition = false
-                
-                let shouldDisappear = abs(initialDragPosition - value.location.y) > (UIScreen.main.bounds.height - initialDragPosition) / 2
-                
-                if shouldDisappear {
-                    viewWillDisappear()
-                } else {
-                    withAnimation {
-                        self.dragOffset = 0
-                    }
-                }
-            }
     }
 }
 

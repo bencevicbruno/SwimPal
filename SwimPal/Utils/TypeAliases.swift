@@ -8,4 +8,6 @@
 import Foundation
 
 typealias EmptyCallback = () -> Void
+typealias ArgCallback<T> = (T) -> Void
 typealias ErrorCallback = (Error) -> Void
+typealias DismissWithCallback = (EmptyCallback?) -> Void

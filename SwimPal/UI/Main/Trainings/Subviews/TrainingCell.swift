@@ -7,18 +7,10 @@
 
 import SwiftUI
 
-struct Training {
-    let name: String
-    let date: Date
-    let time: Int
-    let latitude: Float
-    let longitude: Float
-    let location: String
-}
-
 struct TrainingCell: View {
     
     let training: Training
+    let onTapped: EmptyCallback?
     
     var body: some View {
         HStack(spacing: 0) {
@@ -28,7 +20,7 @@ struct TrainingCell: View {
                         .style(.roboto(.headline2, .bold), .white)
                         .padding(.trailing, 20)
                     
-                    Text(verbatim: "\(training.time)h")
+                    Text(verbatim: training.time.getFormatted(with: .hoursMinutes))
                         .style(.roboto(.body, .medium), .white)
                     
                     Spacer(minLength: 0)
@@ -41,7 +33,7 @@ struct TrainingCell: View {
                         .frame(width: 24, height: 24)
                         .padding(.trailing, 8)
                     
-                    Text(verbatim: training.location)
+                    Text(verbatim: training.location.name)
                         .style(.roboto(.body, .regular), .white)
                     
                     Spacer(minLength: 0)
@@ -52,19 +44,22 @@ struct TrainingCell: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)
+                .onTapGesture {
+                    onTapped?()
+                }
         }
         .padding(8)
         .frame(maxWidth: .infinity)
         .frame(height: 80)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color.brand)
+                .fill(Color.gray142)
         )
     }
 }
 
 struct TrainingCell_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingCell(training: .init(name: "4x Everything", date: .now, time: 128, latitude: 128, longitude: 128, location: "Gradski bazeni"))
+        TrainingCell(training: .init(name: "4x Everything", date: .now, time: Time(1000, .seconds), location: .init(name: "Gradski bazeni"), category: .random, excercises: Training.Category.lifeguard.excercises), onTapped: nil)
     }
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 struct UserData: Identifiable, Codable {
-    let id: UUID
+    let id: String
     var name: String
     var email: String
     var avatarURL: URL?
     
     init(id: String? = nil, name: String, email: String, avatarURL: URL? = nil) {
-        self.id = Self.createUUID(id: id)
+        self.id = Self.createUUID(id: id).uuidString
         self.name = name
         self.email = email
         self.avatarURL = avatarURL

@@ -9,10 +9,5 @@ import Foundation
 
 extension Resource {
     
-    enum Method {
-        case get
-        case post
-        case put
-        case delete
-    }
+    
 }

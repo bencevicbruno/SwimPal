@@ -13,18 +13,17 @@ extension View {
         let isActive = Binding(
             get: { item.wrappedValue != nil },
             set: { value in
-                
                 if !value {
                     item.wrappedValue = nil
                 }
             }
         )
         
-        return ZStack {
+        return VStack(spacing: 0) {
             self
             
             NavigationLink(
-                destination: isActive.wrappedValue && item.wrappedValue != nil ? AnyView(destination(item.wrappedValue!)) : AnyView(EmptyView()),
+                destination: LazyView(destination(item.wrappedValue!)),
                 isActive: isActive,
                 label: { EmptyView() }
             )
@@ -42,12 +41,12 @@ extension View {
             }
         )
         
-        return LazyView(fullScreenCover(isPresented: isActive) {
+        return self.fullScreenCover(isPresented: isActive) {
             if let item = item.wrappedValue {
                 destination(item)
             } else {
                 EmptyView()
             }
-        })
+        }
     }
 }

@@ -15,9 +15,8 @@ struct SwimPalApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                RootCoordinatorView(coordinator: rootCoordinator)
-            }
+            RootCoordinatorView(coordinator: rootCoordinator)
+//            SwimPaltests()
         }
     }
 }

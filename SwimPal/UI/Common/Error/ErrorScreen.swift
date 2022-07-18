@@ -71,7 +71,6 @@ private extension ErrorScreen {
                     .fill(Color.brand)
             )
             .onTapGesture {
-//                Dialogs.hideNoInternet()
                 data.onRetry?()
             }
     }

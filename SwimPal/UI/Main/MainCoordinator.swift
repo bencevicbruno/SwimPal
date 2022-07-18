@@ -22,6 +22,12 @@ final class MainCoordinator: ObservableObject {
         profileCoordinator.onGoToAuthorization = { [weak self] in
             self?.onGoToAuthorization?()
         }
+        
+        profileCoordinator.onStartTraining = { [weak self] category in
+            guard let self = self else { return }
+            self.currentTab = .trainings
+            self.trainingCoordinator.startTraining(category: category)
+        }
     }
     
     private static var instance = MainCoordinator()

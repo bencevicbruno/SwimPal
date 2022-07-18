@@ -16,6 +16,7 @@ struct StatisticsView: View {
             NavigationBar("Statistics", onBackTapped: viewModel.dismiss)
             
             emptyStateContent
+                
         }
         .removeNavigationBar()
         .background(.white)
@@ -27,6 +28,7 @@ private extension StatisticsView {
     
     var emptyStateContent: some View {
         EmptyStateScreen(.init(title: Localizable.no_statistics, message: Localizable.no_statistics_msg, illustrationName: "illustration_noStatistics", actionTitle: Localizable.start_training, action: viewModel.showTrainingSelection))
+            .padding(10)
     }
 }
 

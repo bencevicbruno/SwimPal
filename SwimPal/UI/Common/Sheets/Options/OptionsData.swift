@@ -2,20 +2,25 @@
 //  OptionsData.swift
 //  SwimPal
 //
-//  Created by Bruno Benčević on 20.06.2022..
+//  Created by Bruno Benčević on 11.07.2022..
 //
 
 import SwiftUI
 
 struct OptionsData {
     let title: String
-    let options: [String]
-    let action: ((Int) -> Void)?
+    let items: [Item]
+    let onTapped: ((Int) -> Void)?
     
-    init(title: String, options: [String], action: ((Int) -> Void)? = nil) {
+    init(title: String, items: [Item], onTapped: ((Int) -> Void)? = nil) {
         self.title = title
-        self.options = options
-        self.action = action
+        self.items = items
+        self.onTapped = onTapped
+    }
+    
+    struct Item {
+        let iconName: String
+        let title: String
     }
 }
 

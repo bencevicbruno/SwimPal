@@ -10,7 +10,7 @@ import SwiftUI
 extension Font {
     
     static func roboto(_ size: CustomFontSize, _ weight: CustomFontWeight = .regular, italic isItalic: Bool = false) -> Font {
-        return Font.custom("Roboto-\(weight.rawValue.capitalized)\(isItalic ? "Italic" : "")", size: CGFloat(size.rawValue))
+        return Font.custom("Roboto-\(weight.rawValue.capitalized)\(isItalic ? "Italic" : "")", size: CGFloat(size.size))
     }
 }
 
@@ -22,6 +22,10 @@ enum CustomFontSize: Int {
     case caption = 16
     case smallCaption = 14
     case label = 12
+    
+    var size: CGFloat {
+        CGFloat(UIScreen.main.bounds.width > 320 ? rawValue : rawValue - 2)
+    }
 }
 
 enum CustomFontWeight: String {

@@ -12,7 +12,7 @@ final class SettingsViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
     
-    @Published var optionsData: OptionsData?
+    @Published var optionsData: RadioOptionsData?
     
     init() {
     }
@@ -24,13 +24,13 @@ final class SettingsViewModel: ObservableObject {
     }
     
     func showLanguageOptions() {
-        optionsData = OptionsData(title: Localizable.select_language, options: ["English", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski"]) { index in
+        optionsData = RadioOptionsData(title: Localizable.select_language, options: ["English", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski"]) { index in
             print("Chose \(["English", "Deutsch", "Hrvatski"][index])")
         }
     }
     
     func showUnitSystemOptions() {
-        optionsData = OptionsData(title: Localizable.select_language, options: ["Metric", "Imperial"]) { index in
+        optionsData = RadioOptionsData(title: Localizable.select_language, options: ["Metric", "Imperial"]) { index in
             print("Chose \(["Metric", "Imperial"][index])")
         }
     }

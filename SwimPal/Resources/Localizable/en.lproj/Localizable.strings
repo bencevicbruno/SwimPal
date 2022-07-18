@@ -27,6 +27,12 @@
 "training_category_tooFastForYou" = "2Fast4You";
 "training_category_random" = "Random";
 "training_category_custom" = "Custom";
+"training_category_lifeguard_description" = "These trainings are mostly time-capped. You have to be fast enough to earn a Lifeguard Licence.";
+"training_category_everything4x_description" = "See how fast you can go swimming freestyle.";
+"training_category_endurance_description" = "See how much you can swimm without giving up.";
+"training_category_tooFastForYou_description" = "Are you faster than Michael Phelphs? See for yourself.";
+"training_category_random_description" = "Be aware that this training is randomly generated. It is not guaranteed that it's posibble to even complete it.";
+"training_category_custom_description" = "Create your own training. You can do whatever you want.";
 
 "start_training" = "Start Training";
 

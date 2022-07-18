@@ -14,12 +14,15 @@ struct HomeView: View {
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack(alignment: .leading, spacing: 0) {
+                greetingTitle
+                    .padding(.bottom, 10)
+                
                 MotivationCard(motivation: viewModel.motivations[viewModel.currentMotivationIndex])
                 
                 startTrainingTitle
                     .padding(.vertical, 12)
                 
-                TrainingSelection()
+                TrainingSelection(onCategorySelected: viewModel.goToTrainingPreparation)
                 
                 Spacer(minLength: MainTabBar.height)
             }
@@ -36,9 +39,14 @@ struct HomeView: View {
 
 private extension HomeView {
     
+    var greetingTitle: some View {
+        Text("Hello, \(viewModel.userName)!")
+            .style(.roboto(.display1, .bold), .brand, .leading)
+    }
+    
     var startTrainingTitle: some View {
         Text(Localizable.start_training)
-            .style(.roboto(.display1, .bold), .brand, .leading)
+            .style(.roboto(.headline1, .bold), .brand, .leading)
     }
 }
 

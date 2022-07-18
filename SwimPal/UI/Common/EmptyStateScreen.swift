@@ -40,7 +40,7 @@ struct EmptyStateScreen: View {
             Spacer(minLength: 10)
             
             Text(verbatim: data.title)
-                .style(.roboto(.display1, .bold), .brand)
+                .style(.roboto(.headline1, .bold), .brand)
                 .padding(.bottom, 24)
             
             Text(verbatim: data.message)
@@ -53,8 +53,6 @@ struct EmptyStateScreen: View {
                     .padding(.bottom, 10)
             }
         }
-        .padding(.horizontal, 10)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)
     }
 }
