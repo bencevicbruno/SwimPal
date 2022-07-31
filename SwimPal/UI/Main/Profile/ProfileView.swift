@@ -38,7 +38,7 @@ struct ProfileView: View {
             .padding(.bottom, MainTabBar.height)
         }
         .removeNavigationBar()
-        .background(.white)
+        .background(Color.white)
         .confirmationSheet($viewModel.confirmationData)
     }
     
@@ -55,15 +55,22 @@ private extension ProfileView {
     }
     
     var avatar: some View {
-        AsyncImage(url: viewModel.userData?.avatarURL) { image in
-            image
-                .resizable()
-                .scaledToFill()
-        } placeholder: {
-            Image(systemName: "person")
-                .resizable()
-                .scaledToFit()
-                .background(.blue)
+        if #available(iOS 15, *) {
+            return AsyncImage(url: viewModel.userData?.avatarURL) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+            } placeholder: {
+                Image(systemName: "person")
+                    .resizable()
+                    .scaledToFit()
+                    .background(Color.blue)
+            }
+            .eraseToAnyView()
+        } else {
+            return Circle()
+                .fill(Color.blue)
+                .eraseToAnyView()
         }
     }
     

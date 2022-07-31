@@ -12,13 +12,17 @@ struct TrainingsView: View {
     @ObservedObject var viewModel: TrainingsViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
-//            title
-//                .padding(10)
-            
+        ZStack(alignment: .bottomTrailing) {
             content
+            
+            title
+            
+            newTrainingButton
+                .padding(.bottom, MainTabBar.height + UIScreen.bottomUnsafePadding)
         }
+        .edgesIgnoringSafeArea(.bottom)
         .removeNavigationBar()
+        .background(Color.white)
         .trainingSelectionSheet($viewModel.trainingSelectionData)
         .optionsSheet($viewModel.optionsData)
         .confirmationSheet($viewModel.confirmationData)
@@ -27,14 +31,25 @@ struct TrainingsView: View {
     init(_ viewModel: TrainingsViewModel) {
         self.viewModel = viewModel
     }
+    
+    static let titleHeight: CGFloat = 50
+    static let titleShadowHeight: CGFloat = 15
 }
 
 private extension TrainingsView {
     
     var title: some View {
-        HStack(spacing: 0) {
-            Text(Localizable.trainings)
-                .style(.roboto(.display1, .bold), .brand)
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Text(Localizable.trainings)
+                    .style(.roboto(.display1, .bold), .brand)
+                    .padding(.leading, 10)
+                
+                Spacer(minLength: 10)
+            }
+            .frame(maxWidth: .infinity, height: Self.titleHeight)
+            .background(Color.white)
+            .addShadow(color: .white, radius: Self.titleShadowHeight, offset: 10)
             
             Spacer()
         }
@@ -42,18 +57,12 @@ private extension TrainingsView {
     
     @ViewBuilder
     var content: some View {
-        if viewModel.isActivityRunning {
-            Text("Loading...")
-        } else if let error = viewModel.error {
-            ErrorScreen(error)
+        if let error = viewModel.error {
+            TrainingsErrorView()
+        } else if viewModel.trainings.isEmpty {
+            TrainingsEmptyView()
         } else {
-            if viewModel.trainings.isEmpty {
-                EmptyStateScreen(.init(title: "No Trainings", message: "Start swimmin man!", illustrationName: "illustration_noStatistics"))
-            } else {
-                ZStack(alignment: .bottomTrailing) {
-                    trainingList
-                }
-            }
+            TrainingsContentView(trainings: viewModel.trainings, onTrainingCellTapped: viewModel.trainingCellTapped, onTrainingCellOptionsTapped: viewModel.trainingCellOptionsTapped)
         }
     }
     
@@ -68,47 +77,20 @@ private extension TrainingsView {
         }
         .frame(60)
         .clipShape(Circle())
+        .addShadow()
+        .padding(.trailing, 15)
         .onTapGesture {
             viewModel.showTrainingOptions()
-        }
-        .shadow(color: .black.opacity(0.1), radius: 4)
-    }
-    
-    var trainingList: some View {
-        ZStack {
-            ScrollView(.vertical) {
-                LazyVStack(spacing: 8) {
-                    title
-                        .padding(.top, 10)
-                    
-                    ForEach(0..<viewModel.trainings.count) { index in
-                        TrainingCell(training: viewModel.trainings[index], onTapped: { viewModel.trainingOptionsTapped(index: index) })
-                            .onTapGesture {
-                                viewModel.trainingTapped(index: index)
-                            }
-                    }
-                }
-                .padding(.horizontal, 10)
-                .padding(.bottom, MainTabBar.height)
-            }
-            
-            VStack(spacing: 0) {
-                Spacer()
-                
-                HStack(spacing: 0) {
-                    Spacer()
-                    
-                    newTrainingButton
-                        .padding(.bottom, MainTabBar.height)
-                        .padding(.trailing, 10)
-                }
-            }
         }
     }
 }
 
 struct TrainingsView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingsView(.init())
+        TrainingsView(.mocked)
+        
+        TrainingsView(.mockedEmpty)
+        
+        TrainingsView(.mockedError)
     }
 }

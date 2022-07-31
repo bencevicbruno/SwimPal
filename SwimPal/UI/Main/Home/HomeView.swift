@@ -18,18 +18,19 @@ struct HomeView: View {
                     .padding(.bottom, 10)
                 
                 MotivationCard(motivation: viewModel.motivations[viewModel.currentMotivationIndex])
+                    .addShadow(.small)
                 
                 startTrainingTitle
                     .padding(.vertical, 12)
                 
-                TrainingSelection(onCategorySelected: viewModel.goToTrainingPreparation)
+                TrainingSelection(withShadows: true, onCategorySelected: viewModel.goToTrainingPreparation)
                 
-                Spacer(minLength: MainTabBar.height)
+                Spacer(minLength: MainTabBar.height + UIScreen.bottomUnsafePadding)
             }
             .padding(10)
         }
         .removeNavigationBar()
-        .background(.white)
+        .background(Color.white)
     }
     
     init(_ viewModel: HomeViewModel) {

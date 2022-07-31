@@ -10,12 +10,23 @@ import Foundation
 final class TrainingSummaryViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
+    var onGoToEditTraining: EmptyCallback?
     
-    init() {
-        
+    let training: Training
+    
+    init(training: Training) {
+        self.training = training
     }
+}
+
+// MARK: - User Interactions
+extension TrainingSummaryViewModel {
     
     func dismiss() {
         onDismissed?()
+    }
+    
+    func editTrainingTapped() {
+        onGoToEditTraining?()
     }
 }

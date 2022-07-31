@@ -19,22 +19,25 @@ struct MapLocationPickerView: View {
             mapView
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
-            BigBottomButton("Select", onTapped: viewModel.exit)
+            BigBottomButton("Select", onTapped: viewModel.selectTapped)
         }
+        .setupView()
         .edgesIgnoringSafeArea(.bottom)
-        .removeNavigationBar()
+        .fieldInputSheet($viewModel.fieldInputData)
     }
 }
 
 private extension MapLocationPickerView {
     
     var mapView: some View {
-        Map(coordinateRegion: $viewModel.region, interactionModes: .all, showsUserLocation: true)
+        Map(coordinateRegion: $viewModel.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .none)
     }
 }
 
 struct MapLocationPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        MapLocationPickerView(viewModel: .init())
+        DependencyContainer.register(type: LocationService.self, LocationService())
+        
+        return MapLocationPickerView(viewModel: .init())
     }
 }

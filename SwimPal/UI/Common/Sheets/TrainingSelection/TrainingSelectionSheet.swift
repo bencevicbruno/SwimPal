@@ -27,6 +27,7 @@ struct TrainingSelectionSheet: View {
                     .padding(.horizontal, SheetUtils.horizontalPadding)
                     .padding(.bottom, SheetUtils.bottomContentPadding)
             }
+            .frame(maxHeight: UIScreen.height * 0.6)
         }
     }
     

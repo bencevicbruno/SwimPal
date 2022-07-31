@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct OnboardingItem {
+struct OnboardingItem: Identifiable {
     let title: String
     let message: String
     let illustrationName: String
+    
+    var id: String { title }
 }
 
 final class OnboardingViewModel: ObservableObject {

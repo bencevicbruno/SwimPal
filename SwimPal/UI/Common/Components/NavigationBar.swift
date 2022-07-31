@@ -9,24 +9,37 @@ import SwiftUI
 
 struct NavigationBar: View {
     
-    static let height: CGFloat = 60
+    static let height: CGFloat = 50
     
-    private var title: String
-    private var onBackTapped: EmptyCallback?
-    private var onXTapped: EmptyCallback?
+    private let title: String
+    private var leftIconName: String = "icon_back"
+    private let onLeftItemTapped: EmptyCallback?
+    private var rightIconName: String = "icon_x"
+    private let onRightItemTapped: EmptyCallback?
+    
+    init(_ title: String, onBackTapped: EmptyCallback? = nil, onXTapped: EmptyCallback? = nil) {
+        self.title = title
+        self.onLeftItemTapped = onBackTapped
+        self.onRightItemTapped = onXTapped
+    }
+    
+    init(_ title: String, onBackTapped: EmptyCallback? = nil, rightIconName: String, onRightItemTapped: @escaping EmptyCallback) {
+        self.title = title
+        self.onLeftItemTapped = onBackTapped
+        self.rightIconName = rightIconName
+        self.onRightItemTapped = onRightItemTapped
+    }
+    
+    init(_ title: String, onXTapped: EmptyCallback? = nil, leftIconName: String, onLeftItemTapped: @escaping EmptyCallback) {
+        self.title = title
+        self.leftIconName = leftIconName
+        self.onLeftItemTapped = onLeftItemTapped
+        self.onRightItemTapped = onXTapped
+    }
     
     var body: some View {
         HStack {
-            Image("icon_back")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 24, height: 24)
-                .frame(width: 40, height: 40)
-                .onTapGesture {
-                    onBackTapped?()
-                }
-                .padding(.horizontal, 10)
-                .isVisible(onBackTapped != nil)
+            leftIcon
             
             Spacer()
             
@@ -35,43 +48,49 @@ struct NavigationBar: View {
             
             Spacer()
             
-            Image(systemName: "multiply")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.brand)
-                .frame(width: 18, height: 18)
-                .frame(width: 40, height: 40)
-                .onTapGesture {
-                    onXTapped?()
-                }
-                .padding(.horizontal, 10)
-                .isVisible(onXTapped != nil)
+            rightIcon
         }
         .padding(.horizontal, 10)
-        .frame(height: Self.height)
+        .frame(height: Self.height - 1)
         .frame(maxWidth: .infinity)
-        .background(.white)
+        .background(Color.white)
+        .padding(.bottom, 1)
+        .background(Color.gray)
     }
     
-    init(_ title: String, onBackTapped: EmptyCallback? = nil, onXTapped: EmptyCallback? = nil) {
-        self.title = title
-        self.onBackTapped = onBackTapped
-        self.onXTapped = onXTapped
-    }
+    
 }
 
-extension NavigationBar {
+private extension NavigationBar {
     
-    func addShadow(color: Color = .shadow, radius: CGFloat = 10, offset: CGFloat = 5) -> some View {
-        self.clipped()
-            .shadow(color: .shadow, radius: radius, y: offset)
-            .mask(Rectangle().padding(.bottom, -2 * radius))
+    var leftIcon: some View {
+        Image(leftIconName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 24, height: 24)
+            .frame(width: 40, height: 40)
+            .onTapGesture {
+                onLeftItemTapped?()
+            }
+            .isHidden(onLeftItemTapped == nil)
+    }
+    
+    var rightIcon: some View {
+        Image(rightIconName)
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.brand)
+            .frame(width: 18, height: 18)
+            .frame(width: 40, height: 40)
+            .onTapGesture {
+                onRightItemTapped?()
+            }
+            .isHidden(onRightItemTapped == nil)
     }
 }
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBar("Test", onXTapped: {})
-            .addShadow()
     }
 }

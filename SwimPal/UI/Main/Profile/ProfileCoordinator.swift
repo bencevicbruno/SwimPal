@@ -98,6 +98,7 @@ struct ProfileCoordinatorView: View {
             }
             .presentNavigation(item: $coordinator.aboutViewModel) {
                 AboutView(viewModel: $0)
+                    .preferredColorScheme(.light)
             }
     }
     

@@ -24,7 +24,7 @@ final class SettingsViewModel: ObservableObject {
     }
     
     func showLanguageOptions() {
-        optionsData = RadioOptionsData(title: Localizable.select_language, options: ["English", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski", "Deutsch", "Hrvatski"]) { index in
+        optionsData = RadioOptionsData(title: Localizable.select_language, options: ["English", "Deutsch", "Hrvatski"]) { index in
             print("Chose \(["English", "Deutsch", "Hrvatski"][index])")
         }
     }

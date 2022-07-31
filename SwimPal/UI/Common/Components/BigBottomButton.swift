@@ -10,6 +10,7 @@ import SwiftUI
 struct BigBottomButton: View {
     
     private let title: String
+    private let isEnabled: Bool
     private let onTapped: EmptyCallback?
     
     var body: some View {
@@ -18,14 +19,17 @@ struct BigBottomButton: View {
             .frame(maxWidth: .infinity)
             .frame(height: Self.height)
             .padding(.bottom, Self.bottomPadding)
-            .background(Color.brand)
+            .background(isEnabled ? Color.brand : Color.gray142)
             .onTapGesture {
-                onTapped?()
+                if isEnabled {
+                    onTapped?()
+                }
             }
     }
     
-    init(_ title: String, onTapped: EmptyCallback? = nil) {
+    init(_ title: String, isEnabled: Bool = true, onTapped: EmptyCallback? = nil) {
         self.title = title
+        self.isEnabled = isEnabled
         self.onTapped = onTapped
     }
     

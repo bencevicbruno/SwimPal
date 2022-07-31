@@ -39,7 +39,7 @@ struct ErrorScreen: View {
         .padding(.horizontal, 12)
         .frame(maxHeight: .infinity)
         .edgesIgnoringSafeArea(.bottom)
-        .background(.white)
+        .background(Color.white)
     }
 }
 

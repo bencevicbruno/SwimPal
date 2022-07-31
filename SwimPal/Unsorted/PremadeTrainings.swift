@@ -49,7 +49,7 @@ extension Training.Category {
                 .init(style: .freestyle, value: 250),
                 .init(style: .sprint, value: 50, numberOfRepetitions: 5, timeLimit: Time(1, .minutes)),
             ]
-        case .random:
+        case .randomized:
             return Self.generateRandomTraining()
         case .custom:
             return []

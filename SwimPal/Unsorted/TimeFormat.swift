@@ -13,5 +13,6 @@ extension Time {
         case hoursMinutes
         case hoursMinutesSeconds
         case minutesSeconds
+        case minutes
     }
 }

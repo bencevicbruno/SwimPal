@@ -11,11 +11,13 @@ struct SheetButton: View {
     
     private let title: String
     private let style: Style
+    private let isEnabled: Bool
     private let action: EmptyCallback?
     
-    init(_ title: String, style: Style = .primary, _ action: EmptyCallback? = nil) {
+    init(_ title: String, style: Style = .primary, isEnabled: Bool = true, _ action: EmptyCallback? = nil) {
         self.title = title
         self.style = style
+        self.isEnabled = isEnabled
         self.action = action
     }
     

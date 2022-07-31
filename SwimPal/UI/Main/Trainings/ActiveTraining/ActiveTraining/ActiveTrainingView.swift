@@ -12,17 +12,25 @@ struct ActiveTrainingView: View {
     @ObservedObject var viewModel: ActiveTrainingViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
-            NavigationBar(Localizable.training, onXTapped: viewModel.endTraining)
-            
-            ZStack(alignment: .bottom) {
-                content
-                    .padding(.bottom, 60)
+        ZStack {
+            VStack(spacing: 0) {
+                NavigationBar(Localizable.training, onXTapped: viewModel.endTraining)
                 
-                doneButton
+                Spacer()
+                
+                BigBottomButton(viewModel.isLastExcecise ? "Done" : "Next", onTapped: viewModel.nextTapped)
+                    .addShadow()
+                    .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5.0) {
+                        viewModel.finishTraining()
+                    }
             }
+            
+            content
+                .padding(.top, NavigationBar.height)
+                .padding(.bottom, BigBottomButton.totalHeight)
         }
-        .removeNavigationBar()
+        .setupView()
+        .edgesIgnoringSafeArea(.bottom)
         .onAppear {
             viewModel.startTimer()
         }
@@ -34,8 +42,10 @@ private extension ActiveTrainingView {
     
     var content: some View {
         VStack(spacing: 0) {
-            Text(verbatim: Time(viewModel.timerCounter).getFormatted(with: .hoursMinutesSeconds))
-                .padding(.vertical, 20)
+            timerCard
+                .addShadow(.small)
+                .padding(.top, 30)
+                .padding(.bottom, 20)
             
             ScrollView(.vertical) {
                 ScrollViewReader { value in
@@ -52,19 +62,12 @@ private extension ActiveTrainingView {
         }
     }
     
-    var doneButton: some View {
-        Text((viewModel.isLastExcecise ? "Done" : "Next").uppercased())
-            .style(.roboto(.headline1, .bold), .white)
-            .padding(5, .standard)
-            .frame(height: 60)
-            .frame(maxWidth: .infinity)
-            .background(Color.brand)
-            .onTapGesture {
-                viewModel.nextTapped()
-            }
-            .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5.0) {
-                viewModel.finishTraining()
-            }
+    var timerCard: some View {
+        Text(Time(viewModel.timerCounter).getFormatted(with: .hoursMinutesSeconds))
+            .style(.roboto(.display1, .bold), .black)
+            .padding(15, .standard)
+            .background(Color.white)
+            .clipShape(.roundedRectangle(15))
     }
 }
 

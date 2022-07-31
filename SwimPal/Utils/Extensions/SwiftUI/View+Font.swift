@@ -12,7 +12,7 @@ extension View {
     func style(_ font: Font, _ color: UIColor = .black, _ alignment: TextAlignment = .center) -> some View {
         self
             .font(font)
-            .foregroundColor(Color(uiColor: color))
+            .foregroundColor(Color(color))
             .multilineTextAlignment(alignment)
     }
 }

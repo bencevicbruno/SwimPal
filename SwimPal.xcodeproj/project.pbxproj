@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0DCA1F2892991000765B99 /* View+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA1E2892991000765B99 /* View+Frame.swift */; };
+		8C0DCA2328930C8100765B99 /* View+SwimPal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA2228930C8100765B99 /* View+SwimPal.swift */; };
+		8C0DCA262893FFA300765B99 /* TextInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA252893FFA300765B99 /* TextInputSheet.swift */; };
+		8C0DCA292893FFB500765B99 /* TextInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA282893FFB500765B99 /* TextInputData.swift */; };
+		8C0DCA2B2894014A00765B99 /* SPTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA2A2894014A00765B99 /* SPTextEditor.swift */; };
+		8C0DCA2D28940BE600765B99 /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA2C28940BE600765B99 /* Binding+.swift */; };
+		8C0DCA30289411EA00765B99 /* TrainingSummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA2F289411EA00765B99 /* TrainingSummaryHeader.swift */; };
+		8C0DCA322894162B00765B99 /* TrainingExercisesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA312894162B00765B99 /* TrainingExercisesList.swift */; };
+		8C0DCA34289417C300765B99 /* TrainingSummaryExercisesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA33289417C300765B99 /* TrainingSummaryExercisesCard.swift */; };
+		8C0DCA36289421DA00765B99 /* TrainingSummaryExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA35289421DA00765B99 /* TrainingSummaryExerciseCell.swift */; };
+		8C0DCA382894250200765B99 /* TrainingSummaryCardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA372894250200765B99 /* TrainingSummaryCardBase.swift */; };
+		8C0DCA3A2894265400765B99 /* TrainingSummaryLocationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA392894265400765B99 /* TrainingSummaryLocationCard.swift */; };
+		8C0DCA3C289428DA00765B99 /* TrainingSummaryNotesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA3B289428DA00765B99 /* TrainingSummaryNotesCard.swift */; };
+		8C0DCA3F28967A6E00765B99 /* EditTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA3E28967A6E00765B99 /* EditTrainingView.swift */; };
+		8C0DCA4128967A7700765B99 /* EditTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA4028967A7700765B99 /* EditTrainingViewModel.swift */; };
+		8C0DCA4328967D4000765B99 /* TrainingNotesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA4228967D4000765B99 /* TrainingNotesCard.swift */; };
+		8C0DCA4528967F1700765B99 /* TrainingLocationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DCA4428967F1700765B99 /* TrainingLocationCard.swift */; };
 		8C184516286B3CFC00A35ADE /* TrainingPerparationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C184515286B3CFC00A35ADE /* TrainingPerparationViewModel.swift */; };
 		8C184518286B3D2400A35ADE /* ActiveTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C184517286B3D2400A35ADE /* ActiveTrainingViewModel.swift */; };
 		8C18451A286B3D3800A35ADE /* SaveTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C184519286B3D3800A35ADE /* SaveTrainingViewModel.swift */; };
@@ -17,6 +34,11 @@
 		8C184526286B3DC400A35ADE /* TrainingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C184525286B3DC400A35ADE /* TrainingSummaryView.swift */; };
 		8C184528286B3DDD00A35ADE /* ActiveTrainingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C184527286B3DDD00A35ADE /* ActiveTrainingCoordinator.swift */; };
 		8C1EDAE7286233D6001939A8 /* SheetNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1EDAE6286233D6001939A8 /* SheetNotch.swift */; };
+		8C20B0A3288FE9D1009D869B /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20B0A2288FE9D1009D869B /* CGFloat+.swift */; };
+		8C20B0A7289005D1009D869B /* TrainingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20B0A6289005D1009D869B /* TrainingsContentView.swift */; };
+		8C20B0A9289005DA009D869B /* TrainingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20B0A8289005DA009D869B /* TrainingsEmptyView.swift */; };
+		8C20B0AB289005E1009D869B /* TrainingsErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20B0AA289005E1009D869B /* TrainingsErrorView.swift */; };
+		8C20B0AD2890079E009D869B /* CaseIterable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20B0AC2890079E009D869B /* CaseIterable+.swift */; };
 		8C303F462882E5EA00E7FCFD /* View+ClipShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */; };
 		8C303F492883213700E7FCFD /* TimePickerTwoPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F482883213700E7FCFD /* TimePickerTwoPickers.swift */; };
 		8C303F4F2883252E00E7FCFD /* SheetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F4E2883252E00E7FCFD /* SheetButton.swift */; };
@@ -106,6 +128,9 @@
 		8CAFFB5E2863A8220077D57A /* TrainingSelectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFFB5D2863A8220077D57A /* TrainingSelectionSheet.swift */; };
 		8CAFFB602863A99D0077D57A /* TrainingSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFFB5F2863A99D0077D57A /* TrainingSelectionData.swift */; };
 		8CB02A5B287ED9CF00704437 /* NamedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB02A5A287ED9CF00704437 /* NamedContainer.swift */; };
+		8CB13954288AF0F8008681BA /* TrainingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB13953288AF0F8008681BA /* TrainingsHeader.swift */; };
+		8CB13956288AF11A008681BA /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB13955288AF11A008681BA /* Speed.swift */; };
+		8CB13958288AFA96008681BA /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB13957288AFA96008681BA /* Date+.swift */; };
 		8CC3391A28608B2200AA5E0A /* ConfirmationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC3391928608B2200AA5E0A /* ConfirmationData.swift */; };
 		8CC3391D286092D200AA5E0A /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC3391C286092D200AA5E0A /* InfoSheet.swift */; };
 		8CC3391F286092E200AA5E0A /* InfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC3391E286092E200AA5E0A /* InfoData.swift */; };
@@ -139,6 +164,11 @@
 		8CC8BB95286E0B9C001131DF /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8BB94286E0B9C001131DF /* TimeFormat.swift */; };
 		8CC8BB97286E1493001131DF /* TrainingExcerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8BB96286E1493001131DF /* TrainingExcerciseList.swift */; };
 		8CC8BB99286E3639001131DF /* UInt+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8BB98286E3639001131DF /* UInt+.swift */; };
+		8CD7F03F2888520A00B72D43 /* FieldInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7F03E2888520A00B72D43 /* FieldInputData.swift */; };
+		8CD7F041288852A800B72D43 /* FieldInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7F040288852A800B72D43 /* FieldInputSheet.swift */; };
+		8CD7F0432888536C00B72D43 /* SPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7F0422888536C00B72D43 /* SPTextField.swift */; };
+		8CD7F046288859A500B72D43 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7F045288859A500B72D43 /* TextFieldValidator.swift */; };
+		8CD7F0492888616500B72D43 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7F0482888616500B72D43 /* RoundedCorner.swift */; };
 		8CD87087287EB4FA00BA5B9F /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD87086287EB4FA00BA5B9F /* View+Shadow.swift */; };
 		8CE6C0B4283D63490037BB6E /* SwimPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */; };
 		8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */; };
@@ -172,6 +202,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C0DCA1E2892991000765B99 /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
+		8C0DCA2228930C8100765B99 /* View+SwimPal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+SwimPal.swift"; sourceTree = "<group>"; };
+		8C0DCA252893FFA300765B99 /* TextInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputSheet.swift; sourceTree = "<group>"; };
+		8C0DCA282893FFB500765B99 /* TextInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputData.swift; sourceTree = "<group>"; };
+		8C0DCA2A2894014A00765B99 /* SPTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTextEditor.swift; sourceTree = "<group>"; };
+		8C0DCA2C28940BE600765B99 /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
+		8C0DCA2F289411EA00765B99 /* TrainingSummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryHeader.swift; sourceTree = "<group>"; };
+		8C0DCA312894162B00765B99 /* TrainingExercisesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingExercisesList.swift; sourceTree = "<group>"; };
+		8C0DCA33289417C300765B99 /* TrainingSummaryExercisesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryExercisesCard.swift; sourceTree = "<group>"; };
+		8C0DCA35289421DA00765B99 /* TrainingSummaryExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryExerciseCell.swift; sourceTree = "<group>"; };
+		8C0DCA372894250200765B99 /* TrainingSummaryCardBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryCardBase.swift; sourceTree = "<group>"; };
+		8C0DCA392894265400765B99 /* TrainingSummaryLocationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryLocationCard.swift; sourceTree = "<group>"; };
+		8C0DCA3B289428DA00765B99 /* TrainingSummaryNotesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryNotesCard.swift; sourceTree = "<group>"; };
+		8C0DCA3E28967A6E00765B99 /* EditTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrainingView.swift; sourceTree = "<group>"; };
+		8C0DCA4028967A7700765B99 /* EditTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrainingViewModel.swift; sourceTree = "<group>"; };
+		8C0DCA4228967D4000765B99 /* TrainingNotesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingNotesCard.swift; sourceTree = "<group>"; };
+		8C0DCA4428967F1700765B99 /* TrainingLocationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingLocationCard.swift; sourceTree = "<group>"; };
 		8C184515286B3CFC00A35ADE /* TrainingPerparationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPerparationViewModel.swift; sourceTree = "<group>"; };
 		8C184517286B3D2400A35ADE /* ActiveTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrainingViewModel.swift; sourceTree = "<group>"; };
 		8C184519286B3D3800A35ADE /* SaveTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTrainingViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +229,11 @@
 		8C184525286B3DC400A35ADE /* TrainingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSummaryView.swift; sourceTree = "<group>"; };
 		8C184527286B3DDD00A35ADE /* ActiveTrainingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrainingCoordinator.swift; sourceTree = "<group>"; };
 		8C1EDAE6286233D6001939A8 /* SheetNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetNotch.swift; sourceTree = "<group>"; };
+		8C20B0A2288FE9D1009D869B /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
+		8C20B0A6289005D1009D869B /* TrainingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsContentView.swift; sourceTree = "<group>"; };
+		8C20B0A8289005DA009D869B /* TrainingsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsEmptyView.swift; sourceTree = "<group>"; };
+		8C20B0AA289005E1009D869B /* TrainingsErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsErrorView.swift; sourceTree = "<group>"; };
+		8C20B0AC2890079E009D869B /* CaseIterable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+.swift"; sourceTree = "<group>"; };
 		8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ClipShape.swift"; sourceTree = "<group>"; };
 		8C303F482883213700E7FCFD /* TimePickerTwoPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerTwoPickers.swift; sourceTree = "<group>"; };
 		8C303F4E2883252E00E7FCFD /* SheetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetButton.swift; sourceTree = "<group>"; };
@@ -268,6 +320,9 @@
 		8CAFFB5D2863A8220077D57A /* TrainingSelectionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSelectionSheet.swift; sourceTree = "<group>"; };
 		8CAFFB5F2863A99D0077D57A /* TrainingSelectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSelectionData.swift; sourceTree = "<group>"; };
 		8CB02A5A287ED9CF00704437 /* NamedContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedContainer.swift; sourceTree = "<group>"; };
+		8CB13953288AF0F8008681BA /* TrainingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsHeader.swift; sourceTree = "<group>"; };
+		8CB13955288AF11A008681BA /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		8CB13957288AFA96008681BA /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		8CC3391928608B2200AA5E0A /* ConfirmationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationData.swift; sourceTree = "<group>"; };
 		8CC3391C286092D200AA5E0A /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		8CC3391E286092E200AA5E0A /* InfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoData.swift; sourceTree = "<group>"; };
@@ -302,6 +357,11 @@
 		8CC8BB94286E0B9C001131DF /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		8CC8BB96286E1493001131DF /* TrainingExcerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingExcerciseList.swift; sourceTree = "<group>"; };
 		8CC8BB98286E3639001131DF /* UInt+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt+.swift"; sourceTree = "<group>"; };
+		8CD7F03E2888520A00B72D43 /* FieldInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldInputData.swift; sourceTree = "<group>"; };
+		8CD7F040288852A800B72D43 /* FieldInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldInputSheet.swift; sourceTree = "<group>"; };
+		8CD7F0422888536C00B72D43 /* SPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTextField.swift; sourceTree = "<group>"; };
+		8CD7F045288859A500B72D43 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
+		8CD7F0482888616500B72D43 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		8CD87086287EB4FA00BA5B9F /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
 		8CE6C0B0283D63490037BB6E /* SwimPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimPalApp.swift; sourceTree = "<group>"; };
@@ -349,6 +409,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C0DCA242893FEFA00765B99 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8C0DCA4228967D4000765B99 /* TrainingNotesCard.swift */,
+				8C0DCA4428967F1700765B99 /* TrainingLocationCard.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8C0DCA272893FFA700765B99 /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				8C0DCA282893FFB500765B99 /* TextInputData.swift */,
+				8C0DCA252893FFA300765B99 /* TextInputSheet.swift */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
+		8C0DCA2E289411DF00765B99 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8C0DCA2F289411EA00765B99 /* TrainingSummaryHeader.swift */,
+				8C0DCA372894250200765B99 /* TrainingSummaryCardBase.swift */,
+				8C0DCA33289417C300765B99 /* TrainingSummaryExercisesCard.swift */,
+				8C0DCA35289421DA00765B99 /* TrainingSummaryExerciseCell.swift */,
+				8C0DCA392894265400765B99 /* TrainingSummaryLocationCard.swift */,
+				8C0DCA3B289428DA00765B99 /* TrainingSummaryNotesCard.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8C0DCA3D28967A5E00765B99 /* EditTraining */ = {
+			isa = PBXGroup;
+			children = (
+				8C0DCA3E28967A6E00765B99 /* EditTrainingView.swift */,
+				8C0DCA4028967A7700765B99 /* EditTrainingViewModel.swift */,
+			);
+			path = EditTraining;
+			sourceTree = "<group>";
+		};
 		8C184510286B3C8400A35ADE /* TrainingPreparation */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,7 +473,9 @@
 			children = (
 				8CEB0386287C61F7004D8799 /* TrainingSummaryCoordinator.swift */,
 				8C184525286B3DC400A35ADE /* TrainingSummaryView.swift */,
+				8C0DCA2E289411DF00765B99 /* Subviews */,
 				8C18451B286B3D4C00A35ADE /* TrainingSummaryViewModel.swift */,
+				8C0DCA3D28967A5E00765B99 /* EditTraining */,
 			);
 			path = TrainingSummary;
 			sourceTree = "<group>";
@@ -382,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				8C184523286B3DA900A35ADE /* SaveTrainingView.swift */,
+				8C0DCA242893FEFA00765B99 /* Subviews */,
 				8C184519286B3D3800A35ADE /* SaveTrainingViewModel.swift */,
 			);
 			path = SaveTraining;
@@ -410,6 +513,14 @@
 				8C70105728842DD7009B1F98 /* SheetBase.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		8C20B0A1288FE9C6009D869B /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				8C20B0A2288FE9D1009D869B /* CGFloat+.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 		8C303F472883211F00E7FCFD /* Subviews */ = {
@@ -461,7 +572,11 @@
 		8C51A0F72868D1FA00DECD09 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				8CB13953288AF0F8008681BA /* TrainingsHeader.swift */,
 				8CAFFB4B286316550077D57A /* TrainingCell.swift */,
+				8C20B0A6289005D1009D869B /* TrainingsContentView.swift */,
+				8C20B0A8289005DA009D869B /* TrainingsEmptyView.swift */,
+				8C20B0AA289005E1009D869B /* TrainingsErrorView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -696,6 +811,7 @@
 				8C70104A28841625009B1F98 /* Distance.swift */,
 				8C5758462870BB4200C558C3 /* TrainingLocation.swift */,
 				8CC8BB90286E058E001131DF /* Time.swift */,
+				8CB13955288AF11A008681BA /* Speed.swift */,
 				8CC8BB92286E05AF001131DF /* TimeUnit.swift */,
 				8C5758442870B91600C558C3 /* ActiveTraining.swift */,
 				8CC8BB94286E0B9C001131DF /* TimeFormat.swift */,
@@ -755,10 +871,12 @@
 		8CC339272860EEEB00AA5E0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8CD7F0442888599300B72D43 /* SPTextField */,
 				8C9685052854E7100070C6E2 /* NavigationBar.swift */,
 				8C9684F02853DE520070C6E2 /* PasswordField.swift */,
 				8C8E2A05287C42BF00690A91 /* BigBottomButton.swift */,
 				8CB02A5A287ED9CF00704437 /* NamedContainer.swift */,
+				8C0DCA312894162B00765B99 /* TrainingExercisesList.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -798,6 +916,34 @@
 				8C39FE7A287EBC24001033FF /* TrainingPreparationExerciseCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8CD7F03D288851EE00B72D43 /* FieldInput */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7F03E2888520A00B72D43 /* FieldInputData.swift */,
+				8CD7F040288852A800B72D43 /* FieldInputSheet.swift */,
+			);
+			path = FieldInput;
+			sourceTree = "<group>";
+		};
+		8CD7F0442888599300B72D43 /* SPTextField */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7F0422888536C00B72D43 /* SPTextField.swift */,
+				8C0DCA2A2894014A00765B99 /* SPTextEditor.swift */,
+				8CD7F045288859A500B72D43 /* TextFieldValidator.swift */,
+			);
+			path = SPTextField;
+			sourceTree = "<group>";
+		};
+		8CD7F0472888615B00B72D43 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7F0482888616500B72D43 /* RoundedCorner.swift */,
+				8C0DCA1E2892991000765B99 /* View+Frame.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		8CD87085287EAD2D00BA5B9F /* LocationPicker */ = {
@@ -847,6 +993,7 @@
 		8CE6C0C1283D64510037BB6E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8C20B0A1288FE9C6009D869B /* CoreGraphics */,
 				8CE6C0C5283D64760037BB6E /* Foundation */,
 				8CE6C0C6283D64790037BB6E /* UIKit */,
 				8CE6C0C7283D647D0037BB6E /* SwiftUI */,
@@ -902,6 +1049,8 @@
 				8C575854287197B700C558C3 /* FileManager+.swift */,
 				8C57585B2871DAFF00C558C3 /* String+.swift */,
 				8C7F8676287D9146001D32A4 /* Dictionary+.swift */,
+				8CB13957288AFA96008681BA /* Date+.swift */,
+				8C20B0AC2890079E009D869B /* CaseIterable+.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -919,6 +1068,7 @@
 		8CE6C0C7283D647D0037BB6E /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8CD7F0472888615B00B72D43 /* Shapes */,
 				8CE6C101285A431300343662 /* Color+.swift */,
 				8CFD3DD2284946FD00C684B4 /* View+Navigation.swift */,
 				8C69410E2844E05F005E64F9 /* View+Padding.swift */,
@@ -929,6 +1079,8 @@
 				8CAFFB4D286317580077D57A /* Image+.swift */,
 				8CD87086287EB4FA00BA5B9F /* View+Shadow.swift */,
 				8C3D42122881629000AF95A4 /* GeometryProxy+.swift */,
+				8C0DCA2228930C8100765B99 /* View+SwimPal.swift */,
+				8C0DCA2C28940BE600765B99 /* Binding+.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -978,6 +1130,8 @@
 				8C1EDAE5286233CB001939A8 /* Common */,
 				8CC3391828608B1600AA5E0A /* Confirmation */,
 				8CC3391B286092BA00AA5E0A /* Info */,
+				8CD7F03D288851EE00B72D43 /* FieldInput */,
+				8C0DCA272893FFA700765B99 /* TextInput */,
 				8CC339222860945600AA5E0A /* RadioOptions */,
 				8CEB0388287C6C3D004D8799 /* Options */,
 				8C3D420D28815B9C00AF95A4 /* TimePicker */,
@@ -1088,7 +1242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C20B0A9289005DA009D869B /* TrainingsEmptyView.swift in Sources */,
 				8C51A0EF2865CDCD00DECD09 /* OnboardingView.swift in Sources */,
+				8C0DCA2328930C8100765B99 /* View+SwimPal.swift in Sources */,
 				8C7F867A287D9754001D32A4 /* LocationPickerCoordinator.swift in Sources */,
 				8CE6C0D7283D663E0037BB6E /* UserDefaults+.swift in Sources */,
 				8CE6C0D5283D660D0037BB6E /* PersistenceService.swift in Sources */,
@@ -1100,6 +1256,8 @@
 				8C9684F328548AAC0070C6E2 /* View+Utils.swift in Sources */,
 				8C57585A28719CE300C558C3 /* FileManagerServiceError.swift in Sources */,
 				8C39FE81287EC3E7001033FF /* AddExerciseView.swift in Sources */,
+				8C0DCA4328967D4000765B99 /* TrainingNotesCard.swift in Sources */,
+				8CB13954288AF0F8008681BA /* TrainingsHeader.swift in Sources */,
 				8C3D421A28816CB400AF95A4 /* SwimPaltests.swift in Sources */,
 				8C5758512871941200C558C3 /* LocalDatabaseService.swift in Sources */,
 				8C51A11A2869B89C00DECD09 /* Codable+.swift in Sources */,
@@ -1109,17 +1267,24 @@
 				8C9685002854E2900070C6E2 /* AchievementsViewModel.swift in Sources */,
 				8C1EDAE7286233D6001939A8 /* SheetNotch.swift in Sources */,
 				8CC8BB8A286DBFF7001131DF /* TrainingCategory.swift in Sources */,
+				8C0DCA34289417C300765B99 /* TrainingSummaryExercisesCard.swift in Sources */,
 				8C3D42132881629000AF95A4 /* GeometryProxy+.swift in Sources */,
 				8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */,
 				8C701040288327E6009B1F98 /* SheetTitle.swift in Sources */,
 				8C51A1182869B77F00DECD09 /* ResourceEncoding.swift in Sources */,
 				8CFD3DCB2849449C00C684B4 /* HomeViewModel.swift in Sources */,
+				8C0DCA30289411EA00765B99 /* TrainingSummaryHeader.swift in Sources */,
 				8C9684FA2854E26E0070C6E2 /* StatisticsViewModel.swift in Sources */,
 				8C70104528832918009B1F98 /* SheetUtils.swift in Sources */,
 				8CC3394A2860F6DE00AA5E0A /* UIColor+.swift in Sources */,
 				8CEB0387287C61F7004D8799 /* TrainingSummaryCoordinator.swift in Sources */,
+				8C0DCA322894162B00765B99 /* TrainingExercisesList.swift in Sources */,
+				8CB13958288AFA96008681BA /* Date+.swift in Sources */,
 				8CC8BB97286E1493001131DF /* TrainingExcerciseList.swift in Sources */,
 				8CFD3DD3284946FD00C684B4 /* View+Navigation.swift in Sources */,
+				8CD7F0492888616500B72D43 /* RoundedCorner.swift in Sources */,
+				8C0DCA3F28967A6E00765B99 /* EditTrainingView.swift in Sources */,
+				8C0DCA382894250200765B99 /* TrainingSummaryCardBase.swift in Sources */,
 				8C6941192844E3F3005E64F9 /* TrainingsCoordinator.swift in Sources */,
 				8C9684F12853DE520070C6E2 /* PasswordField.swift in Sources */,
 				8CAFFB4C286316550077D57A /* TrainingCell.swift in Sources */,
@@ -1129,6 +1294,7 @@
 				8C575855287197B700C558C3 /* FileManager+.swift in Sources */,
 				8CAFFB5E2863A8220077D57A /* TrainingSelectionSheet.swift in Sources */,
 				8C9684F528548B4C0070C6E2 /* Utils.swift in Sources */,
+				8C0DCA2D28940BE600765B99 /* Binding+.swift in Sources */,
 				8CAFFB5B28639F060077D57A /* MotivationCard.swift in Sources */,
 				8C303F492883213700E7FCFD /* TimePickerTwoPickers.swift in Sources */,
 				8C184520286B3D7400A35ADE /* TrainingPreparationView.swift in Sources */,
@@ -1143,13 +1309,16 @@
 				8CFD3DC72849442900C684B4 /* TrainingsView.swift in Sources */,
 				8C69410F2844E05F005E64F9 /* View+Padding.swift in Sources */,
 				8C7F8683287D984E001D32A4 /* MapLocationPickerViewModel.swift in Sources */,
+				8C0DCA36289421DA00765B99 /* TrainingSummaryExerciseCell.swift in Sources */,
 				8C7F867C287D97C2001D32A4 /* LocationPickerView.swift in Sources */,
 				8C39FE7F287EC3C8001033FF /* AddExerciseViewModel.swift in Sources */,
 				8CEB038E287D6663004D8799 /* DataServiceResult.swift in Sources */,
 				8CC339502861022A00AA5E0A /* EmptyStateScreen.swift in Sources */,
 				8CE6C102285A431300343662 /* Color+.swift in Sources */,
 				8CE6C0E1283D68F90037BB6E /* MainCoordinator.swift in Sources */,
+				8C20B0AD2890079E009D869B /* CaseIterable+.swift in Sources */,
 				8CE6C0DF283D68BD0037BB6E /* OnboardingCoordinator.swift in Sources */,
+				8C0DCA3C289428DA00765B99 /* TrainingSummaryNotesCard.swift in Sources */,
 				8C51A109286996BF00DECD09 /* AuthorizationServiceProtocol.swift in Sources */,
 				8C51A1162869B73200DECD09 /* ResourceMethod.swift in Sources */,
 				8CC3392A2860EF1500AA5E0A /* ErrorScreen.swift in Sources */,
@@ -1159,14 +1328,19 @@
 				8CEB038C287C6CF4004D8799 /* OptionsSheet.swift in Sources */,
 				8C184528286B3DDD00A35ADE /* ActiveTrainingCoordinator.swift in Sources */,
 				8C184526286B3DC400A35ADE /* TrainingSummaryView.swift in Sources */,
+				8C0DCA4528967F1700765B99 /* TrainingLocationCard.swift in Sources */,
 				8CC8BB93286E05AF001131DF /* TimeUnit.swift in Sources */,
 				8C3D42182881660E00AF95A4 /* AdvancedScrollView.swift in Sources */,
+				8CB13956288AF11A008681BA /* Speed.swift in Sources */,
 				8C51A1122869B6BB00DECD09 /* Request.swift in Sources */,
 				8C3D420F28815BB000AF95A4 /* TimePickerData.swift in Sources */,
 				8C57584F287193DC00C558C3 /* DatabaseServiceProtocol.swift in Sources */,
 				8C69411D2844E59D005E64F9 /* TypeAliases.swift in Sources */,
 				8C70104B28841625009B1F98 /* Distance.swift in Sources */,
+				8CD7F03F2888520A00B72D43 /* FieldInputData.swift in Sources */,
 				8C9684FE2854E2870070C6E2 /* AchievementsView.swift in Sources */,
+				8C0DCA292893FFB500765B99 /* TextInputData.swift in Sources */,
+				8C20B0AB289005E1009D869B /* TrainingsErrorView.swift in Sources */,
 				8CC339462860F2A700AA5E0A /* View+Font.swift in Sources */,
 				8CC8BB86286DBE65001131DF /* TrainingExcercise.swift in Sources */,
 				8C9685062854E7100070C6E2 /* NavigationBar.swift in Sources */,
@@ -1187,11 +1361,13 @@
 				8CE6C104285A482D00343662 /* UIScreen+.swift in Sources */,
 				8C3D420C28815B9900AF95A4 /* TimePickerSheet.swift in Sources */,
 				8CE6C0CA283D64E00037BB6E /* DependencyContainer.swift in Sources */,
+				8C20B0A7289005D1009D869B /* TrainingsContentView.swift in Sources */,
 				8C70105028841768009B1F98 /* ValuePickerData.swift in Sources */,
 				8C51A11E2869B9FF00DECD09 /* RequestInterceptor.swift in Sources */,
 				8CE6C0DD283D67C40037BB6E /* AuthorizationCoordinator.swift in Sources */,
 				8CC339242860946C00AA5E0A /* RadioOptionsData.swift in Sources */,
 				8C57585C2871DAFF00C558C3 /* String+.swift in Sources */,
+				8CD7F041288852A800B72D43 /* FieldInputSheet.swift in Sources */,
 				8CC8BB8C286DC0A8001131DF /* PremadeTrainings.swift in Sources */,
 				8C7010522884181B009B1F98 /* ValuePickerSheet.swift in Sources */,
 				8C57584C2870BF9B00C558C3 /* LocationService.swift in Sources */,
@@ -1202,7 +1378,9 @@
 				8C7F867E287D97D5001D32A4 /* LocationPickerViewModel.swift in Sources */,
 				8CFD3DBF2849437900C684B4 /* ProfileView.swift in Sources */,
 				8CFD3DD5284948DD00C684B4 /* AppDelegate.swift in Sources */,
+				8C0DCA262893FFA300765B99 /* TextInputSheet.swift in Sources */,
 				8C9684DF2853D1330070C6E2 /* Localizable.swift in Sources */,
+				8CD7F0432888536C00B72D43 /* SPTextField.swift in Sources */,
 				8CE6C0D3283D65D30037BB6E /* UserData.swift in Sources */,
 				8CFD3DCF284944BB00C684B4 /* HomeView.swift in Sources */,
 				8C51A0F62868CA2C00DECD09 /* MainTabBar.swift in Sources */,
@@ -1212,21 +1390,27 @@
 				8C70104228832822009B1F98 /* SheetDescription.swift in Sources */,
 				8C70105628842A67009B1F98 /* ValuePickerSheetItem.swift in Sources */,
 				8C184524286B3DA900A35ADE /* SaveTrainingView.swift in Sources */,
+				8C0DCA3A2894265400765B99 /* TrainingSummaryLocationCard.swift in Sources */,
 				8CC8BB88286DBE99001131DF /* TrainingExcerciseStyle.swift in Sources */,
+				8C0DCA4128967A7700765B99 /* EditTrainingViewModel.swift in Sources */,
 				8CAFFB54286392190077D57A /* Training.swift in Sources */,
 				8CFD3DC3284943A300C684B4 /* ProfileViewModel.swift in Sources */,
 				8C9684FC2854E2770070C6E2 /* StatisticsView.swift in Sources */,
 				8C51A0FC2868D34B00DECD09 /* AboutViewModel.swift in Sources */,
 				8CAFFB5928639EC30077D57A /* Motivation.swift in Sources */,
 				8CC8BB91286E058E001131DF /* Time.swift in Sources */,
+				8C0DCA1F2892991000765B99 /* View+Frame.swift in Sources */,
 				8CEB038A287C6C49004D8799 /* OptionsData.swift in Sources */,
+				8C20B0A3288FE9D1009D869B /* CGFloat+.swift in Sources */,
 				8CFD3DD1284946BB00C684B4 /* LazyView.swift in Sources */,
 				8CE6C0CC283D65080037BB6E /* DependencyPropertyWrapper.swift in Sources */,
 				8C51A1142869B6F100DECD09 /* Resource.swift in Sources */,
 				8C9685042854E3020070C6E2 /* SettingsViewModel.swift in Sources */,
+				8C0DCA2B2894014A00765B99 /* SPTextEditor.swift in Sources */,
 				8C51A0FA2868D34200DECD09 /* AboutView.swift in Sources */,
 				8C39FE7B287EBC24001033FF /* TrainingPreparationExerciseCell.swift in Sources */,
 				8CC3391F286092E200AA5E0A /* InfoData.swift in Sources */,
+				8CD7F046288859A500B72D43 /* TextFieldValidator.swift in Sources */,
 				8C184516286B3CFC00A35ADE /* TrainingPerparationViewModel.swift in Sources */,
 				8CC3394D2861020900AA5E0A /* ErrorData.swift in Sources */,
 				8CAFFB602863A99D0077D57A /* TrainingSelectionData.swift in Sources */,
@@ -1381,7 +1565,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1413,7 +1597,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -12,7 +12,13 @@ struct TrainingSelection: View {
     static let spacing: CGFloat = 14
     static let columns = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: Self.spacing)]
     
+    private let withShadows: Bool
     var onCategorySelected: ((Training.Category) -> Void)?
+    
+    init(withShadows: Bool = false, onCategorySelected: ((Training.Category) -> Void)? = nil) {
+        self.withShadows = withShadows
+        self.onCategorySelected  = onCategorySelected
+    }
     
     var body: some View {
         LazyVGrid(columns: Self.columns, spacing: Self.spacing) {
@@ -21,6 +27,7 @@ struct TrainingSelection: View {
                     .onTapGesture {
                         onCategorySelected?(category)
                     }
+                    .addShadow(.small, enabled: withShadows)
             }
         }
     }

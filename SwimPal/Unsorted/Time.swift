@@ -31,13 +31,6 @@ struct Time {
     }
     
     func getFormatted(with format: Time.Format) -> String {
-        var seconds = miliseconds / 1000
-        var minutes = seconds / 60
-        let hours = minutes / 60
-        
-        minutes %= 60
-        seconds %= 60
-        
         switch format {
         case .hoursMinutes:
             return "\(hours.asTwoDigit):\(minutes.asTwoDigit)h"
@@ -45,6 +38,8 @@ struct Time {
             return "\(minutes.asTwoDigit):\(seconds.asTwoDigit)"
         case .hoursMinutesSeconds:
             return "\(hours.asTwoDigit):\(minutes.asTwoDigit):\(seconds.asTwoDigit)"
+        case .minutes:
+            return "\(totalMinutes) min"
         default:
             return "Format not implemented"
         }
@@ -62,11 +57,19 @@ extension Time: Codable, Equatable {
 extension Time {
     
     var seconds: UInt {
-        (miliseconds / 1000) % 60
+        totalSeconds % 60
+    }
+    
+    var totalSeconds: UInt {
+        miliseconds / 1000
     }
     
     var minutes: UInt {
-        (seconds / 60) % 60
+        totalMinutes % 60
+    }
+    
+    var totalMinutes: UInt {
+        seconds / 60
     }
     
     var hours: UInt {

@@ -9,7 +9,7 @@ import SwiftUI
 
 final class TrainingsCoordinator: ObservableObject {
     
-    @Published var viewModel = TrainingsViewModel()
+    @Published var viewModel: TrainingsViewModel = .mocked
     @Published var activeTrainingCoordinator: ActiveTrainingCoordinator?
     @Published var trainingSummaryCoordinator: TrainingSummaryCoordinator?
     
@@ -18,8 +18,8 @@ final class TrainingsCoordinator: ObservableObject {
             self?.startTraining(category: category)
         }
         
-        viewModel.onGoToTrainingSummary = { [weak self] in
-            self?.goToTrainingSummary()
+        viewModel.onGoToTrainingSummary = { [weak self] training in
+            self?.goToTrainingSummary(training: training)
         }
     }
     
@@ -30,14 +30,14 @@ final class TrainingsCoordinator: ObservableObject {
             self?.activeTrainingCoordinator = nil
         }
         
-        activeTrainingCoordinator?.onTrainingSaved = { [weak self] in
+        activeTrainingCoordinator?.onTrainingSaved = { [weak self] training in
             self?.activeTrainingCoordinator = nil
-            self?.goToTrainingSummary()
+            self?.goToTrainingSummary(training: training)
         }
     }
     
-    func goToTrainingSummary() {
-        trainingSummaryCoordinator = TrainingSummaryCoordinator()
+    func goToTrainingSummary(training: Training) {
+        trainingSummaryCoordinator = TrainingSummaryCoordinator(training: training)
         
         trainingSummaryCoordinator!.onDismissed = { [weak self] in
             self?.trainingSummaryCoordinator = nil

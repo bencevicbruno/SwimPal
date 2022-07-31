@@ -21,3 +21,10 @@ extension Training {
         }
     }
 }
+
+extension Training.Location {
+    
+    static var osijek: Training.Location {
+        Training.Location(latitude: 45.5550, longitude: 18.6955, name: "Osijek")
+    }
+}

@@ -14,7 +14,7 @@ struct TrainingPreparationView: View {
     var body: some View {
         VStack(spacing: 0) {
             NavigationBar("Are you ready?", onXTapped: viewModel.dismiss)
-                .addShadow()
+//                .addShadow()
             
             ScrollView(.vertical) {
                 content
@@ -22,10 +22,10 @@ struct TrainingPreparationView: View {
             }
             .frame(maxHeight: .infinity)
             
-            BigBottomButton("Let's go", onTapped: viewModel.startTraining)
+            BigBottomButton("Let's go", isEnabled: viewModel.excercises.count != 0, onTapped: viewModel.startTraining)
                 .addShadow()
         }
-        .removeNavigationBar()
+        .setupView()
         .edgesIgnoringSafeArea(.bottom)
     }
 }
@@ -59,11 +59,7 @@ private extension TrainingPreparationView {
     
     var exercisesTable: some View {
         LazyVStack(spacing: 2) {
-            ForEach(viewModel.excercises) {
-                TrainingPreparationExerciseCell(excercise: $0)
-                    .addShadow(.small)
-                    .padding(.vertical, 5)
-            }
+            TrainingExcerciseList(excercises: viewModel.excercises)
             
             if viewModel.category == .custom {
                 addExcerciseCell

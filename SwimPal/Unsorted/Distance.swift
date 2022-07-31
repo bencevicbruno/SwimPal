@@ -28,5 +28,14 @@ extension Distance {
     enum Unit: Float {
         case meters = 1
         case kilometers = 1000
+        
+        func format(amount: Float, shortened: Bool = true) -> String {
+            switch self {
+            case .meters:
+                return shortened ? "\(amount) m" : (amount == 1 ? "\(amount) meter" : "\(amount) meters")
+            case .kilometers:
+                return shortened ? "\(amount) km" : (amount == 1 ? "\(amount) kilometer" : "\(amount) kilometers")
+            }
+        }
     }
 }

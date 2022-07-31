@@ -19,7 +19,7 @@ struct StatisticsView: View {
                 
         }
         .removeNavigationBar()
-        .background(.white)
+        .background(Color.white)
         .trainingSelectionSheet($viewModel.trainingSelectionData)
     }
 }

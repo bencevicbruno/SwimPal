@@ -23,7 +23,7 @@ extension View {
             self
             
             NavigationLink(
-                destination: LazyView(destination(item.wrappedValue!)),
+                destination: LazyView(destination(item.wrappedValue!)).removeNavigationBar(),
                 isActive: isActive,
                 label: { EmptyView() }
             )

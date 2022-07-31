@@ -18,7 +18,7 @@ struct AchievementsView: View {
             emptyStateContent
         }
         .removeNavigationBar()
-        .background(.white)
+        .background(Color.white)
         .trainingSelectionSheet($viewModel.trainingSelectionData)
     }
 }

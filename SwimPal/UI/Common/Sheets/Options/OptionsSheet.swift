@@ -17,11 +17,11 @@ struct OptionsSheet: View {
         SheetBase($isVisible) { dismiss in
             VStack(alignment: .leading, spacing: 0) {
                 SheetTitle(data.title)
-                    .padding(.vertical, 24)
+                    .padding(.vertical, 12)
                     .padding(.horizontal, SheetUtils.horizontalPadding)
                 
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 0) {
                         ForEach(0..<data.items.count, id: \.self) { index in
                             optionCell(for: index) {
                                 dismiss { data.onTapped?(index) }
@@ -40,12 +40,15 @@ struct OptionsSheet: View {
         self._isVisible = isVisible
         self.data = data
     }
+    
+    static let rowHeight: CGFloat = 40
+    static let rowPadding: CGFloat = 12
 }
 
 private extension OptionsSheet {
     
     var idealHeight: CGFloat {
-        let rowHeight = 60 + 12
+        let rowHeight = Self.rowHeight + Self.rowPadding
         return CGFloat(data.items.count * rowHeight)
     }
     
@@ -62,10 +65,9 @@ private extension OptionsSheet {
         .padding(.vertical, 20)
         .padding(.leading, 8)
         .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.brand, lineWidth: 2)
-        )
+        .frame(height: Self.rowHeight)
+        .padding(.vertical, Self.rowPadding / 2)
+        .background(Color.white)
         .onTapGesture {
             action?()
         }

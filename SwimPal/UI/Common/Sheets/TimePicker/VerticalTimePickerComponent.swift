@@ -54,7 +54,7 @@ struct VerticalTimePickerComponent: View {
             }
         }
         .frame(height: Self.height)
-        .background(.yellow)
+        .background(Color.yellow)
     }
     
     func getColor(midY: CGFloat) -> UIColor {

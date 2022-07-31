@@ -29,7 +29,7 @@ struct LoginView: View {
                 .padding(.bottom, 10)
         }
         .padding(20)
-        .background(.white)
+        .background(Color.white)
     }
 }
 

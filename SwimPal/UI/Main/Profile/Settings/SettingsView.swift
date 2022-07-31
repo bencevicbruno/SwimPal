@@ -21,11 +21,11 @@ struct SettingsView: View {
                     
                     settingCard("Unit System", value: "Metric", onTapped: viewModel.showUnitSystemOptions)
                 }
-                .padding(.horizontal, 10)
+                .padding([.top, .horizontal], 10)
             }
         }
         .removeNavigationBar()
-        .background(.white)
+        .background(Color.white)
         .optionsSheet($viewModel.optionsData)
     }
 }

@@ -41,7 +41,7 @@ struct TrainingPreparationHeader: View {
             .padding([.leading, .trailing, .bottom], 10)
         }
         .frame(maxWidth: .infinity)
-        .background(.white)
+        .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }

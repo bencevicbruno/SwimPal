@@ -16,7 +16,7 @@ final class ActiveTrainingCoordinator: ObservableObject {
     @Published var locationPickerCoordinator: LocationPickerCoordinator?
     
     var onDismissed: EmptyCallback?
-    var onTrainingSaved: EmptyCallback?
+    var onTrainingSaved: ((Training) -> Void)?
     
     private let category: Training.Category
     
@@ -28,8 +28,8 @@ final class ActiveTrainingCoordinator: ObservableObject {
             self?.onDismissed?()
         }
         
-        trainingPreparationViewModel.onGoToAddExercise = { [weak self] in
-            self?.goToAddExercise()
+        trainingPreparationViewModel.onGoToAddExercise = { [weak self] onAddExercise in
+            self?.goToAddExercise(onAddExercise: onAddExercise)
         }
         
         trainingPreparationViewModel.onGoToActiveTraining = { [weak self] activeTraining in
@@ -42,17 +42,24 @@ final class ActiveTrainingCoordinator: ObservableObject {
     }
     
     func dismiss() {
-        saveTrainingViewModel = nil
+        addExerciseViewModel = nil
         activeTrainingViewModel = nil
+        saveTrainingViewModel = nil
+        locationPickerCoordinator = nil
         
         onDismissed?()
     }
     
-    func goToAddExercise() {
+    func goToAddExercise(onAddExercise: ((Training.Excercise) -> Void)? = nil) {
         addExerciseViewModel = AddExerciseViewModel()
         
         addExerciseViewModel!.onDismissed = { [weak self] in
             self?.addExerciseViewModel = nil
+        }
+        
+        addExerciseViewModel!.onAddExercise = { [weak self] exercise in
+            self?.addExerciseViewModel = nil
+            onAddExercise?(exercise)
         }
     }
     
@@ -79,8 +86,8 @@ final class ActiveTrainingCoordinator: ObservableObject {
             self?.goToLocationPicker()
         }
         
-        saveTrainingViewModel!.onTrainingSaved = { [weak self] in
-            self?.onTrainingSaved?()
+        saveTrainingViewModel!.onTrainingSaved = { [weak self] training in
+            self?.onTrainingSaved?(training)
         }
     }
     
@@ -107,13 +114,14 @@ struct ActiveTrainingCoordinatorView: View {
                 .pushNavigation(item: $coordinator.activeTrainingViewModel) {
                     ActiveTrainingView(viewModel: $0)
                         .pushNavigation(item: $coordinator.saveTrainingViewModel) {
-                        SaveTrainingView(viewModel: $0)
-                                .pushNavigation(item: $coordinator.locationPickerCoordinator) {
-                            LocationPickerCoordinatorView(coordinator: $0)
+                            SaveTrainingView(viewModel: $0)
+                                .presentNavigation(item: $coordinator.locationPickerCoordinator) {
+                                    LocationPickerCoordinatorView(coordinator: $0)
+                                }
                         }
-                    }
                 }
         }
         .navigationViewStyle(.stack)
+        .preferredColorScheme(.light)
     }
 }

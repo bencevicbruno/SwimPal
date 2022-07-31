@@ -26,12 +26,12 @@ struct AddExerciseView: View {
                 
                 Spacer()
                 
-                BigBottomButton("Add exercise", onTapped: viewModel.dismiss)
+                BigBottomButton("Add exercise", isEnabled: viewModel.isFormValid, onTapped: viewModel.addExerciseTapped)
                     .addShadow()
             }
         }
         .edgesIgnoringSafeArea(.bottom)
-        .removeNavigationBar()
+        .setupView()
         .optionsSheet($viewModel.optionsData)
         .timePickerSheet($viewModel.timePickerData)
         .valuePickerSheet($viewModel.valuePickerData)
@@ -84,10 +84,20 @@ private extension AddExerciseView {
         }
     }
     
+    var exerciseValueTitle: String {
+        guard let style = viewModel.exerciseStyle else { return "" }
+        
+        if let value = viewModel.value {
+            return style.countsAsSwimming ? Distance.Unit.meters.format(amount: Float(value)) : Time.Unit.minutes.format(UInt(value))
+        } else {
+            return style.countsAsSwimming ? "Choose distance" : "Pick time"
+        }
+    }
+    
     var exerciseValueCard: some View {
         NamedContainer(viewModel.exerciseStyle?.valueTitle ?? "Amount", color: conditionalColor) {
             HStack(spacing: 10) {
-                Text("01:00h")
+                Text(exerciseValueTitle)
                     .style(.roboto(.body), .black)
                 
                 Spacer(minLength: 10)

@@ -14,9 +14,10 @@ struct OnboardingView: View {
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $viewModel.currentStep) {
-                ForEach(0..<viewModel.items.count) { index in
-                    stepView(viewModel.items[index])
-                        .tag(index)
+                ForEach(viewModel.items) {
+                    stepView($0)
+                        .tag($0.id)
+                        
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -25,7 +26,7 @@ struct OnboardingView: View {
                 .padding(.bottom, 12)
         }
         .padding(.horizontal, 12)
-        .background(.white)
+        .background(Color.white)
     }
 }
 

@@ -53,7 +53,7 @@ private extension MainTabBar {
             .frame(height: Self.height * 3 / 4)
             .frame(maxWidth: .infinity)
             .padding(.bottom, UIScreen.bottomUnsafePadding)
-            .background(.white)
+            .background(Color.white)
     }
     
     var tabBackground: some View {

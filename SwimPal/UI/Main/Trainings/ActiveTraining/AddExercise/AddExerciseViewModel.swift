@@ -10,6 +10,7 @@ import Foundation
 final class AddExerciseViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
+    var onAddExercise: ((Training.Excercise) -> Void)?
     
     @Published var exerciseStyle: Training.Excercise.Style?
     @Published var value: Int?
@@ -47,7 +48,9 @@ final class AddExerciseViewModel: ObservableObject {
         
         if style.isMeasuredInMeters {
             valuePickerData = ValuePickerData(title: "Pick distance",
-                                              items: stride(from: 25, to: 1025, by: 25).map { ValuePickerSheetItem(title: "\($0) meters", value: $0) })
+                                              items: stride(from: 25, to: 1025, by: 25).map { ValuePickerSheetItem(title: "\($0) meters", value: $0) }) { [weak self] newValue in
+                self?.value = newValue
+            }
         } else {
             var values: [Int] = []
             
@@ -56,7 +59,9 @@ final class AddExerciseViewModel: ObservableObject {
             }
             
             valuePickerData = ValuePickerData(title: "Pick time",
-                                              items: (1...30).map { ValuePickerSheetItem(title: "\($0) \($0 == 1 ? "minute" : "minutes")", value: $0) })
+                                              items: (1...30).map { ValuePickerSheetItem(title: "\($0) \($0 == 1 ? "minute" : "minutes")", value: $0) }) { [weak self] newValue in
+                self?.value = newValue
+            }
         }
     }
     
@@ -69,5 +74,14 @@ final class AddExerciseViewModel: ObservableObject {
     
     func dismiss() {
         onDismissed?()
+    }
+    
+    var isFormValid: Bool {
+        exerciseStyle != nil && value != nil
+    }
+    
+    func addExerciseTapped() {
+        guard isFormValid else { return }
+        onAddExercise?(.init(style: exerciseStyle!, value: value!, numberOfRepetitions: repetitions, timeLimit: timeLimit, isInProgress: false))
     }
 }

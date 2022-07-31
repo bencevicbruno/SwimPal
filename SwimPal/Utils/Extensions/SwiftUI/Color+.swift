@@ -9,11 +9,11 @@ import SwiftUI
 
 extension Color {
     
-    static let brand = Color(uiColor: .brand)
-    static let brangLight = Color(uiColor: .brangLight)
+    static let brand = Color(UIColor.brand)
+    static let brangLight = Color(UIColor.brangLight)
     
-    static let gray142 = Color(uiColor: .gray142)
-    static let gray242 = Color(uiColor: .gray242)
+    static let gray142 = Color(UIColor.gray142)
+    static let gray242 = Color(UIColor.gray242)
     
-    static let shadow = Color(uiColor: .shadow)
+    static let shadow = Color(UIColor.shadow)
 }

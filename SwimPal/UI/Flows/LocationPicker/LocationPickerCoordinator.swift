@@ -31,14 +31,14 @@ final class LocationPickerCoordinator: ObservableObject {
             self?.mapLocationPickerViewModel = nil
         }
         
-        mapLocationPickerViewModel!.onExit = { [weak self] in
-            self?.dismiss()
+        mapLocationPickerViewModel!.onExit = { [weak self] newLocation in
+            self?.dismiss(location: newLocation)
             self?.mapLocationPickerViewModel = nil
         }
     }
     
-    func dismiss() {
-        onDismissed?(nil)
+    func dismiss(location: Training.Location? = nil) {
+        onDismissed?(location)
     }
 }
 
@@ -49,10 +49,9 @@ struct LocationPickerCoordinatorView: View {
     var body: some View {
         NavigationView {
             LocationPickerView(viewModel: coordinator.viewModel)
-                .pushNavigation(item: $coordinator.mapLocationPickerViewModel) {
+                .presentNavigation(item: $coordinator.mapLocationPickerViewModel) {
                     MapLocationPickerView(viewModel: $0)
                 }
         }
-        .removeNavigationBar()
     }
 }

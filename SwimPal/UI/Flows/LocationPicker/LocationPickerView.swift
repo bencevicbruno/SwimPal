@@ -26,8 +26,8 @@ struct LocationPickerView: View {
             
             content
         }
+        .setupView()
         .edgesIgnoringSafeArea(.bottom)
-        .removeNavigationBar()
     }
 }
 

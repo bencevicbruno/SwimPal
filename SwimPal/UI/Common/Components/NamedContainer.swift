@@ -13,7 +13,7 @@ struct NamedContainer<Content: View>: View {
     let color: UIColor
     @ViewBuilder var viewBuilder: () -> Content
     
-    init(_ title: String, color: UIColor = .brand, _ viewBuilder: @escaping () -> Content) {
+    init(_ title: String, color: UIColor = .brand, @ViewBuilder _ viewBuilder: @escaping () -> Content) {
         self.title = title
         self.color = color
         self.viewBuilder = viewBuilder
@@ -27,13 +27,13 @@ struct NamedContainer<Content: View>: View {
             .background(
                 ZStack(alignment: .topLeading) {
                     RoundedRectangle(cornerRadius: 15)
-                        .strokeBorder(Color(uiColor: color), lineWidth: 2)
+                        .strokeBorder(Color(color), lineWidth: 2)
                         .padding(.vertical, 7.5)
                     
                     Text(verbatim: title)
                         .style(.roboto(.caption, .medium), color)
                         .padding(.horizontal, 5)
-                        .background(.white)
+                        .background(Color.white)
                         .padding(.leading, 20)
                 }
             )
