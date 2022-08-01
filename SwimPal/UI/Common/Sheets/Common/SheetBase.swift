@@ -93,7 +93,7 @@ private extension SheetBase {
         if #available(iOS 15.0, *) {
             return Rectangle()
                 .fill(Material.thin)
-                .opacity(didAppear ? 1 : 0)
+                .opacity(overlayOpacity)
                 .onTapGesture {
                     dismiss()
                 }
@@ -109,9 +109,21 @@ private extension SheetBase {
         }
     }
     
+    var overlayOpacity: CGFloat {
+        var multiplier = 1.0
+        
+        if didSetInitialDragPosition {
+            multiplier = 1 - dragOffset / sheetHeight
+        } else {
+            multiplier = didAppear ? 1 : 0
+        }
+        
+        return multiplier
+    }
+    
     var sheetContent: some View {
         content(dismiss)
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, idealHeight: UIScreen.height - keyboardHeight)
             .clipped()
             .background(Color.white)
     }

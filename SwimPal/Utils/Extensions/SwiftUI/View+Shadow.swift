@@ -44,7 +44,7 @@ enum ShadowStyle {
         case .custom(_, let radius, _):
             return radius
         default:
-            return 10
+            return 5
         }
     }
     

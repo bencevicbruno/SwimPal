@@ -17,7 +17,7 @@ struct TrainingSummaryLocationCard: View {
     }
     
     var body: some View {
-        TrainingSummaryCardBase("Location", iconName: "location") {
+        TrainingSummaryCardBase("Location", iconName: "icon_location") {
             VStack(alignment: .leading, spacing: 10) {
                 Text(location.name)
                     .style(.roboto(.headline2, .medium), .black, .leading)

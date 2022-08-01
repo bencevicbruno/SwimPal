@@ -27,7 +27,6 @@ final class HomeCoordinator: ObservableObject {
         }
         
         activeTrainingCoordinator!.onTrainingSaved = { [weak self] training in
-            self?.activeTrainingCoordinator = nil
             self?.goToTrainingSummary(training: training)
         }
     }
@@ -47,10 +46,10 @@ struct HomeCoordinatorView: View {
     
     var body: some View {
         HomeView(coordinator.viewModel)
-            .presentNavigation(item: $coordinator.activeTrainingCoordinator) {
+            .present(item: $coordinator.activeTrainingCoordinator) {
                 ActiveTrainingCoordinatorView(coordinator: $0)
             }
-            .pushNavigation(item: $coordinator.trainingSummaryCoordinator) {
+            .push(item: $coordinator.trainingSummaryCoordinator) {
                 TrainingSummaryCoordinatorView(coordinator: $0)
             }
     }

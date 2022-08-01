@@ -22,13 +22,13 @@ class TrainingSummaryCoordinator: ObservableObject {
             self?.dismiss()
         }
         
-        viewModel.onGoToEditTraining = { [weak self] in
-            self?.goToEditTraining()
+        viewModel.onGoToEditTraining = { [weak self] model, onSaved in
+            self?.goToEditTraining(model: model, onSaved: onSaved)
         }
     }
     
-    func goToEditTraining() {
-        editTrainingViewModel = EditTrainingViewModel()
+    func goToEditTraining(model: EditTrainingModel, onSaved: ((EditTrainingModel) -> Void)? = nil) {
+        editTrainingViewModel = EditTrainingViewModel(model: model)
         
         editTrainingViewModel!.onDismissed = { [weak self] in
             self?.editTrainingViewModel = nil
@@ -37,13 +37,20 @@ class TrainingSummaryCoordinator: ObservableObject {
         editTrainingViewModel?.onGoToLocationPicker = { [weak self] in
             self?.goToLocationPicker()
         }
+        
+        editTrainingViewModel?.onSaved = { [weak self] model in
+            onSaved?(model)
+            self?.editTrainingViewModel = nil
+        }
     }
     
     func goToLocationPicker() {
         locationPickerCoordinator = LocationPickerCoordinator()
         
         locationPickerCoordinator!.onDismissed = { [weak self] pickedLocation in
-            self?.editTrainingViewModel?.location = pickedLocation
+            if let pickedLocation = pickedLocation {
+                self?.editTrainingViewModel?.location = pickedLocation
+            }
             self?.locationPickerCoordinator = nil
         }
     }
@@ -59,9 +66,9 @@ struct TrainingSummaryCoordinatorView: View {
     
     var body: some View {
         TrainingSummaryView(viewModel: coordinator.viewModel)
-            .pushNavigation(item: $coordinator.editTrainingViewModel) {
+            .push(item: $coordinator.editTrainingViewModel) {
                 EditTrainingView(viewModel: $0)
-                    .pushNavigation(item: $coordinator.locationPickerCoordinator) {
+                    .push(item: $coordinator.locationPickerCoordinator) {
                         LocationPickerCoordinatorView(coordinator: $0)
                     }
             }

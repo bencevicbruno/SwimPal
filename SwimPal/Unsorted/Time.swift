@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Time {
+struct Time: Hashable {
     private(set) var miliseconds: UInt
     
     init(_ value: UInt, _ unit: Time.Unit = .seconds) {
@@ -74,5 +74,12 @@ extension Time {
     
     var hours: UInt {
         (minutes / 60) % 24
+    }
+}
+
+extension Time {
+    
+    static func +=(_ lhs: inout Time, _ rhs: Time) {
+        lhs.miliseconds += rhs.miliseconds
     }
 }

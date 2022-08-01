@@ -9,36 +9,42 @@ import SwiftUI
 
 struct TrainingsContentView: View {
     
+    let headerData: TrainingHeaderData
     let trainings: [Training]
     let onTrainingCellTapped: UUIDCallback?
     let onTrainingCellOptionsTapped: UUIDCallback?
+    let onStartTrainingTapped: EmptyCallback?
     
-    init(trainings: [Training], onTrainingCellTapped: UUIDCallback? = nil, onTrainingCellOptionsTapped: UUIDCallback? = nil) {
+    init(headerData: TrainingHeaderData, trainings: [Training], onTrainingCellTapped: UUIDCallback? = nil, onTrainingCellOptionsTapped: UUIDCallback? = nil, onStartTrainingTapped: EmptyCallback? = nil) {
+        self.headerData = headerData
         self.trainings = trainings
         self.onTrainingCellTapped = onTrainingCellTapped
         self.onTrainingCellOptionsTapped = onTrainingCellOptionsTapped
+        self.onStartTrainingTapped = onStartTrainingTapped
     }
     
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVStack(spacing: 10) {
-                header
-                
-                trainingsList
-                    .padding(.bottom, MainTabBar.height + UIScreen.bottomUnsafePadding)
+        ZStack(alignment: .bottomTrailing) {
+            ScrollView(.vertical) {
+                LazyVStack(spacing: 10) {
+                    if trainings.count > 3 {
+                        TrainingsHeader(headerData)
+                            .addShadow(.small)
+                    }
+                    
+                    trainingsList
+                        .padding(.bottom, MainTabBar.height + UIScreen.bottomUnsafePadding)
+                }
+                .padding(10)
             }
-            .padding(.horizontal, 10)
-            .padding(.top, TrainingsView.titleHeight + TrainingsView.titleShadowHeight)
+            
+            startTrainingButton
+                .padding(.bottom, MainTabBar.height + UIScreen.bottomUnsafePadding)
         }
     }
 }
 
 private extension TrainingsContentView {
-    
-    var header: some View {
-        TrainingsHeader(totalDistance: .init(5, .kilometers), totalTime: .init(10, .hours), maxSpeed: .init(15, .metersPerSecond), favoriteCategory: .lifeguard)
-            .addShadow(.small)
-    }
     
     var trainingsList: some View {
         LazyVStack(spacing: 10) {
@@ -48,10 +54,28 @@ private extension TrainingsContentView {
             }
         }
     }
+    
+    var startTrainingButton: some View {
+        ZStack {
+            Circle()
+                .fill(Color.white)
+            
+            Image("icon_plus")
+                .frameForIcon()
+                .padding(5)
+        }
+        .frame(60)
+        .clipShape(Circle())
+        .onTapGesture {
+            onStartTrainingTapped?()
+        }
+        .addShadow()
+        .padding(.trailing, 15)
+    }
 }
 
 struct TrainingsContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingsContentView(trainings: [.random, .random, .random])
+        TrainingsContentView(headerData: .init(totalDistance: .zero, totalTime: .zero, maxSpeed: .zero, favoriteCategory: .random), trainings: [.random, .random, .random])
     }
 }

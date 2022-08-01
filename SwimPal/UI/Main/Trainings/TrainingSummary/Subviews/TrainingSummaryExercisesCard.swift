@@ -16,7 +16,7 @@ struct TrainingSummaryExercisesCard: View {
     }
     
     var body: some View {
-        TrainingSummaryCardBase("Exercises", iconName: "waveform.path.ecg") {
+        TrainingSummaryCardBase("Exercises", iconName: "icon_list") {
             ForEach(training.excercises) {
                 TrainingSummaryExerciseCell(excercise: $0)
             }

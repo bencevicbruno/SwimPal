@@ -10,25 +10,16 @@ import SwiftUI
 final class AchievementsViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
-    var onStartTraining: ((Training.Category) -> Void)?
-    
-    @Published var trainingSelectionData: TrainingSelectionData?
     
     init() {
         
     }
-    
-    // MARK: - User Ineractions
+}
+
+// MARK: - User Interactions
+extension AchievementsViewModel {
     
     func dismiss() {
         onDismissed?()
-    }
-    
-    func showTrainingSelection() {
-        trainingSelectionData = .init(onCategorySelected: { [weak self] category in
-            guard let self = self else { return }
-            self.onDismissed?()
-            self.onStartTraining?(category)
-        })
     }
 }

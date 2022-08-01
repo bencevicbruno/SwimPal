@@ -10,13 +10,15 @@ import SwiftUI
 struct FieldInputData {
     let title: String
     let description: String?
+    let preenteredText: String?
     let okTitle: String
     let validators: [TextFieldValidatorProtocol]
     let action: ((String) -> Void)?
     
-    init(title: String, description: String? = nil, okTitle: String = Localizable.ok.uppercased(), validators: [TextFieldValidatorProtocol] = [], action: ((String) -> Void)? = nil) {
+    init(title: String, description: String? = nil, preenteredText: String? = nil, okTitle: String = Localizable.ok.uppercased(), validators: [TextFieldValidatorProtocol] = [], action: ((String) -> Void)? = nil) {
         self.title = title
         self.description = description
+        self.preenteredText = preenteredText
         self.okTitle = okTitle
         self.validators = validators
         self.action = action

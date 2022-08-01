@@ -13,14 +13,15 @@ struct TrainingSummaryView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavigationBar("Training Summary", onBackTapped: viewModel.dismiss, rightIconName: "icon_back", onRightItemTapped: viewModel.editTrainingTapped)
+            NavigationBar("Training Summary", onBackTapped: viewModel.dismiss, rightIconName: "icon_edit", onRightItemTapped: viewModel.editTrainingTapped)
             
             ScrollView(.vertical) {
                 content
-                    .padding([.horizontal, .top], 10)
+                    .padding(10)
             }
         }
         .setupView()
+        .refreshToken(viewModel.refreshToken)
     }
 }
 

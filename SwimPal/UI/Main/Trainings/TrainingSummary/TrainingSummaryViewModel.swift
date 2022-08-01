@@ -10,9 +10,10 @@ import Foundation
 final class TrainingSummaryViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
-    var onGoToEditTraining: EmptyCallback?
+    var onGoToEditTraining: ((EditTrainingModel, ((EditTrainingModel) -> Void)?) -> Void)?
     
-    let training: Training
+    @Published var training: Training
+    @Published var refreshToken = RefreshToken()
     
     init(training: Training) {
         self.training = training
@@ -27,6 +28,11 @@ extension TrainingSummaryViewModel {
     }
     
     func editTrainingTapped() {
-        onGoToEditTraining?()
+        onGoToEditTraining?(EditTrainingModel(name: training.name, location: training.location, notes: training.notes)) { [weak self] model in
+            guard let self = self else { return }
+            
+            self.training = self.training.withUpdatedInfo(name: model.name, location: model.location, notes: model.notes)
+            self.refreshToken.refresh()
+        }
     }
 }

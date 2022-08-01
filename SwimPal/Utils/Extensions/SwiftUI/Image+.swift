@@ -9,10 +9,10 @@ import SwiftUI
 
 extension Image {
     
-    func frameForIcon() -> some View {
+    func frameForIcon(size: CGFloat = 30) -> some View {
         self.resizable()
             .scaledToFit()
-            .frame(width: 24, height: 24)
-            .frame(width: 40, height: 40)
+            .frame(size)
+            .frame(40)
     }
 }

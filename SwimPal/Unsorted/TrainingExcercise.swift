@@ -9,7 +9,7 @@ import Foundation
 
 extension Training {
     
-    struct Excercise: Identifiable, Codable {
+    struct Excercise: Identifiable, Codable, Hashable {
         let id: UUID
         let style: Training.Excercise.Style
         let value: Int

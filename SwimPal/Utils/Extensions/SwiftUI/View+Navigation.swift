@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     
-    func pushNavigation<Item, Destination: View>(item: Binding<Item?>, @ViewBuilder destination: @escaping (Item) -> Destination) -> some View {
+    func push<Item, Destination: View>(item: Binding<Item?>, @ViewBuilder destination: @escaping (Item) -> Destination) -> some View {
         let isActive = Binding(
             get: { item.wrappedValue != nil },
             set: { value in
@@ -31,7 +31,7 @@ extension View {
         }
     }
     
-    func presentNavigation<Item, Destination: View>(item: Binding<Item?>, @ViewBuilder destination: @escaping (Item) -> Destination) -> some View {
+    func present<Item, Destination: View>(item: Binding<Item?>, @ViewBuilder destination: @escaping (Item) -> Destination) -> some View {
         let isActive = Binding(
             get: { item.wrappedValue != nil },
             set: { value in

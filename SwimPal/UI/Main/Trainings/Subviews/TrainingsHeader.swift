@@ -7,21 +7,31 @@
 
 import SwiftUI
 
+struct TrainingHeaderData {
+    let totalDistance: Distance?
+    let totalTime: Time?
+    let maxSpeed: Speed?
+    let favoriteCategory: Training.Category?
+    
+    static let empty = TrainingHeaderData(totalDistance: nil, totalTime: nil, maxSpeed: nil, favoriteCategory: nil)
+}
+
 struct TrainingsHeader: View {
     
-    let totalDistance: Distance
-    let totalTime: Time
-    let maxSpeed: Speed
-    let favoriteCategory: Training.Category
+    private let data: TrainingHeaderData
+    
+    init(_ data: TrainingHeaderData) {
+        self.data = data
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             HStack(alignment: .top, spacing: 0) {
-                column("Distance", value: Distance.Unit.kilometers.format(amount: totalDistance.meters))
+                column("Distance", value: Distance.Unit.kilometers.format(amount: data.totalDistance?.meters ?? 0))
                 
-                column("Time", value: totalTime.getFormatted(with: .hoursMinutes))
+                column("Time", value: data.totalTime?.getFormatted(with: .hoursMinutes) ?? Localizable.not_available_abbr)
                 
-                column("Max Speed", value: maxSpeed.format(in: .metersPerSecond))
+                column("Max Speed", value: data.maxSpeed?.format(in: .metersPerSecond) ?? Localizable.not_available_abbr)
             }
             
             separator
@@ -61,12 +71,14 @@ private extension TrainingsHeader {
     
     var favoriteTrainingCategoryCell: some View {
         HStack(spacing: 10) {
-            Image(favoriteCategory.imageName)
-                .resizable()
-                .scaledToFill()
-                .frame(50)
-                .background(Color.white)
-                .clipShape(.roundedRectangle(10))
+            if let imageName = data.favoriteCategory?.imageName {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(50)
+                    .background(Color.white)
+                    .clipShape(.roundedRectangle(10))
+            }
             
             VStack(alignment: .leading) {
                 Text("Favorite Training")
@@ -74,17 +86,17 @@ private extension TrainingsHeader {
                 
                 Spacer(minLength: 0)
                 
-                Text(favoriteCategory.title)
+                Text(data.favoriteCategory?.title ?? Localizable.not_available_abbr)
                     .style(.roboto(.headline2, .bold), .black, .leading)
             }
-            .frame(height: 50)
         }
+        .frame(height: 50)
     }
 }
 
 struct TrainingsHeader_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingsHeader(totalDistance: .init(5, .meters), totalTime: .init(5, .hours), maxSpeed: .init(5, .metersPerSecond), favoriteCategory: .lifeguard)
+        TrainingsHeader(.init(totalDistance: .init(5, .meters), totalTime: .init(5, .hours), maxSpeed: .init(5, .metersPerSecond), favoriteCategory: .lifeguard))
             .addShadow()
             .padding()
     }

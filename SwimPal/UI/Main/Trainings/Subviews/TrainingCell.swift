@@ -22,25 +22,29 @@ struct TrainingCell: View {
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             categoryIcon
-                .padding(.leading, 10)
+                .padding([.top, .leading], 10)
             
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading) {
                 Text(training.date.formatted(as: "MM/dd/yyyy"))
                     .style(.roboto(.smallCaption, .medium), .gray142)
+                
+                Spacer(minLength: 0)
                 
                 Text(training.name)
                     .lineLimit(1)
                     .style(.roboto(.body, .bold), .black, .leading)
                 
+                Spacer(minLength: 0)
+                
                 timeLabel
             }
+            .padding(.top, 10)
             
             Spacer(minLength: 10)
             
             optionsIcon
-                .padding(.trailing, 10)
         }
-        .padding(.vertical, 10)
+        .padding(.bottom, 10)
         .frame(maxWidth: .infinity)
         .frame(height: 80)
         .background(Color.white)
@@ -54,31 +58,31 @@ struct TrainingCell: View {
 private extension TrainingCell {
     
     var categoryIcon: some View {
-        Image("icon_mainTab_profile")
+        Image(training.category.imageName)
             .resizable()
-            .scaledToFit()
-            .frame(60)
+            .scaledToFill()
+            .frame(65)
             .clipShape(.roundedRectangle(10))
+            .frame(70)
     }
     
     var timeLabel: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "timer")
+        HStack(spacing: 5) {
+            Image("icon_time_gray")
                 .resizable()
                 .scaledToFit()
-                .frame(15)
+                .frame(18)
+                .frame(20)
                 .foregroundColor(.gray142)
             
             Text(training.time.getFormatted(with: .hoursMinutesSeconds))
-                .style(.roboto(.smallCaption, .medium), .gray142, .leading)
+                .style(.roboto(.caption, .medium), .gray142, .leading)
         }
     }
     
     var optionsIcon: some View {
-        Text("...")
-            .style(.roboto(.headline1, .black), .gray142)
-            .frame(width: 40, height: 20)
-            .frame(height: 40, alignment: .top)
+        Image("icon_options")
+            .frameForIcon()
             .contentShape(Rectangle())
             .onTapGesture {
                 onOptionsTapped?(training.id)

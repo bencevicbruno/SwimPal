@@ -43,9 +43,11 @@ private extension TrainingSummaryExerciseCell {
     var timeLimit: some View {
         if let limit = excercise.timeLimit {
             HStack(spacing: 0) {
-                Image(systemName: "clock.badge.exclamationmark")
+                Image("icon_time_white")
                     .resizable()
-                    .frameForIcon()
+                    .scaledToFit()
+                    .frame(25)
+                    .frame(40)
                     .padding(.leading, 4)
                 
                 Text(verbatim: limit.getFormatted(.minutes))

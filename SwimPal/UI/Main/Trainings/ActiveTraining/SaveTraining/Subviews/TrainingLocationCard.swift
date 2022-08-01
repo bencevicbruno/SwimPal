@@ -19,7 +19,7 @@ struct TrainingLocationCard: View {
     }
     
     var body: some View {
-        NamedContainer("Location") {
+        NamedContainer("Location", onEditTapped: location == nil ? nil : onAddLocationTapped) {
             if location != nil {
                 mapView
             } else {
@@ -27,11 +27,11 @@ struct TrainingLocationCard: View {
                     .style(.roboto(.body, .bold), .brand, .center)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        onAddLocationTapped?()
+                    }
             }
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            onAddLocationTapped?()
         }
     }
 }
@@ -55,8 +55,7 @@ private extension TrainingLocationCard {
                     .padding(.bottom, 5)
             }
         }
-        .padding(.vertical, 30)
-        .padding(.horizontal, 20)
+        .padding(10)
     }
 }
 

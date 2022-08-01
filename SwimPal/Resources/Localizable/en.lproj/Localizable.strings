@@ -1,7 +1,7 @@
 
 "welcome_to" = "Welcome to";
 "continue_with_google" = "Continue with Google";
-
+"about" = "About";
 "not_available_abbr" = "N/A";
 
 "onboarding_title_first" = "Welcome!";
@@ -42,3 +42,13 @@
 
 "log_out" = "Log Out";
 "log_out_msg" = "Are you sure you want to log out?";
+
+"about_section_1_title" = "Why was this app made?";
+"about_section_1_text" = "SwimPal was made as a project for the mandatory lecture *Development of Mobile Application* at the Faculty of Electrical Engineering, Computer Science and Information Technology.";
+"about_section_2_title" = "What technical significance does it have?";
+"about_section_2_text" = "This app was created using Figma for design, **SwiftUI for the UI combined with the MVVM-C app arhitecture**. It features many tricks and examples on building customized sheets, text validators, refresh tokens for views, localization, custom SwiftUI view modifiers and serves as a test playground for implementing an industry standard data service with the idea of phasing out Alamofire from app development.";
+"about_section_3_title" = "Where can I find the source code?";
+"about_section_3_text" = "The source code can be found [here](https://github.com/bencevicbruno/SwimPal). The only 3rd party libraries used were provided by Google: Firebase and GoogleSignIn. All icons and illustrations used in the app were provided for free on the Figma Community.";
+"about_section_3_text_preIOS15" = "The source code can be found at github.com/bencevicbruno/SwimPal. The only 3rd party libraries used were provided by Google: Firebase and GoogleSignIn. All icons and illustrations used in the app were provided for free on the Figma Community.";
+"about_section_4_title" = "What's the future of SwimPal";
+"about_section_4_text" = "Well, the Statistics and Achievemnt systems need to be properly implemented. They're on hold until iOS 16 SwiftUI ChartKit comes out. Aside from that, the data service needs to be improved to use a remote database instead of storing data in files on devices.";

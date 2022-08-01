@@ -12,33 +12,18 @@ struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading) {
-                aboutYouTitle
-                    .padding(.bottom, 10)
-                
-                profileDetails
-                    .padding(.bottom, 10)
-                
-                createButton("Statistics", onTapped: viewModel.goToStatistics)
-                
-                createButton("Achievements", onTapped: viewModel.goToAchievements)
-                
-                createSection("Other")
-                
-                createButton("Settings", onTapped: viewModel.goToSettings)
-                
-                createButton("About", onTapped: viewModel.goToAbout)
-                
-                createButton("Log Out", onTapped: viewModel.logOut)
-                
-                Spacer()
+        ZStack(alignment: .top) {
+            ScrollView(.vertical) {
+                content
+                    .padding(.horizontal, 10)
+                    .padding(.bottom, MainTabBar.height)
             }
-            .padding([.top, .leading, .trailing], 10)
-            .padding(.bottom, MainTabBar.height)
+            .padding(.top, MainTitle.totalHeight)
+            
+            
+            MainTitle("About you")
         }
-        .removeNavigationBar()
-        .background(Color.white)
+        .setupView()
         .confirmationSheet($viewModel.confirmationData)
     }
     
@@ -49,55 +34,42 @@ struct ProfileView: View {
 
 private extension ProfileView {
     
-    var aboutYouTitle: some View {
-        Text("About you...")
-            .style(.roboto(.display1, .bold), .brand, .leading)
-    }
-    
-    var avatar: some View {
-        if #available(iOS 15, *) {
-            return AsyncImage(url: viewModel.userData?.avatarURL) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-            } placeholder: {
-                Image(systemName: "person")
-                    .resizable()
-                    .scaledToFit()
-                    .background(Color.blue)
-            }
-            .eraseToAnyView()
-        } else {
-            return Circle()
-                .fill(Color.blue)
-                .eraseToAnyView()
-        }
-    }
-    
-    var profileDetails: some View {
-        HStack(spacing: 0) {
-            avatar
-                .clipShape(Circle())
-                .frame(UIScreen.width / 5)
-                .padding(5, .standard)
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text(verbatim: viewModel.userData?.name ?? Localizable.not_available_abbr)
-                    .style(.roboto(.body, .bold), .black, .leading)
-                    .padding(.bottom, 5)
-                
-                Text(verbatim: viewModel.userData?.email ?? Localizable.not_available_abbr)
-                    .style(.roboto(.smallCaption, .light), .black, .leading)
+    var content: some View {
+        LazyVStack(spacing: 15) {
+            if let userData = viewModel.userData {
+                ProfileDetailsCard(userData: userData)
+                    .addShadow(.small)
             }
             
-            Spacer(minLength: 10)
+            SPActionButton("Statistics", iconName: "icon_statistics_white") {
+                viewModel.goToStatistics()
+            }
+            .addShadow(.small)
+            
+            SPActionButton("Achievements", iconName: "icon_achievements_white") {
+                viewModel.goToAchievements()
+            }
+            .addShadow(.small)
+            
+            createSection("Other")
+            
+            SPActionButton("Settings", iconName: "icon_settings_white") {
+                viewModel.goToSettings()
+            }
+            .addShadow(.small)
+            
+            SPActionButton("About", iconName: "icon_about_white") {
+                viewModel.goToAbout()
+            }
+            .addShadow(.small)
+            
+            SPActionButton("Log Out", iconName: "icon_logout_white") {
+                viewModel.logOut()
+            }
+            .addShadow(.small)
+            
+            Spacer()
         }
-        .padding(.vertical, 10)
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.gray242)
-        )
     }
     
     func createSection(_ title: String) -> some View {
@@ -112,30 +84,6 @@ private extension ProfileView {
             Capsule()
                 .fill(Color.gray142)
                 .frame(height: 5)
-        }
-    }
-    
-    func createButton(_ title: String, onTapped: EmptyCallback? = nil) -> some View {
-        HStack {
-            Text(verbatim: title)
-                .style(.roboto(.headline2, .bold), .white)
-            
-            Spacer(minLength: 10)
-            
-            Image("icon_action")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 24, height: 24)
-                .frame(width: 40, height: 40)
-        }
-        .padding(.vertical, 8)
-        .padding(.leading, 16)
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.brand)
-        )
-        .onTapGesture {
-            onTapped?()
         }
     }
 }

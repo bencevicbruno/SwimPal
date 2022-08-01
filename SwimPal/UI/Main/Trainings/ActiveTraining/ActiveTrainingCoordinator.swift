@@ -37,10 +37,6 @@ final class ActiveTrainingCoordinator: ObservableObject {
         }
     }
     
-    deinit {
-        
-    }
-    
     func dismiss() {
         addExerciseViewModel = nil
         activeTrainingViewModel = nil
@@ -108,14 +104,14 @@ struct ActiveTrainingCoordinatorView: View {
     var body: some View {
         NavigationView {
             TrainingPreparationView(viewModel: coordinator.trainingPreparationViewModel)
-                .presentNavigation(item: $coordinator.addExerciseViewModel) {
+                .present(item: $coordinator.addExerciseViewModel) {
                     AddExerciseView(viewModel: $0)
                 }
-                .pushNavigation(item: $coordinator.activeTrainingViewModel) {
+                .push(item: $coordinator.activeTrainingViewModel) {
                     ActiveTrainingView(viewModel: $0)
-                        .pushNavigation(item: $coordinator.saveTrainingViewModel) {
+                        .push(item: $coordinator.saveTrainingViewModel) {
                             SaveTrainingView(viewModel: $0)
-                                .presentNavigation(item: $coordinator.locationPickerCoordinator) {
+                                .present(item: $coordinator.locationPickerCoordinator) {
                                     LocationPickerCoordinatorView(coordinator: $0)
                                 }
                         }

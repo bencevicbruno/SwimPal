@@ -15,18 +15,9 @@ struct AchievementsView: View {
         VStack(spacing: 0) {
             NavigationBar(Localizable.achievements, onBackTapped: viewModel.dismiss)
             
-            emptyStateContent
+            WIPScreen(title: "Work in progress", message: "I guess the whole summer wasn't enough to develop an achievement system.", illustrationName: "illustration_noAchievements")
         }
-        .removeNavigationBar()
-        .background(Color.white)
-        .trainingSelectionSheet($viewModel.trainingSelectionData)
-    }
-}
-
-private extension AchievementsView {
-    
-    var emptyStateContent: some View {
-        EmptyStateScreen(.init(title: Localizable.no_achievements, message: Localizable.no_achievements_msg, illustrationName: "illustration_noAchievements", actionTitle: Localizable.start_training, action: viewModel.showTrainingSelection))
+        .setupView()
     }
 }
 

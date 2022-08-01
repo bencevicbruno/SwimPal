@@ -22,7 +22,7 @@ struct TrainingSummaryCardBase<Content: View>: View {
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                Image(systemName: iconName)
+                Image(iconName)
                     .resizable()
                     .scaledToFit()
                     .frame(30)

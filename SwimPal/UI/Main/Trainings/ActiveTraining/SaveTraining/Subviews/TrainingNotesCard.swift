@@ -18,7 +18,7 @@ struct TrainingNotesCard: View {
     }
     
     var body: some View {
-        NamedContainer("Notes") {
+        NamedContainer("Notes", onEditTapped: onAddNotesTapped) {
             if let notes = notes {
                 HStack(spacing: 0) {
                     Text(notes)
@@ -27,19 +27,12 @@ struct TrainingNotesCard: View {
                     Spacer(minLength: 0)
                 }
                 .padding(.vertical, 5)
-                .onTapGesture {
-                    onAddNotesTapped?()
-                }
             } else {
                 Text("Add notes")
                     .style(.roboto(.body, .bold), .brand, .center)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)
             }
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            onAddNotesTapped?()
         }
     }
 }

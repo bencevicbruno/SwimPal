@@ -18,16 +18,19 @@ struct EditTrainingView: View {
                 
                 ScrollView(.vertical) {
                     content
-                        .padding([.horizontal, .top], 10)
+                        .padding(10)
                 }
                 .frame(maxHeight: .infinity)
             }
-            .padding(.bottom, BigBottomButton.height)
+            .padding(.bottom, BigBottomButton.totalHeight)
             
             BigBottomButton("Save", isEnabled: viewModel.isFormValid, onTapped: viewModel.saveTapped)
         }
         .setupView()
         .edgesIgnoringSafeArea(.bottom)
+        .onTapGesture {
+            UIApplication.hideKeyboard()
+        }
         .textInputSheet($viewModel.textInputData)
     }
 }
@@ -48,6 +51,6 @@ private extension EditTrainingView {
 
 struct EditTrainingView_Previews: PreviewProvider {
     static var previews: some View {
-        EditTrainingView(viewModel: .init())
+        EditTrainingView(viewModel: .init(model: EditTrainingModel(name: "Training Example")))
     }
 }

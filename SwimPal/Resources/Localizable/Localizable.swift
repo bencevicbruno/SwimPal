@@ -65,6 +65,16 @@ enum Localizable {
     
     static var settings: String { "settings".localized() }
     static var select_language: String { "select_language".localized() }
+    
+    static var about_section_1_title: String { "about_section_1_title".localized() }
+    static var about_section_1_text: String { "about_section_1_text".localized() }
+    static var about_section_2_title: String { "about_section_2_title".localized() }
+    static var about_section_2_text: String { "about_section_2_text".localized() }
+    static var about_section_3_title: String { "about_section_3_title".localized() }
+    static var about_section_3_text: String { "about_section_3_text".localized() }
+    static var about_section_3_text_preIOS15: String { "about_section_3_text_preIOS15".localized() }
+    static var about_section_4_title: String { "about_section_4_title".localized() }
+    static var about_section_4_text: String { "about_section_4_text".localized() }
 }
 
 extension String {

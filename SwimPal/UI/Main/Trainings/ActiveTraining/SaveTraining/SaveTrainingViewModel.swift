@@ -18,6 +18,7 @@ final class SaveTrainingViewModel: ObservableObject {
     @Published var notes: String?
     
     @Published var confirmationData: ConfirmationData?
+    @Published var fieldInputData: FieldInputData?
     @Published var textInputData: TextInputData?
     @Published var infoData: InfoData?
     
@@ -38,6 +39,12 @@ extension SaveTrainingViewModel {
         
         confirmationData = ConfirmationData(title: "Discard Training?", message: "No info will be saved.", confirmTitle: "Discard") { [weak self] in
             self?.onDismissed?()
+        }
+    }
+    
+    func editNameTapped() {
+        fieldInputData = .init(title: "Enter name", preenteredText: name, validators: [TextFieldValidator.nonEmpty]) { [weak self] newName in
+            self?.name = newName
         }
     }
     

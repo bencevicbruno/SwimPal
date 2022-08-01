@@ -15,7 +15,22 @@ struct AboutView: View {
         VStack(spacing: 0) {
             NavigationBar(Localizable.about, onXTapped: viewModel.dismiss)
             
-            Spacer()
+            ScrollView(.vertical) {
+                content
+                    .padding(.horizontal, 10)
+            }
+        }
+    }
+}
+
+private extension AboutView {
+    
+    var content: some View {
+        LazyVStack(spacing: 15) {
+            ForEach(viewModel.items) {
+                AboutSection($0)
+                    .addShadow(.small)
+            }
         }
     }
 }

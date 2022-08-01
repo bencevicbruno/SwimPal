@@ -11,6 +11,7 @@ final class EditTrainingViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
     var onGoToLocationPicker: EmptyCallback?
+    var onSaved: ((EditTrainingModel) -> Void)?
     
     @Published var name: String
     @Published var location: Training.Location?
@@ -18,9 +19,10 @@ final class EditTrainingViewModel: ObservableObject {
     
     @Published var textInputData: TextInputData?
     
-    init() {
-        self.name = "name"
-        
+    init(model: EditTrainingModel) {
+        self.name = model.name
+        self.location = model.location
+        self.notes = model.notes
     }
     
     var isFormValid: Bool {
@@ -47,6 +49,6 @@ extension EditTrainingViewModel {
     }
     
     func saveTapped() {
-        onDismissed?()
+        onSaved?(EditTrainingModel(name: name, location: location, notes: notes))
     }
 }

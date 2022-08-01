@@ -15,13 +15,28 @@ final class SettingsViewModel: ObservableObject {
     @Published var optionsData: RadioOptionsData?
     
     init() {
+        
     }
     
+}
+
     // MARK: - User Ineractions
+extension SettingsViewModel {
     
     func dismiss() {
         onDismissed?()
     }
+    
+    func languageTapped() {
+        showLanguageOptions()
+    }
+    
+    func unitSystemTapped() {
+        showUnitSystemOptions()
+    }
+}
+
+private extension SettingsViewModel {
     
     func showLanguageOptions() {
         optionsData = RadioOptionsData(title: Localizable.select_language, options: ["English", "Deutsch", "Hrvatski"]) { index in

@@ -15,20 +15,10 @@ struct StatisticsView: View {
         VStack(spacing: 0) {
             NavigationBar("Statistics", onBackTapped: viewModel.dismiss)
             
-            emptyStateContent
+            WIPScreen(title: "Time goes by...\nSo slowly...", message: "Let's wait until Apple releases iOS 16 so we can use SwiftUI charts, shall we?", illustrationName: "illustration_noStatistics")
                 
         }
-        .removeNavigationBar()
-        .background(Color.white)
-        .trainingSelectionSheet($viewModel.trainingSelectionData)
-    }
-}
-
-private extension StatisticsView {
-    
-    var emptyStateContent: some View {
-        EmptyStateScreen(.init(title: Localizable.no_statistics, message: Localizable.no_statistics_msg, illustrationName: "illustration_noStatistics", actionTitle: Localizable.start_training, action: viewModel.showTrainingSelection))
-            .padding(10)
+        .setupView()
     }
 }
 

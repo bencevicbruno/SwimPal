@@ -9,24 +9,48 @@ import SwiftUI
 
 struct TrainingsEmptyView: View {
     
+    private let onStartTrainingTapped: EmptyCallback?
+    
+    init(onStartTrainingTapped: EmptyCallback? = nil) {
+        self.onStartTrainingTapped = onStartTrainingTapped
+    }
+    
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 10) {
             Spacer()
             
-            Image("illustration_error")
+            Image("illustration_noTrainings")
                 .resizable()
                 .scaledToFit()
             
-            Text("No trainings found")
+            Text("You gotta start swimming man")
                 .style(.roboto(.headline1, .bold), .brand, .center)
-                .padding(.vertical, 20)
             
-            Text("It's time to start swimming man! Hit that plus button to start a new training.")
+            Text("Once you finish a training, it will show up right here.")
                 .style(.roboto(.body), .black, .center)
             
             Spacer()
+            
+            startTrainingButton
+            
+            Spacer()
         }
-        .padding(.horizontal, 50)
+        .padding(.horizontal, 30)
+    }
+}
+
+private extension TrainingsEmptyView {
+    
+    var startTrainingButton: some View {
+        Text("Start Training")
+            .style(.roboto(.headline1, .bold), .white)
+            .frame(maxWidth: .infinity, height: 60)
+            .background(Color.brand)
+            .clipShape(.roundedRectangle(15))
+            .contentShape(RoundedRectangle(cornerRadius: 15))
+            .onTapGesture {
+                onStartTrainingTapped?()
+            }
     }
 }
 

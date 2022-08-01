@@ -46,10 +46,6 @@ final class ProfileCoordinator: ObservableObject {
         statisticsViewModel!.onDismissed = { [weak self] in
             self?.statisticsViewModel = nil
         }
-        
-        statisticsViewModel!.onStartTraining = { [weak self] category in
-            self?.onStartTraining?(category)
-        }
     }
     
     func goToAchievements() {
@@ -57,10 +53,6 @@ final class ProfileCoordinator: ObservableObject {
         
         achievementsViewModel!.onDismissed = { [weak self] in
             self?.achievementsViewModel = nil
-        }
-        
-        achievementsViewModel!.onStartTraining = { [weak self] category in
-            self?.onStartTraining?(category)
         }
     }
     
@@ -87,16 +79,16 @@ struct ProfileCoordinatorView: View {
     
     var body: some View {
         ProfileView(coordinator.viewModel)
-            .pushNavigation(item: $coordinator.statisticsViewModel) {
+            .push(item: $coordinator.statisticsViewModel) {
                 StatisticsView(viewModel: $0)
             }
-            .pushNavigation(item: $coordinator.achievementsViewModel) {
+            .push(item: $coordinator.achievementsViewModel) {
                 AchievementsView(viewModel: $0)
             }
-            .pushNavigation(item: $coordinator.settingsViewModel) {
+            .push(item: $coordinator.settingsViewModel) {
                 SettingsView(viewModel: $0)
             }
-            .presentNavigation(item: $coordinator.aboutViewModel) {
+            .present(item: $coordinator.aboutViewModel) {
                 AboutView(viewModel: $0)
                     .preferredColorScheme(.light)
             }

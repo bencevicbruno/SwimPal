@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 
 final class TrainingsViewModel: ObservableObject {
     
     @Published var trainings: [Training] = []
+    @Published var headerData: TrainingHeaderData = .empty
     @Published var error: ErrorData?
     @Published var isActivityRunning = false
     @Published var trainingSelectionData: TrainingSelectionData?
@@ -22,11 +24,27 @@ final class TrainingsViewModel: ObservableObject {
     @Dependency private var databaseService: DatabaseServiceProtocol
     @Dependency private var persistenceService: PersistenceServiceProtocol
     
+    private var cancellables: Set<AnyCancellable> = []
+    
     init() {
-//        loadTrainings()
+        $trainings.sink { [weak self] _ in
+            self?.updateTotals()
+        }
+        .store(in: &cancellables)
+        
+        trainings = [
+            .random, .sample, .sample, .random, .random, .sample, .sample, .random, .random, .sample, .sample, .random
+        ]
+        updateTotals()
     }
     
     // MARK: - User Interactions
+    
+    func startTrainingTapped() {
+        trainingSelectionData = TrainingSelectionData { [weak self] category in
+            self?.onGoToStartTraining?(category)
+        }
+    }
     
     func trainingCellTapped(trainingID: UUID) {
         guard let training = trainings.first(where: { $0.id == trainingID }) else { return }
@@ -35,23 +53,17 @@ final class TrainingsViewModel: ObservableObject {
     
     func trainingCellOptionsTapped(trainingID: UUID) {
         optionsData = .init(title: "Watcha wanna do?", items: [
-            .init(iconName: "icon_delete", title: "Delete Training"),
+            .init(iconName: "icon_bin", title: "Delete Training"),
             .init(iconName: "icon_share", title: "Share Training")
         ]) { [weak self] option in
             switch option {
             case 0:
-                self?.showDeleteTrainingConfirmation()
+                self?.showDeleteTrainingConfirmation(trainingID: trainingID)
             case 1:
                 self?.showShareTrainingModal()
             default:
                 break;
             }
-        }
-    }
-    
-    func showTrainingOptions() {
-        trainingSelectionData = TrainingSelectionData { [weak self] category in
-            self?.onGoToStartTraining?(category)
         }
     }
 }
@@ -77,12 +89,30 @@ private extension TrainingsViewModel {
         }
     }
     
-    func showDeleteTrainingConfirmation() {
-        confirmationData = .init(title: "Delete?", message: "Can not be undone")
+    func showDeleteTrainingConfirmation(trainingID: UUID) {
+        confirmationData = .init(title: "Delete?", message: "Can not be undone") { [weak self] in
+            self?.trainings.removeAll(where: { $0.id == trainingID })
+        }
     }
     
     func showShareTrainingModal() {
         
+    }
+    
+    func updateTotals() {
+        var distance: Distance = .zero
+        var time: Time = .zero
+        var speed: Speed = .zero
+        
+        trainings.forEach { training in
+            distance += training.totalDistance
+            time += training.time
+            speed = max(speed, training.averageSpeed)
+        }
+        
+        let favoriteCategory = trainings.map { $0.category }.frequencyOfUniqueElements.sorted(by: { $0.value > $1.value }).first?.key
+        
+        self.headerData = .init(totalDistance: distance, totalTime: time, maxSpeed: speed, favoriteCategory: favoriteCategory)
     }
 }
 

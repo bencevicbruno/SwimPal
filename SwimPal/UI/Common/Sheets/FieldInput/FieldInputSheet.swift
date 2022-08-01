@@ -11,7 +11,7 @@ struct FieldInputSheet: View {
     
     @Binding var isVisible: Bool
     
-    @State private var fieldText: String = ""
+    @State private var fieldText: String
     
     private let data: FieldInputData
     
@@ -44,6 +44,7 @@ struct FieldInputSheet: View {
     init(_ isVisible: Binding<Bool>, data: FieldInputData) {
         self._isVisible = isVisible
         self.data = data
+        self.fieldText = data.preenteredText ?? ""
     }
 }
 

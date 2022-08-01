@@ -28,10 +28,10 @@ struct TrainingSummaryHeader: View {
                 .padding(.vertical, 10)
             
             HStack(spacing: 0) {
-                label(image: "timer", training.time.getFormatted(with: .hoursMinutesSeconds))
+                label(iconName: "icon_time", value: training.time.getFormatted(with: .hoursMinutesSeconds))
                     .frame(maxWidth: .infinity)
                 
-                label(image: "calendar", training.date.formatted(as: "MMM dd, YYYY"))
+                label(iconName: "icon_date", value: training.date.formatted(as: "MMM dd, YYYY"))
                     .frame(maxWidth: .infinity)
             }
             .frame(height: 30)
@@ -51,15 +51,15 @@ private extension TrainingSummaryHeader {
             .frame(maxWidth: .infinity, height: 1)
     }
     
-    func label(image: String, _ value: String) -> some View {
+    func label(iconName: String, value: String) -> some View {
         HStack(spacing: 5) {
-            Image(systemName: image)
+            Image(iconName)
                 .resizable()
                 .scaledToFit()
                 .frame(20)
             
             Text(value)
-                .style(.roboto(.smallCaption, .medium), .black, .leading)
+                .style(.roboto(.caption, .medium), .black, .leading)
             
             Spacer(minLength: 0)
         }

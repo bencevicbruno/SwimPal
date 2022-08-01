@@ -65,10 +65,7 @@ private extension NavigationBar {
     
     var leftIcon: some View {
         Image(leftIconName)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 24, height: 24)
-            .frame(width: 40, height: 40)
+            .frameForIcon()
             .onTapGesture {
                 onLeftItemTapped?()
             }
@@ -77,11 +74,7 @@ private extension NavigationBar {
     
     var rightIcon: some View {
         Image(rightIconName)
-            .resizable()
-            .scaledToFit()
-            .foregroundColor(.brand)
-            .frame(width: 18, height: 18)
-            .frame(width: 40, height: 40)
+            .frameForIcon()
             .onTapGesture {
                 onRightItemTapped?()
             }

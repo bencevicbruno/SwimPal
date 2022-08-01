@@ -49,7 +49,7 @@ struct LocationPickerCoordinatorView: View {
     var body: some View {
         NavigationView {
             LocationPickerView(viewModel: coordinator.viewModel)
-                .presentNavigation(item: $coordinator.mapLocationPickerViewModel) {
+                .present(item: $coordinator.mapLocationPickerViewModel) {
                     MapLocationPickerView(viewModel: $0)
                 }
         }

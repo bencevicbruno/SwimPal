@@ -9,7 +9,7 @@ import SwiftUI
 
 final class TrainingsCoordinator: ObservableObject {
     
-    @Published var viewModel: TrainingsViewModel = .mocked
+    @Published var viewModel: TrainingsViewModel = .init()
     @Published var activeTrainingCoordinator: ActiveTrainingCoordinator?
     @Published var trainingSummaryCoordinator: TrainingSummaryCoordinator?
     
@@ -51,10 +51,10 @@ struct TrainingsCoordinatorView: View {
     
     var body: some View {
         TrainingsView(coordinator.viewModel)
-            .presentNavigation(item: $coordinator.activeTrainingCoordinator) {
+            .present(item: $coordinator.activeTrainingCoordinator) {
                 ActiveTrainingCoordinatorView(coordinator: $0)
             }
-            .pushNavigation(item: $coordinator.trainingSummaryCoordinator) {
+            .push(item: $coordinator.trainingSummaryCoordinator) {
                 TrainingSummaryCoordinatorView(coordinator: $0)
             }
     }

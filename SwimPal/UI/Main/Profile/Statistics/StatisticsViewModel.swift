@@ -10,25 +10,16 @@ import SwiftUI
 final class StatisticsViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
-    var onStartTraining: ((Training.Category) -> Void)?
-    
-    @Published var trainingSelectionData: TrainingSelectionData?
     
     init() {
         
     }
-    
-    // MARK: - User Ineractions
+}
+
+// MARK: - User Ineractions
+extension StatisticsViewModel {
     
     func dismiss() {
         onDismissed?()
-    }
-    
-    func showTrainingSelection() {
-        trainingSelectionData = .init(onCategorySelected: { [weak self] category in
-            guard let self = self else { return }
-            self.onDismissed?()
-            self.onStartTraining?(category)
-        })
     }
 }

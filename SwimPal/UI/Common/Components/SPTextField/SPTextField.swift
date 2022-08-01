@@ -83,12 +83,17 @@ struct SPTextField: View {
         for validator in validators {
             if !validator.isValid(text) {
                 infoMessage = validator.message
-                isValid = false
+                withAnimation {
+                    isValid = false
+                }
                 return
             }
         }
         
-        isValid = true
+        withAnimation {
+            isValid = true
+        }
+        infoMessage = nil
     }
     
     var borderColor: Color {
@@ -99,9 +104,9 @@ struct SPTextField: View {
 struct SPTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 20) {
-            SPTextField(title: "Title", hint: "Hello", .constant(""), validators: [TextFieldValidator.lowerCase])
+            SPTextField(title: "Title", hint: "Hello", .constant("H"), validators: [TextFieldValidator.lowerCase])
             
-            SPTextField(title: nil, hint: "Hint", .constant(""), validators: [TextFieldValidator.upperCase])
+            SPTextField(title: nil, hint: "Hint", .constant("hihi"), validators: [TextFieldValidator.upperCase])
             
             SPTextField(title: "hehe", hint: nil, .constant(""), validators: [TextFieldValidator.number])
         }

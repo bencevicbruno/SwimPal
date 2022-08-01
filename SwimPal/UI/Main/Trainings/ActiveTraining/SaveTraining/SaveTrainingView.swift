@@ -18,9 +18,8 @@ struct SaveTrainingView: View {
                 NavigationBar("Add Details", onXTapped: viewModel.xTapped)
                 
                 content
-                    .padding(.bottom, BigBottomButton.height)
             }
-            .padding(.bottom, BigBottomButton.height)
+            .padding(.bottom, BigBottomButton.totalHeight)
             
             BigBottomButton("Done", onTapped: viewModel.doneTapped)
                 .addShadow()
@@ -30,6 +29,7 @@ struct SaveTrainingView: View {
             UIApplication.hideKeyboard()
         }
         .confirmationSheet($viewModel.confirmationData)
+        .fieldInputSheet($viewModel.fieldInputData)
         .textInputSheet($viewModel.textInputData)
         .infoSheet($viewModel.infoData)
         .edgesIgnoringSafeArea(.bottom)
@@ -42,23 +42,28 @@ private extension SaveTrainingView {
         ScrollView(.vertical) {
             VStack(spacing: 10) {
                 nameField
-                    .padding(.top, 10)
                 
                 timeField
                 
                 locationField
                 
                 notesField
+                
+                Spacer(minLength: 0)
             }
-            .padding(.horizontal, 10)
+            .padding(10)
         }
     }
     
     var nameField: some View {
-        NamedContainer("Name") {
-            TextField("Insert name here", text: $viewModel.name)
-                .foregroundColor(.black)
-                .frame(height: 40)
+        NamedContainer("Name", onEditTapped: viewModel.editNameTapped) {
+            HStack(spacing: 0) {
+                Text(viewModel.name)
+                    .style(.roboto(.body, .regular), .black, .leading)
+                
+                Spacer(minLength: 0)
+            }
+            .frame(height: 40)
         }
     }
     
