@@ -21,6 +21,14 @@ final class HomeViewModel: ObservableObject {
         changeMotivation()
     }
     
+    var title: String {
+        if let userName = persistenceService.user?.name.components(separatedBy: " ").first {
+            return Localizable.greeting_with_name.replacingOccurrences(of: "%s", with: userName)
+        } else {
+            return Localizable.greeting_without_name
+        }
+    }
+    
     var userName: String {
         String(persistenceService.user?.name.split(separator: " ").first ?? "swimmer")
     }

@@ -19,7 +19,7 @@ func debug(_ message: String, _ file: String = #file, _ function: String = #func
     print("[\(fileName)#\(function)]: \(message)")
 }
 
-func debugError(_ message: String, _ file: String = #file, _ function: String = #function) {
+func debugError(_ message: String, _ error: Error? = nil, _ file: String = #file, _ function: String = #function) {
     let fileName: String
     
     if let lastSlashIndex = file.lastIndex(of: "/") {
@@ -28,5 +28,21 @@ func debugError(_ message: String, _ file: String = #file, _ function: String = 
         fileName = file
     }
     
-    print("[ERROR @\(fileName)#\(function)]: \(message)")
+    if let error = error {
+        print("[ERROR @\(fileName)#\(function)]: \(error) -> \(message)")
+    } else {
+        print("[ERROR @\(fileName)#\(function)]: \(message)")
+    }
+}
+
+func onMain(_ completion: @escaping EmptyCallback) {
+    DispatchQueue.main.async {
+        completion()
+    }
+}
+
+func inBackground(_ completion: @escaping EmptyCallback) {
+    DispatchQueue.global(qos: .background).async {
+        completion()
+    }
 }

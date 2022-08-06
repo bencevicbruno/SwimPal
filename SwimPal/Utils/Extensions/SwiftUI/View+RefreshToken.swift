@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     
-    func refreshToken(_ token: RefreshToken) -> some View {
-        self.id(token ? UUID() : UUID())
+    func refreshable(using token: RefreshToken) -> some View {
+        self.id(token.token ? UUID() : UUID())
     }
 }

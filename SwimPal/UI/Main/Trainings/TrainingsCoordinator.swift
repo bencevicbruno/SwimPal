@@ -18,8 +18,8 @@ final class TrainingsCoordinator: ObservableObject {
             self?.startTraining(category: category)
         }
         
-        viewModel.onGoToTrainingSummary = { [weak self] training in
-            self?.goToTrainingSummary(training: training)
+        viewModel.onGoToTrainingSummary = { [weak self] trainingID in
+            self?.goToTrainingSummary(trainingID: trainingID)
         }
     }
     
@@ -30,14 +30,14 @@ final class TrainingsCoordinator: ObservableObject {
             self?.activeTrainingCoordinator = nil
         }
         
-        activeTrainingCoordinator?.onTrainingSaved = { [weak self] training in
+        activeTrainingCoordinator?.onTrainingSaved = { [weak self] trainingID in
+            self?.goToTrainingSummary(trainingID: trainingID)
             self?.activeTrainingCoordinator = nil
-            self?.goToTrainingSummary(training: training)
         }
     }
     
-    func goToTrainingSummary(training: Training) {
-        trainingSummaryCoordinator = TrainingSummaryCoordinator(training: training)
+    func goToTrainingSummary(trainingID: UUID) {
+        trainingSummaryCoordinator = TrainingSummaryCoordinator(trainingID: trainingID)
         
         trainingSummaryCoordinator!.onDismissed = { [weak self] in
             self?.trainingSummaryCoordinator = nil

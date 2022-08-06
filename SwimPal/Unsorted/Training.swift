@@ -61,6 +61,10 @@ class Training: Codable, Identifiable, Hashable, ObservableObject {
         id.hashValue
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     func withUpdatedInfo(name: String, location: Training.Location? = nil, notes: String? = nil) -> Training {
         return Training(id: id, name: name, time: time, location: location, category: category, exercises: excercises, notes: notes)
     }
@@ -70,7 +74,7 @@ class Training: Codable, Identifiable, Hashable, ObservableObject {
 extension Training {
     
     static var random: Training {
-        Training(name: "Random", time: .zero, location: .init(name: "Somwehere"), category: .random, exercises: Training.Category.lifeguard.excercises, notes: .loremIpsum)
+        Training(name: "Random", time: .zero, location: .init(name: "Somwehere"), category: .randomCase, exercises: Training.Category.lifeguard.excercises, notes: .loremIpsum)
     }
     
     static var sample: Training {

@@ -13,49 +13,30 @@ struct OnboardingView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            if viewModel.flow == .fromAbout {
+                NavigationBar("Onboarding", onXTapped: viewModel.xTapped)
+            }
+            
             TabView(selection: $viewModel.currentStep) {
                 ForEach(viewModel.items) {
-                    stepView($0)
+                    OnboardingStep($0)
+                        .padding(.horizontal, 10)
                         .tag($0.id)
-                        
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             
             nextButton
-                .padding(.bottom, 12)
+                .padding([.horizontal, .bottom], 10)
         }
-        .padding(.horizontal, 12)
-        .background(Color.white)
+        .setupView()
     }
 }
 
 private extension OnboardingView {
     
-    func stepView(_ item: OnboardingItem) -> some View {
-        VStack(spacing: 0) {
-            Spacer(minLength: 10)
-            
-            Image(item.illustrationName)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal, 10)
-            
-            Spacer(minLength: 10)
-            
-            Text(verbatim: item.title)
-                .style(.roboto(.headline1, .bold), .brand, .center)
-                .padding(.bottom, 10)
-            
-            Text(verbatim: item.message)
-                .style(.roboto(.body), .black, .center)
-            
-            Spacer(minLength: 10)
-        }
-    }
-    
     var nextButton: some View {
-        Text(viewModel.isLastStep ? Localizable.start_swimming : Localizable.next)
+        Text(viewModel.buttonTitle)
             .style(.roboto(.display1, .bold), .white, .center)
             .padding(8)
             .frame(maxWidth: .infinity)
@@ -64,20 +45,17 @@ private extension OnboardingView {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.brand)
             )
+            .contentShape(RoundedRectangle(cornerRadius: 10))
             .onTapGesture {
-                if viewModel.isLastStep {
-                    viewModel.goToAuthorization()
-                } else {
-                    withAnimation(.linear(duration: 0.3)) {
-                        viewModel.currentStep += 1
-                    }
-                }
+                viewModel.nextTapped()
             }
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(viewModel: .init())
+        OnboardingView(viewModel: .init(.fromAbout))
+        
+        OnboardingView(viewModel: .init(.fromAppLaunch))
     }
 }

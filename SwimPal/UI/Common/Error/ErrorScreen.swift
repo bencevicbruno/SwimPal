@@ -15,6 +15,10 @@ struct ErrorScreen: View {
         self.data = data
     }
     
+    init(_ error: Error) {
+        self.data = .init(title: "Error", message: error.localizedDescription, illustration: "illustration_error")
+    }
+    
     init(for coordinator: String) {
         self.data = .init(title: "Error", message: "It seems like \(coordinator) is in a wierd state.", illustration: "illustration_error")
     }

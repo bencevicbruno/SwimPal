@@ -26,4 +26,15 @@ extension String {
     static var loremIpsumShort: String {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
+    
+    func localized() -> String {
+        @Dependency var persistenceService: PersistenceServiceProtocol
+        
+        let lang = persistenceService.language.rawValue
+        
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }
 }

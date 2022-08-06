@@ -18,6 +18,14 @@ final class PersistenceService: PersistenceServiceProtocol {
         }
     }
     
+    var unitSystem: UnitSystem {
+        get {
+            UserDefaults.standard.load(.unitSystem) ?? .metric
+        } set {
+            UserDefaults.standard.save(newValue, .unitSystem)
+        }
+    }
+    
     var didShowOnboarding: Bool {
         get {
             UserDefaults.standard.load(.didShowOnboarding) ?? false

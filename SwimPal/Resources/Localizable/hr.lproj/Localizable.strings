@@ -1,0 +1,95 @@
+// MARK: - Common
+"cancel" = "Odustani";
+"clear" = "Obriši";
+"log_out" = "Odjavi se";
+"no" = "Ne";
+"other" = "Ostalo";
+"yes" = "Da";
+
+// MARK: - Miscellaneous
+"confirmation_log_out_title" = "Odjava";
+"confirmation_log_out_message" = "Želite li se odjaviti?";
+
+"start_training" = "Započni trening";
+
+// MARK: - Home
+"greeting_without_name" = "Pozdrav!";
+"greeting_with_name" = "Pozdrav, %s!";
+
+"welcome_to" = "Welcome to";
+"continue_with_google" = "Continue with Google";
+"about" = "Generalno";
+"not_available_abbr" = "N/A";
+
+
+
+"no_internet" = "No Internet";
+"no_internet_msg" = "Sorry, but it seems there's no connection to the internet. Please try again.";
+"no_statistics" = "No Statistics available";
+"no_statistics_msg" = "There are no trainings recorded. Start a new training and track your progress!";
+"achievements" = "Achievements";
+"no_achievements" = "No Achivements available";
+"no_achievements_msg" = "Just keep swimmin', just keep swimmin'...";
+
+"training" = "Training";
+"trainings" = "Trainings";
+
+// MARK: - Training Category
+"training_category_lifeguard" = "Spasioc";
+"training_category_everything4x" = "4x Sve";
+"training_category_endurance" = "Izdržljivost";
+"training_category_tooFastForYou" = "2Fast4You";
+"training_category_random" = "Nasumično";
+"training_category_custom" = "Kostumizirano";
+"training_category_lifeguard_description" = "Ovi treninzi imaju vremensko ograničenje. Morate biti dovoljno brzi prije nego dobijete licencu za spasioca.";
+"training_category_everything4x_description" = "Koliko brzo možeš otplivati kraul?";
+"training_category_endurance_description" = "Provjeri koliko dugo možeš plivati.";
+"training_category_tooFastForYou_description" = "Provjeri tko je brži: Michael Phelphs ili ti?";
+"training_category_random_description" = "Imaj na umu da je trening nasumično napravljen. Nije zagarantirano da je fizički moguće ovo otplivati.";
+"training_category_custom_description" = "Napravi svoj trening i plivaj što želiš, koliko god želiš.";
+
+// MARK: - Statistics
+"title_statistics" = "Statistika";
+"wip_statistics_title" = "Time goes by...\nSo slowly...";
+"wip_statistics_message" = "Ajmo pričekati da izađe iOS 16 da možemo koristiti SwiftUI grafove, šta kažeš?";
+
+// MARK: - Achivements
+"title_achievements" = "Postignuća";
+"wip_achievements_title" = "U izradi";
+"wip_achievements_message" = "Mislim da cijelo ljeto nije bilo dovoljno za razvoj sustava postignuća.";
+
+// MARK: - Settings
+"title_settings" = "Postavke";
+
+"setting_language" = "Jezik";
+"select_language" = "Odaberi jezik";
+"language_english" = "Engleski";
+"language_croatian" = "Hrvatski";
+
+"setting_unit_system" = "Sustav jedinica";
+"select_unit_system" = "Odaberi sustav jedinica";
+"unit_system_metric" = "Metrički";
+"unit_system_imperial" = "Imperijalni";
+
+// MARK: - Onboarding
+"title_onboarding" = "Uvod";
+
+"onboarding_step_1_title" = "Dobro došli!";
+"onboarding_step_1_message" = "SwimPal je tvoj osobni asistent! Bilježi svoje treninge za lakše praćenje napretka. Svaki metar je bitan!";
+"onboarding_step_2_title" = "Prati napredak!";
+"onboarding_step_2_message" = "SwimPal ti daje vizualnu prezentaciju tvog napretka uz grafove i ostale podatke za koje ne bi imali vremena sami bilježiti.";
+"onboarding_step_3_title" = "Najvažnije...";
+"onboarding_step_3_message" = "Niša nije bolje od osjećaja napretka i uspijeha. Uživaj sa SwimPalom i samo nastavi plivati!";
+
+// MARK: - About
+"title_about" = "O aplikaciji";
+
+"about_section_1_title" = "Zašto je ova aplikacija napravljena";
+"about_section_1_text" = "SwimPal je napravljen za projekt za kolegij *Razvoj Mobilnih Aplikacija* na Fakultetu elektrotehnike, računarstva i informacijskih tehnologija.";
+"about_section_2_title" = "Koje tehničke značajke sadrži?";
+"about_section_2_text" = "Ova aplikacija je napravljena koristeći Figmu za dizajn, **SwiftUI za UI kombinirano s MVVM-C arhitekturom**. Sadrži trikove i primjere za pravljene modala, validatora teksta, tokena za osvježavanje, lokalizacije, kostumiziranih SwiftUI modifikatora i služi za tetstiranje implementacija servisa podataka industrijskog standarda s ciljem uklanjanja Alamofire-a iz razvoja aplikacija.";
+"about_section_3_title" = "Gdje mogu pronaći izvorni kod?";
+"about_section_3_text" = "Izvorni kod se nalazi [ovdje](https://github.com/bencevicbruno/SwimPal). Jedine biblioteke trećeg izvora su Googleov Firebase i GoogleSignIn. Sve ikone i ilustracije su preuzete besplatno s Figma Communityja.";
+"about_section_3_text_preIOS15" = "Izvorni kod se nalazi na https://github.com/bencevicbruno/SwimPal. Jedine biblioteke trećeg izvora su Googleov Firebase i GoogleSignIn. Sve ikone i ilustracije su preuzete besplatno s Figma Communityja.";
+"about_section_4_title" = "Koja je budućnost SwimPala";
+"about_section_4_text" = "Prvo, statistika i postignuća bi se morali implementirati, ali tek nakon što izađe iOS 16 i SwiftUI ChartKit. Osim toga, servis za podatke bi se trebao unaprijediti kako bi se omogućio pristup udaljenim podacima umjesto pohrane podataka na uređaju.";

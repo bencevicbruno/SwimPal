@@ -9,6 +9,7 @@ import Foundation
 
 enum FileManagerServiceError: Error {
     case fileNotFound
+    case filesNotFound
     case dataCorrupted
     case cannotEncode
     case invalidURL

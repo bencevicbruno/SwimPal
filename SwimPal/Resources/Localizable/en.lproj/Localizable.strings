@@ -1,15 +1,33 @@
+// MARK: - Common
+"cancel" = "Cancel";
+"clear" = "Clear";
+"log_out" = "Log Out";
+"no" = "No";
+"other" = "Other";
+"yes" = "Yes";
+
+// MARK: - Miscellaneous
+"confirmation_log_out_title" = "Log Out";
+"confirmation_log_out_message" = "Are you sure you want to log out?";
+
+"start_training" = "Start Training";
+
+// MARK: - Home
+"greeting_without_name" = "Hello!";
+"greeting_with_name" = "Hello, %s!";
 
 "welcome_to" = "Welcome to";
 "continue_with_google" = "Continue with Google";
 "about" = "About";
 "not_available_abbr" = "N/A";
 
-"onboarding_title_first" = "Welcome!";
-"onboarding_title_second" = "Track Progress!";
-"onboarding_title_third" = "Most importantly...";
-"onboarding_message_first" = "Use SwimPal as your personal assistant! Mark your trainings for easier training tracking. Every mile counts!";
-"onboarding_message_second" = "SwimPal offers you visual presentation of your progress providing you with all sorts of graphs and data you would not have time to track yourself.";
-"onboarding_message_third" = "Nothing is better than the feeling of improvement and success. Have fun with SwimPal and just keep swimming!";
+"language" = "Language";
+"unit_system" = "Unit System";
+"unit_system_option_metric" = "Metric";
+"unit_system_option_imperial" = "Imperial";
+
+"language_option_english" = "English";
+"language_option_croatian" = "Croatian";
 
 "no_internet" = "No Internet";
 "no_internet_msg" = "Sorry, but it seems there's no connection to the internet. Please try again.";
@@ -21,6 +39,8 @@
 
 "training" = "Training";
 "trainings" = "Trainings";
+
+// MARK: - Training Category
 "training_category_lifeguard" = "Lifeguard";
 "training_category_everything4x" = "4x Everything";
 "training_category_endurance" = "Endurance";
@@ -34,14 +54,47 @@
 "training_category_random_description" = "Be aware that this training is randomly generated. It is not guaranteed that it's posibble to even complete it.";
 "training_category_custom_description" = "Create your own training. You can do whatever you want.";
 
-"start_training" = "Start Training";
 
-"settings" = "Settings";
 
+
+
+
+
+// MARK: - Statistics
+"title_statistics" = "Statistics";
+"wip_statistics_title" = "Time goes by...\nSo slowly...";
+"wip_statistics_message" = "Let's wait until Apple releases iOS 16 so we can use SwiftUI charts, shall we?";
+
+// MARK: - Achivements
+"title_achievements" = "Achivements";
+"wip_achievements_title" = "Work in progress";
+"wip_achievements_message" = "I guess the whole summer wasn't enough to develop an achievement system.";
+
+// MARK: - Settings
+"title_settings" = "Settings";
+
+"setting_language" = "Language";
 "select_language" = "Select Language";
+"language_english" = "English";
+"language_croatian" = "Croatian";
 
-"log_out" = "Log Out";
-"log_out_msg" = "Are you sure you want to log out?";
+"setting_unit_system" = "Unit System";
+"select_unit_system" = "Select Unit System";
+"unit_system_metric" = "Metric";
+"unit_system_imperial" = "Imperial";
+
+// MARK: - Onboarding
+"title_onboarding" = "Onboarding";
+
+"onboarding_step_1_title" = "Welcome!";
+"onboarding_step_1_message" = "Use SwimPal as your personal assistant! Mark your trainings for easier training tracking. Every meter counts!";
+"onboarding_step_2_title" = "Track Progress!";
+"onboarding_step_2_message" = "SwimPal offers you visual presentation of your progress providing you with all sorts of graphs and data you would not have time to track yourself.";
+"onboarding_step_3_title" = "Most importantly...";
+"onboarding_step_3_message" = "Nothing is better than the feeling of improvement and success. Have fun with SwimPal and just keep swimming!";
+
+// MARK: - About
+"title_about" = "About";
 
 "about_section_1_title" = "Why was this app made?";
 "about_section_1_text" = "SwimPal was made as a project for the mandatory lecture *Development of Mobile Application* at the Faculty of Electrical Engineering, Computer Science and Information Technology.";

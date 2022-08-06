@@ -11,11 +11,10 @@ struct SwimPaltests: View {
     
     @State private var scrollViewOffset: CGPoint = .zero
     
+    @State private var text = "Lets go"
+    
     var body: some View {
-        Button("Tap on me") {
-            
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        ActivityOverlay()
     }
 }
 

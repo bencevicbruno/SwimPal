@@ -26,13 +26,13 @@ final class HomeCoordinator: ObservableObject {
             self?.activeTrainingCoordinator = nil
         }
         
-        activeTrainingCoordinator!.onTrainingSaved = { [weak self] training in
-            self?.goToTrainingSummary(training: training)
+        activeTrainingCoordinator!.onTrainingSaved = { [weak self] id in
+            self?.goToTrainingSummary(id: id)
         }
     }
     
-    func goToTrainingSummary(training: Training) {
-        trainingSummaryCoordinator = TrainingSummaryCoordinator(training: training)
+    func goToTrainingSummary(id: UUID) {
+        trainingSummaryCoordinator = TrainingSummaryCoordinator(trainingID: id)
         
         trainingSummaryCoordinator!.onDismissed = { [weak self] in
             self?.trainingSummaryCoordinator = nil

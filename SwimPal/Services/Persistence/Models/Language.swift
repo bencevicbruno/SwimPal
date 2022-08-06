@@ -7,7 +7,16 @@
 
 import Foundation
 
-enum Language: String, Codable {
+enum Language: String, Codable, CaseIterable {
     case english = "en"
-    case croatian = "cro"
+    case croatian = "hr"
+    
+    var title: String {
+        switch self {
+        case .english:
+            return Localizable.language_english
+        case .croatian:
+            return Localizable.language_croatian
+        }
+    }
 }

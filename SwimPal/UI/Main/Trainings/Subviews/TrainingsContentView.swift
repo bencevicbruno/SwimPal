@@ -76,6 +76,6 @@ private extension TrainingsContentView {
 
 struct TrainingsContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingsContentView(headerData: .init(totalDistance: .zero, totalTime: .zero, maxSpeed: .zero, favoriteCategory: .random), trainings: [.random, .random, .random])
+        TrainingsContentView(headerData: .init(totalDistance: .zero, totalTime: .zero, maxSpeed: .zero, favoriteCategory: .randomCase), trainings: [.random, .random, .random])
     }
 }

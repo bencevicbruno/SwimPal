@@ -23,9 +23,6 @@ struct TrainingsView: View {
         .trainingSelectionSheet($viewModel.trainingSelectionData)
         .optionsSheet($viewModel.optionsData)
         .confirmationSheet($viewModel.confirmationData)
-        .onAppear {
-            
-        }
     }
     
     init(_ viewModel: TrainingsViewModel) {
@@ -45,13 +42,15 @@ private extension TrainingsView {
     
     @ViewBuilder
     var content: some View {
-        if let error = viewModel.error {
-            TrainingsErrorView()
-        } else if viewModel.trainings.isEmpty {
-            TrainingsEmptyView(onStartTrainingTapped: viewModel.startTrainingTapped)
-        } else {
-            TrainingsContentView(headerData: viewModel.headerData, trainings: viewModel.trainings, onTrainingCellTapped: viewModel.trainingCellTapped, onTrainingCellOptionsTapped: viewModel.trainingCellOptionsTapped, onStartTrainingTapped: viewModel.startTrainingTapped)
+        Group {
+            if viewModel.trainings.isEmpty {
+                TrainingsEmptyView(onStartTrainingTapped: viewModel.startTrainingTapped)
+            } else {
+                TrainingsContentView(headerData: viewModel.headerData, trainings: viewModel.trainings, onTrainingCellTapped: viewModel.trainingCellTapped, onTrainingCellOptionsTapped: viewModel.trainingCellOptionsTapped, onStartTrainingTapped: viewModel.startTrainingTapped)
+            }
         }
+        .activityIndicator(viewModel.isActivityRunning)
+        .errorSnack($viewModel.error)
     }
 }
 

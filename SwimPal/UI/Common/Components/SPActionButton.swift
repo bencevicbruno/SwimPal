@@ -33,7 +33,7 @@ struct SPActionButton: View {
             Spacer(minLength: 0)
             
             if iconName == nil {
-                Image("icon_action")
+                Image("icon_action_white")
                     .frameForIcon()
             }
         }

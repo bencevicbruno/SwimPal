@@ -27,7 +27,7 @@ final class RootCoordinator: ObservableObject {
     }
     
     func goToOnboarding() {
-        onboardingCoordinator = OnboardingCoordinator()
+        onboardingCoordinator = OnboardingCoordinator(.fromAppLaunch)
         authorizationCoordinator = nil
         mainCoordinator = nil
         

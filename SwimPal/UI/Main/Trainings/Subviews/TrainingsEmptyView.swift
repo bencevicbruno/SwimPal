@@ -36,6 +36,7 @@ struct TrainingsEmptyView: View {
             Spacer()
         }
         .padding(.horizontal, 30)
+        .padding(.bottom, MainTabBar.height + UIScreen.bottomUnsafePadding)
     }
 }
 

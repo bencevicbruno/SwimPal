@@ -11,7 +11,7 @@ final class MainCoordinator: ObservableObject {
     
     @Published var homeCoordinator = HomeCoordinator()
     @Published var trainingCoordinator = TrainingsCoordinator()
-    @Published var profileCoordinator = ProfileCoordinator()
+    @Published var generalCoordinator = GeneralCoordinator()
     
     @Published var currentTab: MainTab = .home
     @Published var isTabBarHidden = false
@@ -19,14 +19,8 @@ final class MainCoordinator: ObservableObject {
     var onGoToAuthorization: EmptyCallback?
     
     private init() {
-        profileCoordinator.onGoToAuthorization = { [weak self] in
+        generalCoordinator.onGoToAuthorization = { [weak self] in
             self?.onGoToAuthorization?()
-        }
-        
-        profileCoordinator.onStartTraining = { [weak self] category in
-            guard let self = self else { return }
-            self.currentTab = .trainings
-            self.trainingCoordinator.startTraining(category: category)
         }
     }
     
@@ -64,7 +58,7 @@ struct MainCoordinatorView: View {
                         }
                         .tag(MainTab.trainings)
                     
-                    ProfileCoordinatorView(coordinator.profileCoordinator)
+                    GeneralCoordinatorView(coordinator.generalCoordinator)
                         .tabItem {
                             Image(systemName: "person")
                             Text("Profile")

@@ -9,7 +9,7 @@ import Foundation
 
 extension CaseIterable {
     
-    static var random: Self {
+    static var randomCase: Self {
         allCases.randomElement()!
     }
 }

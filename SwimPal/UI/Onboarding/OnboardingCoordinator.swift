@@ -9,16 +9,26 @@ import SwiftUI
 
 final class OnboardingCoordinator: ObservableObject {
     
+    var onDismissed: EmptyCallback?
     var onGoToAuthorization: EmptyCallback?
     
-    @Published var viewModel = OnboardingViewModel()
+    @Published var viewModel: OnboardingViewModel
     
     @Dependency var persistenceService: PersistenceServiceProtocol
     
-    init() {
+    init(_ flow: OnboardingFlow) {
+        viewModel = OnboardingViewModel(flow)
+        viewModel.onDismissed = { [weak self] in
+            self?.onDismissed?()
+        }
+        
         viewModel.onGoToAuthorization = { [weak self] in
             self?.goToAuthorization()
         }
+    }
+    
+    func dismiss() {
+        onDismissed?()
     }
     
     func goToAuthorization() {

@@ -25,21 +25,12 @@ struct ConfirmationData {
 
 extension View {
     
-    func confirmationSheet(_ data: Binding<ConfirmationData?>) -> some View {
-        let isVisible = Binding(
-            get: { data.wrappedValue != nil },
-            set: { value in
-                if !value {
-                    data.wrappedValue = nil
-                }
-            }
-        )
-        
-        return ZStack {
+    func confirmationSheet(_ dataBinding: Binding<ConfirmationData?>) -> some View {
+        ZStack {
             self
             
-            if let data = data.wrappedValue {
-                ConfirmationSheet(isVisible, data: data)
+            if let data = dataBinding.wrappedValue {
+                ConfirmationSheet(.forVisibility(dataBinding), data: data)
             }
         }
     }

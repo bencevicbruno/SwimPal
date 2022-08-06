@@ -30,5 +30,7 @@
 		<string>Roboto-Black.ttf</string>
 		<string>Roboto-BlackItalic.ttf</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

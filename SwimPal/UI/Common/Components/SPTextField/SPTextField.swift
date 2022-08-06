@@ -12,6 +12,7 @@ struct SPTextField: View {
     let title: String?
     let hint: String?
     let height: CGFloat = 60
+    let showClearButtton: Bool
     
     let validators: [TextFieldValidatorProtocol]
     
@@ -20,18 +21,20 @@ struct SPTextField: View {
     @State private var infoMessage: String?
     @State private var isValid: Bool = true
     
-    init(title: String? = nil, hint: String? = nil, _ text: Binding<String>, validators: TextFieldValidatorProtocol) {
+    init(title: String? = nil, hint: String? = nil, _ text: Binding<String>, validators: TextFieldValidatorProtocol, showClearButton: Bool = false) {
         self.title = title
         self.hint = hint
         self._text = text
         self.validators = [validators]
+        self.showClearButtton = showClearButton
     }
     
-    init(title: String? = nil, hint: String? = nil, _ text: Binding<String>, validators: [TextFieldValidatorProtocol] = []) {
+    init(title: String? = nil, hint: String? = nil, _ text: Binding<String>, validators: [TextFieldValidatorProtocol] = [], showClearButton: Bool = false) {
         self.title = title
         self.hint = hint
         self._text = text
         self.validators = validators
+        self.showClearButtton = showClearButton
     }
     
     var body: some View {
@@ -44,16 +47,29 @@ struct SPTextField: View {
                     RoundedCorner(radius: 10, corners: [.topLeft, .topRight])
                         .fill(.white)
                         .padding([.top, .horizontal], 2)
+                    
+                    HStack(spacing: 0) {
+                        TextField(hint ?? "", text: $text)
+                            .disableAutocorrection(true)
+                            .font(.roboto(.headline2))
+                            .textFieldStyle(.plain)
                         
-                    TextField(hint ?? "", text: $text)
-                        .disableAutocorrection(true)
-                        .font(.roboto(.headline2))
-                        .textFieldStyle(.plain)
-                        .frame(height: height - 10)
-                        .background(Color.white)
-                        .padding(.bottom, 4)
-                        .background(borderColor)
-                        .padding(.horizontal, 10)
+                        Spacer(minLength: 10)
+                        
+                        if showClearButtton {
+                            Text(Localizable.clear)
+                                .style(.roboto(.body, .bold), .brand, .leading)
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    text = ""
+                                }
+                        }
+                    }
+                    .frame(height: height - 10)
+                    .background(Color.white)
+                    .padding(.bottom, 4)
+                    .background(borderColor)
+                    .padding(.horizontal, 10)
                 }
                 .frame(height: height)
                 .padding(.top, title == nil ? 0 : 12.5)
@@ -61,9 +77,9 @@ struct SPTextField: View {
                 if let title = title {
                     Text(title)
                         .style(.roboto(.body, .bold), .brand, .leading)
-                    .padding(.horizontal, 5)
-                    .background(Color.white)
-                    .padding(.leading, 10)
+                        .padding(.horizontal, 5)
+                        .background(Color.white)
+                        .padding(.leading, 10)
                 }
             }
             
@@ -74,7 +90,6 @@ struct SPTextField: View {
             }
         }
         .onChange(of: text) { newText in
-            text = newText.trimmingCharacters(in: .whitespaces)
             checkIfValid()
         }
     }

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum OnboardingFlow {
+    case fromAppLaunch
+    case fromAbout
+}
+
 struct OnboardingItem: Identifiable {
     let title: String
     let message: String
@@ -17,31 +22,58 @@ struct OnboardingItem: Identifiable {
 
 final class OnboardingViewModel: ObservableObject {
     
+    var onDismissed: EmptyCallback?
     var onGoToAuthorization: EmptyCallback?
     
     @Published var currentStep = 0
+    @Published private(set) var buttonTitle = Localizable.next
     
-    init() {
-        
+    let flow: OnboardingFlow
+    
+    init(_ flow: OnboardingFlow) {
+        self.flow = flow
     }
     
     let items: [OnboardingItem] = [
-        .init(title: Localizable.onboarding_title_first,
-              message: Localizable.onboarding_message_first,
+        .init(title: Localizable.onboarding_step_1_title,
+              message: Localizable.onboarding_step_1_message,
               illustrationName: "illustration_error"),
-        .init(title: Localizable.onboarding_title_second,
-              message: Localizable.onboarding_message_second,
+        .init(title: Localizable.onboarding_step_2_title,
+              message: Localizable.onboarding_step_2_message,
               illustrationName: "illustration_error"),
-        .init(title: Localizable.onboarding_title_third,
-              message: Localizable.onboarding_message_third,
+        .init(title: Localizable.onboarding_step_3_title,
+              message: Localizable.onboarding_step_3_message,
               illustrationName: "illustration_error")
     ]
     
     var isLastStep: Bool {
         currentStep == items.count - 1
     }
+}
+
+//MARK: - User Interactions
+extension OnboardingViewModel {
     
-    func goToAuthorization() {
-        onGoToAuthorization?()
+    func xTapped() {
+        onDismissed?()
+    }
+    
+    func nextTapped() {
+        if isLastStep {
+            if flow == .fromAbout {
+                onDismissed?()
+            } else {
+                onGoToAuthorization?()
+            }
+            
+        } else {
+            withAnimation(.easeInOut) {
+                currentStep += 1
+            }
+            
+            if isLastStep {
+                buttonTitle = "Done"
+            }
+        }
     }
 }

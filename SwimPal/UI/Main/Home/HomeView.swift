@@ -16,7 +16,7 @@ struct HomeView: View {
             content
                 .padding(.top, MainTitle.totalHeight)
             
-            MainTitle("Hello, \(viewModel.userName)!")
+            MainTitle(viewModel.title)
         }
         .setupView()
     }

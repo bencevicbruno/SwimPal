@@ -92,7 +92,7 @@ private extension TrainingCell {
 
 struct TrainingCell_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingCell(.init(name: "4x Everything", time: Time(1000, .seconds).and(4, .hours), location: .init(name: "Gradski bazeni"), category: .random, exercises: Training.Category.lifeguard.excercises), onTapped: nil)
+        TrainingCell(.init(name: "4x Everything", time: Time(1000, .seconds).and(4, .hours), location: .init(name: "Gradski bazeni"), category: .randomCase, exercises: Training.Category.lifeguard.excercises), onTapped: nil)
             .addShadow(.small)
             .padding()
     }
