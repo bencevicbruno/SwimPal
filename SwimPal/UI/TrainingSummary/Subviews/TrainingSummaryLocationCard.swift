@@ -17,18 +17,19 @@ struct TrainingSummaryLocationCard: View {
     }
     
     var body: some View {
-        TrainingSummaryCardBase("Location", iconName: "icon_location") {
+        TrainingSummaryCardBase(Localizable.location, iconName: "icon_location") {
             VStack(alignment: .leading, spacing: 10) {
                 Text(location.name)
                     .style(.roboto(.headline2, .medium), .black, .leading)
                 
                 if let latitude = location.latitude,
                    let longitude = location.longitude {
-                    Map(coordinateRegion: .constant(.init(center: .init(latitude: latitude, longitude: longitude), span: .init(latitudeDelta: 0.01, longitudeDelta: 0.01))))
+                    Map(coordinateRegion: .constant(.init(center: .init(latitude: latitude, longitude: longitude), span: .init(latitudeDelta: 0.5, longitudeDelta: 0.5))))
                         .frame(maxWidth: .infinity)
                         .aspectRatio(1.0, contentMode: .fit)
                         .allowsHitTesting(false)
                         .clipShape(.roundedRectangle(15))
+                        .overlay(Image("icon_location").frameForIcon())
                 }
             }
         }

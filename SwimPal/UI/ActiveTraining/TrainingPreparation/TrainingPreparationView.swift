@@ -13,8 +13,7 @@ struct TrainingPreparationView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavigationBar("Are you ready?", onXTapped: viewModel.dismiss)
-//                .addShadow()
+            NavigationBar(Localizable.are_you_ready, onXTapped: viewModel.dismiss)
             
             ScrollView(.vertical) {
                 content
@@ -22,7 +21,7 @@ struct TrainingPreparationView: View {
             }
             .frame(maxHeight: .infinity)
             
-            BigBottomButton("Let's go", isEnabled: viewModel.excercises.count != 0, onTapped: viewModel.startTraining)
+            BigBottomButton(Localizable.lets_go, isEnabled: viewModel.excercises.count != 0, onTapped: viewModel.startTraining)
                 .addShadow()
         }
         .setupView()
@@ -49,7 +48,7 @@ private extension TrainingPreparationView {
     
     var excercisesTitle: some View {
         HStack(spacing: 0) {
-            Text(viewModel.excercises.count == 0 ? "Tap + to add Trainings" : "What you'll do")
+            Text(viewModel.excercises.count == 0 ? Localizable.tap_add_exercises : Localizable.what_youll_do)
                 .style(.roboto(.headline1, .bold), .brand, .leading)
             
             Spacer(minLength: 0)
@@ -59,7 +58,7 @@ private extension TrainingPreparationView {
     
     var exercisesTable: some View {
         LazyVStack(spacing: 2) {
-            TrainingExcerciseList(excercises: viewModel.excercises)
+            TrainingExcerciseList(exercises: viewModel.excercises, allInProgress: true)
             
             if viewModel.category == .custom {
                 addExcerciseCell

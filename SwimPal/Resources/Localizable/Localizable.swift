@@ -11,15 +11,28 @@ enum Localizable {
     
     // MARK: - Common
     static var cancel: String { "cancel".localized() }
+    static var category: String { "category".localized() }
     static var clear: String { "clear".localized() }
+    static var discard: String { "discard".localized() }
+    static var distance: String { "distance".localized() }
+    static var done: String { "done".localized() }
+    static var confirm: String { "confirm".localized() }
     static var log_out: String { "log_out".localized() }
+    static var name: String { "name".localized() }
     static var no: String { "no".localized() }
     static var other: String { "other".localized() }
+    static var select: String { "select".localized() }
+    static var time: String { "time".localized() }
     static var yes: String { "yes".localized() }
     
     // MARK: - Miscellaneous
+    static var watch_wanna_do: String { "watch_wanna_do".localized() }
+    static var delete_training: String { "delete_training".localized() }
+    static var share_training: String { "share_training".localized() }
     static var confirmation_log_out_title: String { "confirmation_log_out_title".localized() }
     static var confirmation_log_out_message: String { "confirmation_log_out_message".localized() }
+    static var confirmation_delete_training_title: String { "confirmation_delete_training_title".localized() }
+    static var confirmation_delete_training_message: String { "confirmation_delete_training_message".localized() }
     
     static var start_training: String { "start_training".localized() }
     
@@ -36,15 +49,39 @@ enum Localizable {
     static var password: String { "password".localized() }
     static var repeat_password: String { "repeat_password".localized() }
     static var register_msg: String { "register_msg".localized() }
-    static var confirm: String { "confirm".localized() }
     static var ok: String { "ok".localized() }
     static var retry: String { "retry".localized() }
     static var next: String { "next".localized() }
     static var start_swimming: String { "start_swimming".localized() }
-    static var about: String { "about".localized() }
     
+    // MARK: - Trainings
     static var training: String { "training".localized() }
     static var trainings: String { "trainings".localized() }
+    static var are_you_ready: String { "are_you_ready".localized() }
+    static var lets_go: String { "lets_go".localized() }
+    static var tap_add_exercises: String { "tap_add_exercises".localized() }
+    static var what_youll_do: String { "what_youll_do".localized() }
+    static var add_exercise: String { "add_exercise".localized() }
+    static var exercise: String { "exercise".localized() }
+    static var select_exercise: String { "select_exercise".localized() }
+    static var choose_distance: String { "choose_distance".localized() }
+    static var pick_time: String { "pick_time".localized() }
+    static var amount: String { "amount".localized() }
+    static var change: String { "change".localized() }
+    static var optional: String { "optional".localized() }
+    static var repetitions: String { "repetitions".localized() }
+    static var time_limit: String { "time_limit".localized() }
+    static var no_limit: String { "no_limit".localized() }
+    static var meters: String { "meters".localized() }
+    static var minute: String { "minute".localized() }
+    static var minutes: String { "minutes".localized() }
+    static var confirmation_discard_training_title: String { "confirmation_discard_training_title".localized() }
+    static var confirmation_discard_training_message: String { "confirmation_discard_training_message".localized() }
+    static var add_details: String { "add_details".localized() }
+    static var add_notes: String { "add_notes".localized() }
+    static var enter_name: String { "enter_name".localized() }
+    static var confirmation_cancel_training_title: String { "confirmation_cancel_training_title".localized() }
+    static var confirmation_cancel_training_message: String { "confirmation_cancel_training_message".localized() }
     
     // MARK: - Training Category
     static var training_category_lifeguard: String { "training_category_lifeguard".localized() }
@@ -61,7 +98,15 @@ enum Localizable {
     static var training_category_random_description: String { "training_category_random_description".localized() }
     static var training_category_custom_description: String { "training_category_custom_description".localized() }
     
-    
+    static var exercise_style_freestyle: String { "exercise_style_freestyle".localized() }
+    static var exercise_style_backStroke: String { "exercise_style_backStroke".localized() }
+    static var exercise_style_chestStroke: String { "exercise_style_chestStroke".localized() }
+    static var exercise_style_butterfly: String { "exercise_style_butterfly".localized() }
+    static var exercise_style_dry: String { "exercise_style_dry".localized() }
+    static var exercise_style_rest: String { "exercise_style_rest".localized() }
+    static var exercise_style_stretching: String { "exercise_style_stretching".localized() }
+    static var exercise_style_diving: String { "exercise_style_diving".localized() }
+    static var exercise_style_sprint: String { "exercise_style_sprint".localized() }
     
     static var no_internet: String { "no_internet".localized() }
     static var no_internet_msg: String { "no_internet_msg".localized() }
@@ -73,11 +118,18 @@ enum Localizable {
     static var no_achievements: String { "no_achievements".localized() }
     static var no_achievements_msg: String { "no_achievements_msg".localized() }
     
-    static var settings: String { "settings".localized() }
+    // MARK: - Training Summary
+    static var training_summary: String { "training_summary".localized() }
+    static var exercises: String { "exercises".localized() }
+    static var notes: String { "notes".localized() }
     
-    
-    
-    
+    // MARK: - Location Picker
+    static var location: String { "location".localized() }
+    static var pick_location: String { "pick_location".localized() }
+    static var tap_to_search: String { "tap_to_search".localized() }
+    static var no_result_found: String { "no_result_found".localized() }
+    static var search_on_map: String { "search_on_map".localized() }
+    static var insert_location_name: String { "insert_location_name".localized() }
     
     // MARK: - Statistics
     static var title_statistics: String { "title_statistics".localized() }

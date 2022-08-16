@@ -19,6 +19,10 @@ final class LocationPickerCoordinator: ObservableObject {
             self?.dismiss()
         }
         
+        viewModel.onLocationPicked = { [weak self] location in
+            self?.dismiss(location: location)
+        }
+        
         viewModel.onGoToMapLocationPicker = { [weak self] in
             self?.goToMapLocationPicker()
         }
@@ -31,9 +35,14 @@ final class LocationPickerCoordinator: ObservableObject {
             self?.mapLocationPickerViewModel = nil
         }
         
-        mapLocationPickerViewModel!.onExit = { [weak self] newLocation in
-            self?.dismiss(location: newLocation)
-            self?.mapLocationPickerViewModel = nil
+        mapLocationPickerViewModel!.onDismissedAll = { [weak self] in
+            guard let self = self else { return }
+            self.mapLocationPickerViewModel = nil
+            self.dismiss()
+        }
+        
+        mapLocationPickerViewModel?.onLocationPicked = { [weak self] location in
+            self?.dismiss(location: location)
         }
     }
     
@@ -49,7 +58,7 @@ struct LocationPickerCoordinatorView: View {
     var body: some View {
         NavigationView {
             LocationPickerView(viewModel: coordinator.viewModel)
-                .present(item: $coordinator.mapLocationPickerViewModel) {
+                .push(item: $coordinator.mapLocationPickerViewModel) {
                     MapLocationPickerView(viewModel: $0)
                 }
         }

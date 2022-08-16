@@ -28,11 +28,13 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 private extension AppDelegate {
     
     func setupDependencyContainer() {
+        DependencyContainer.register(type: DataServiceProtocol.self, DataService())
         DependencyContainer.register(type: FileManagerService.self, FileManagerService())
         DependencyContainer.register(type: AuthorizationServiceProtocol.self, AuthorizationService())
         DependencyContainer.register(type: LocationService.self, LocationService())
         DependencyContainer.register(type: PersistenceServiceProtocol.self, PersistenceService())
         DependencyContainer.register(type: TrainingsServiceProtocol.self, TestTrainingService())
+        DependencyContainer.register(type: GeoNamesServiceProtocol.self, GeoNamesService())
     }
     
     func printFonts() {

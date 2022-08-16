@@ -13,11 +13,11 @@ struct LocationPickerView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavigationBar("Pick Location", onXTapped: viewModel.dismiss)
+            NavigationBar(Localizable.pick_location, onXTapped: viewModel.dismiss)
             
             ScrollView(.vertical) {
                 content
-                    .padding([.top, .horizontal], 10)
+                    .padding(10)
                     .padding(.bottom, UIScreen.bottomUnsafePadding)
             }
         }
@@ -34,7 +34,7 @@ private extension LocationPickerView {
     
     var content: some View {
         VStack(spacing: 15) {
-            SPTextField(title: "Location", hint: "Tap to search", $viewModel.searchText, showClearButton: true)
+            SPTextField(title: Localizable.location, hint: Localizable.tap_to_search, $viewModel.searchText, showClearButton: true)
                 .padding(.bottom, 10)
             
             resultTable
@@ -52,7 +52,7 @@ private extension LocationPickerView {
                 loadingIndicatorCell
             }
             
-            if !viewModel.searchText.isEmpty && !viewModel.isActivityRunning {
+            if viewModel.results.isEmpty && !viewModel.searchText.isEmpty {
                 emptyContentView
                     .frame(maxHeight: .infinity)
             }
@@ -85,7 +85,7 @@ private extension LocationPickerView {
                 .aspectRatio(1, contentMode: .fit)
                 .frame(maxWidth: UIScreen.width * 0.75)
             
-            Text("No results found.")
+            Text(Localizable.no_result_found)
                 .style(.roboto(.headline2, .bold), .brand, .center)
             
             Spacer()
@@ -93,7 +93,7 @@ private extension LocationPickerView {
     }
     
     var searchOnMapButton: some View {
-        Text("Search on Map")
+        Text(Localizable.search_on_map)
             .style(.roboto(.body, .bold), .brand, .center)
             .frame(maxWidth: .infinity, height: 60)
             .background(Color.gray242)

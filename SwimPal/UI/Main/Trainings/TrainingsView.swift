@@ -21,7 +21,7 @@ struct TrainingsView: View {
         .setupView()
         .edgesIgnoringSafeArea(.bottom)
         .trainingSelectionSheet($viewModel.trainingSelectionData)
-        .optionsSheet($viewModel.optionsData)
+        .newOptionsSheet($viewModel.optionsSheetData)
         .confirmationSheet($viewModel.confirmationData)
     }
     
@@ -46,7 +46,7 @@ private extension TrainingsView {
             if viewModel.trainings.isEmpty {
                 TrainingsEmptyView(onStartTrainingTapped: viewModel.startTrainingTapped)
             } else {
-                TrainingsContentView(headerData: viewModel.headerData, trainings: viewModel.trainings, onTrainingCellTapped: viewModel.trainingCellTapped, onTrainingCellOptionsTapped: viewModel.trainingCellOptionsTapped, onStartTrainingTapped: viewModel.startTrainingTapped)
+                TrainingsContentView(scrollingEnabled: viewModel.scrollingEnabled, headerData: viewModel.headerData, trainings: viewModel.trainings, onTrainingCellTapped: viewModel.trainingCellTapped, onTrainingCellOptionsTapped: viewModel.trainingCellOptionsTapped, onStartTrainingTapped: viewModel.startTrainingTapped)
             }
         }
         .activityIndicator(viewModel.isActivityRunning)

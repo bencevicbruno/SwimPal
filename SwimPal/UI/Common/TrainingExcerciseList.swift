@@ -10,6 +10,22 @@ import SwiftUI
 struct TrainingExcerciseList: View {
     
     let excercises: [Training.Excercise]
+    let allInProgress: Bool
+    
+    init(exercises: [Training.Excercise], allInProgress: Bool = false) {
+        self.allInProgress = allInProgress
+        
+        if allInProgress {
+            self.excercises = exercises.map {
+                var newExercise = $0
+                newExercise.isInProgress = allInProgress
+                return newExercise
+            }
+        } else {
+            self.excercises = exercises
+        }
+        
+    }
     
     var body: some View {
         LazyVStack(spacing: 8) {
@@ -29,6 +45,6 @@ struct TrainingExcerciseList_Previews: PreviewProvider {
         var excercises = Training.Category.lifeguard.excercises
         excercises[0].isInProgress = true
         
-        return TrainingExcerciseList(excercises: excercises)
+        return TrainingExcerciseList(exercises: excercises)
     }
 }

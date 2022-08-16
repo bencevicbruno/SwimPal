@@ -13,13 +13,22 @@ struct MapLocationPickerView: View {
     @ObservedObject var viewModel: MapLocationPickerViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
-            NavigationBar("Pick Location", onBackTapped: viewModel.dismiss, onXTapped: viewModel.exit)
-            
-            mapView
+        ZStack(alignment: .bottom) {
+            VStack(spacing: 0) {
+                NavigationBar(Localizable.pick_location, onBackTapped: viewModel.dismiss, onXTapped: viewModel.dismissAll)
+                
+                ZStack {
+                    mapView
+                    
+                    Image("icon_location")
+                        .frameForIcon()
+                }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .padding(.bottom, BigBottomButton.totalHeight)
             
-            BigBottomButton("Select", onTapped: viewModel.selectTapped)
+            BigBottomButton(Localizable.select, onTapped: viewModel.selectTapped)
+                .addShadow()
         }
         .setupView()
         .edgesIgnoringSafeArea(.bottom)

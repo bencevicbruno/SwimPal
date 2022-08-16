@@ -15,7 +15,7 @@ final class TrainingsViewModel: ObservableObject {
     @Published var error: Error?
     @Published var isActivityRunning = false
     @Published var trainingSelectionData: TrainingSelectionData?
-    @Published var optionsData: OptionsData?
+    @Published var optionsSheetData: NewOptionsSheetData?
     @Published var confirmationData: ConfirmationData?
     
     var onGoToStartTraining: ((Training.Category) -> Void)?
@@ -37,6 +37,10 @@ final class TrainingsViewModel: ObservableObject {
         reloadTrainings()
     }
     
+    var scrollingEnabled: Bool {
+        trainingSelectionData == nil && optionsSheetData == nil && confirmationData == nil
+    }
+    
     func saveTraining(_ training: Training) {
         self.trainings.append(training)
     }
@@ -54,19 +58,19 @@ final class TrainingsViewModel: ObservableObject {
     }
     
     func trainingCellOptionsTapped(trainingID: UUID) {
-        optionsData = .init(title: "Watcha wanna do?", items: [
-            .init(iconName: "icon_bin", title: "Delete Training"),
-            .init(iconName: "icon_share", title: "Share Training")
-        ]) { [weak self] option in
+        optionsSheetData = .init(title: Localizable.watch_wanna_do, options: [
+            .option(title: Localizable.delete_training, iconName: "icon_bin"),
+            .option(title: Localizable.share_training, iconName: "icon_share")
+        ], onOptionSelected: { [weak self] option in
             switch option {
             case 0:
                 self?.showDeleteTrainingConfirmation(trainingID: trainingID)
             case 1:
-                self?.showShareTrainingModal()
+                self?.showShareTrainingModal(trainingID: trainingID)
             default:
                 break;
             }
-        }
+        })
     }
 }
 
@@ -92,7 +96,7 @@ private extension TrainingsViewModel {
     }
     
     func showDeleteTrainingConfirmation(trainingID: UUID) {
-        confirmationData = .init(title: "Delete?", message: "Can not be undone") { [weak self] in
+        confirmationData = .init(title: Localizable.confirmation_delete_training_title, message: Localizable.confirmation_delete_training_message) { [weak self] in
             guard let self = self else { return }
             self.isActivityRunning = true
             
@@ -109,8 +113,15 @@ private extension TrainingsViewModel {
         }
     }
     
-    func showShareTrainingModal() {
+    func showShareTrainingModal(trainingID: UUID) {
+        guard let topMostViewController = UIApplication.topMostViewController else { return }
+        guard let training = trainings.first(where: { $0.id == trainingID }) else { return }
         
+        
+        let items = training.activityItems
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        ac.modalPresentationStyle = .overFullScreen
+        topMostViewController.present(ac, animated: true)
     }
     
     func updateTotals() {

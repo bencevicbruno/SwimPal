@@ -15,9 +15,8 @@ struct SwimPalApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootCoordinatorView(coordinator: rootCoordinator)
-                .preferredColorScheme(.light)
-//            SwimPaltests()
+            RootCoordinatorView(coordinator: rootCoordinator).preferredColorScheme(.light)
+//            SwimPaltests().preferredColorScheme(.light)
         }
     }
 }

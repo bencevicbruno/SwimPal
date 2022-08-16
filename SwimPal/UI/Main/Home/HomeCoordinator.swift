@@ -28,6 +28,7 @@ final class HomeCoordinator: ObservableObject {
         
         activeTrainingCoordinator!.onTrainingSaved = { [weak self] id in
             self?.goToTrainingSummary(id: id)
+            self?.activeTrainingCoordinator = nil
         }
     }
     

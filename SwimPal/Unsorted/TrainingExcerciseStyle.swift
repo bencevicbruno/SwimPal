@@ -33,14 +33,33 @@ extension Training.Excercise {
         }
         
         var title: String {
-            "\(self)"
+            switch self {
+            case .freestyle:
+                return Localizable.exercise_style_freestyle
+            case .backStroke:
+                return Localizable.exercise_style_backStroke
+            case .chestStroke:
+                return Localizable.exercise_style_chestStroke
+            case .butterfly:
+                return Localizable.exercise_style_butterfly
+            case .dry:
+                return Localizable.exercise_style_dry
+            case .rest:
+                return Localizable.exercise_style_rest
+            case .stretching:
+                return Localizable.exercise_style_stretching
+            case .diving:
+                return Localizable.exercise_style_diving
+            case .sprint:
+                return Localizable.exercise_style_sprint
+            }
         }
         
         var valueTitle: String {
             if self == .rest || self == .stretching || self == .diving {
-                return "Time"
+                return Localizable.time
             } else {
-                return "Distance"
+                return Localizable.distance
             }
         }
     }

@@ -18,7 +18,7 @@ struct ActiveTrainingView: View {
                 
                 Spacer()
                 
-                BigBottomButton(viewModel.isLastExcecise ? "Done" : "Next", onTapped: viewModel.nextTapped)
+                BigBottomButton(viewModel.isLastExcecise ? Localizable.done : Localizable.next, onTapped: viewModel.nextTapped)
                     .addShadow()
                     .onLongPressGesture(minimumDuration: 0.5, maximumDistance: 5.0) {
                         viewModel.finishTraining()
@@ -49,7 +49,7 @@ private extension ActiveTrainingView {
             
             ScrollView(.vertical) {
                 ScrollViewReader { value in
-                    TrainingExcerciseList(excercises: viewModel.excercises)
+                    TrainingExcerciseList(exercises: viewModel.excercises)
                         .padding(.horizontal, 12)
                         .padding(.bottom, 60)
                         .onAppear {

@@ -29,5 +29,15 @@ extension Training {
         static var stretching: Excercise {
             .init(style: .stretching, value: 5)
         }
+        
+        var activityRepresentation: String {
+            var base = "\(style.title) (\(value)) x\(numberOfRepetitions)"
+            
+            if let timeLimit = timeLimit {
+                base += " limit: \(timeLimit.getFormatted(with: .minutes))"
+            }
+            
+            return base
+        }
     }
 }

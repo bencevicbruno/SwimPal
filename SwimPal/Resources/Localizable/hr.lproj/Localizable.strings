@@ -1,41 +1,72 @@
 // MARK: - Common
 "cancel" = "Odustani";
+"category" = "Kategorija";
 "clear" = "Obriši";
+"discard" = "Odbaci";
+"distance" = "Udaljenost";
+"done" = "Gotovo";
+"confirm" = "Potvrdi";
 "log_out" = "Odjavi se";
+"name" = "Naziv";
+"next" = "Dalje";
 "no" = "Ne";
+"not_available_abbr" = "N/A";
 "other" = "Ostalo";
+"select" = "Odaberi";
+"time" = "Vrijeme";
 "yes" = "Da";
 
+// MARK: - Authorization
+"welcome_to" = "Welcome to";
+"continue_with_google" = "Continue with Google";
+
 // MARK: - Miscellaneous
+"watch_wanna_do" = "Šta ba 'oš?";
+"delete_training" = "Obriši trening";
+"share_training" = "Podijeli trening";
 "confirmation_log_out_title" = "Odjava";
 "confirmation_log_out_message" = "Želite li se odjaviti?";
-
-"start_training" = "Započni trening";
+"no_internet" = "Nema interneta";
+"no_internet_msg" = "Gdje je, kud je nestao?";
+"confirmation_delete_training_title" = "Obrisati trening?";
+"confirmation_delete_training_message" = "Nakon brisanja, nećeš ga moći vratiti.";
 
 // MARK: - Home
 "greeting_without_name" = "Pozdrav!";
 "greeting_with_name" = "Pozdrav, %s!";
+"start_training" = "Započni trening";
 
-"welcome_to" = "Welcome to";
-"continue_with_google" = "Continue with Google";
-"about" = "Generalno";
-"not_available_abbr" = "N/A";
-
-
-
-"no_internet" = "No Internet";
-"no_internet_msg" = "Sorry, but it seems there's no connection to the internet. Please try again.";
-"no_statistics" = "No Statistics available";
-"no_statistics_msg" = "There are no trainings recorded. Start a new training and track your progress!";
-"achievements" = "Achievements";
-"no_achievements" = "No Achivements available";
-"no_achievements_msg" = "Just keep swimmin', just keep swimmin'...";
-
-"training" = "Training";
-"trainings" = "Trainings";
+// MARK: - Trainings
+"training" = "Trening";
+"trainings" = "Treninzi";
+"are_you_ready" = "Jeste li spremni?";
+"lets_go" = "Idemo";
+"tap_add_exercises" = "Pritisni + da dodaš vježbe";
+"what_youll_do" = "Što ćeš raditi:";
+"add_exercise" = "Dodaj vježbu";
+"exercise" = "Vježba";
+"select_exercise" = "Odaberi vježbu";
+"choose_distance" = "Odaberi udaljenost";
+"pick_time" = "Odaberi vrijeme";
+"amount" = "Iznos";
+"change" = "Promijeni";
+"optional" = "Opcionalno";
+"repetitions" = "Ponavljanja";
+"time_limit" = "Vremensko ograničenje";
+"no_limit" = "Bez ograničenja";
+"meters" = "metara";
+"minute" = "minuta";
+"minutes" = "minutet";
+"confirmation_discard_training_title" = "Odbaciti trening?";
+"confirmation_discard_training_message" = "Nećeš se moći predomisliti nakon toga.";
+"add_details" = "Dodaj detalje";
+"add_notes" = "Dodaj zabilješke";
+"enter_name" = "Unesi ime";
+"confirmation_cancel_training_title" = "Prekinuti trening?";
+"confirmation_cancel_training_message" = "Jeste li sigurni da želite prekinuti trening?";
 
 // MARK: - Training Category
-"training_category_lifeguard" = "Spasioc";
+"training_category_lifeguard" = "Spasilac";
 "training_category_everything4x" = "4x Sve";
 "training_category_endurance" = "Izdržljivost";
 "training_category_tooFastForYou" = "2Fast4You";
@@ -47,6 +78,29 @@
 "training_category_tooFastForYou_description" = "Provjeri tko je brži: Michael Phelphs ili ti?";
 "training_category_random_description" = "Imaj na umu da je trening nasumično napravljen. Nije zagarantirano da je fizički moguće ovo otplivati.";
 "training_category_custom_description" = "Napravi svoj trening i plivaj što želiš, koliko god želiš.";
+
+"exercise_style_freestyle" = "Kraul";
+"exercise_style_backStroke" = "Leđno";
+"exercise_style_chestStroke" = "Prsno";
+"exercise_style_butterfly" = "Leptir";
+"exercise_style_dry" = "Na suhom";
+"exercise_style_rest" = "Odmor";
+"exercise_style_stretching" = "Rastezanje";
+"exercise_style_diving" = "Ronjenje";
+"exercise_style_sprint" = "Šprint";
+
+// MARK: - Training Summary
+"training_summary" = "Sažetak treninga";
+"exercises" = "Vježbe";
+"notes" = "Zabilješke";
+
+// MARK: - Location Picker
+"location" = "Lokacija";
+"pick_location" = "Odaberi Lokaciju";
+"tap_to_search" = "Pritisni za pretraživanje";
+"no_result_found" = "Nema rezultata.";
+"search_on_map" = "Pretraži na karti";
+"insert_location_name" = "Unesi ime lokacije.";
 
 // MARK: - Statistics
 "title_statistics" = "Statistika";

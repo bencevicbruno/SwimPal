@@ -54,13 +54,10 @@ final class TestTrainingService: TrainingsServiceProtocol {
                     let newTraining = training.withUpdatedInfo(name: newData.name, location: newData.location, notes: newData.notes)
                     
                     self.trainings.removeAll(where: { $0.id == id })
-                    self.trainings.append(newTraining)
-                    
-                    completion(.success(()))
+                    self.saveTraining(newTraining, completion)
                 case .failure(let error):
                     completion(.failure(error))
                 }
-                
             }
         }
     }

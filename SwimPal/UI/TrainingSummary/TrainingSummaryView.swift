@@ -13,15 +13,15 @@ struct TrainingSummaryView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavigationBar("Training Summary", onBackTapped: viewModel.dismiss, rightIconName: "icon_edit", onRightItemTapped: viewModel.editTrainingTapped)
+            NavigationBar(Localizable.training_summary, onBackTapped: viewModel.dismiss, rightIconName: "icon_edit", onRightItemTapped: viewModel.editTrainingTapped)
             
             ScrollView(.vertical) {
                 content
                     .padding(10)
             }
+            .activityIndicator(viewModel.isActivityRunning)
         }
         .setupView()
-        .activityIndicator(viewModel.isActivityRunning)
     }
 }
 
@@ -38,6 +38,7 @@ private extension TrainingSummaryView {
                 
                 if let location = training.location {
                     TrainingSummaryLocationCard(location)
+                        .allowsHitTesting(false)
                         .addShadow(.small)
                 }
                 

@@ -34,13 +34,13 @@ struct TimePickerSheet: View {
                     SheetButton(data.okTitle) {
                         dismiss { data.action?(Time(hoursValue, .hours)
                             .and(minutesValue, .minutes)
-                            .and(secondsvalue, .seconds)) }
+                            .and(secondsvalue, .seconds))
+                        }
                     }
                 }
             }
             .padding(.horizontal, SheetUtils.horizontalPadding)
             .padding(.bottom, SheetUtils.bottomContentPadding)
-            
         }
     }
     

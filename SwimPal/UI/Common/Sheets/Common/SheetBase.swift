@@ -189,7 +189,6 @@ struct SheetBase_Previews: PreviewProvider {
     
     static var previews: some View {
         SheetBase(.constant(true)) { onDismissed in
-            
             VStack(spacing: 0) {
                 SheetTitle(data.title)
                     .padding(.vertical, 24)
@@ -207,6 +206,8 @@ struct SheetBase_Previews: PreviewProvider {
                     }
                 }
             }
+            .padding(.bottom, max(12, UIScreen.bottomUnsafePadding))
+            .padding(.horizontal, SheetUtils.horizontalPadding)
         }
     }
 }

@@ -69,6 +69,24 @@ class Training: Codable, Identifiable, Hashable, ObservableObject {
         return Training(id: id, name: name, time: time, location: location, category: category, exercises: excercises, notes: notes)
     }
     
+    var activityItems: [String] {
+        var base = ["\(Localizable.training) @ \(date.formatted(as: "dd MM yyyy")) - \(time.getFormatted(with: .hoursMinutes)); \(Localizable.category) - \(category.title)"]
+        
+        excercises.forEach {
+            base.append($0.activityRepresentation)
+        }
+        
+        if let location = location {
+            base.append("\(Localizable.location): \(location.name)")
+        }
+        
+        if let notes = notes {
+            base.append("\(Localizable.notes): \(notes)")
+        }
+        
+        return base
+    }
+    
 }
 
 extension Training {

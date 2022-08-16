@@ -10,7 +10,7 @@ import SwiftUI
 extension View {
     
     @ViewBuilder
-    func addShadow(color: Color = .shadow, radius: CGFloat = 10, offset: CGFloat = 5, enabled: Bool = true) -> some View {
+    func addShadow(color: Color = .shadow, radius: CGFloat = 10, offset: CGFloat = 0, enabled: Bool = true) -> some View {
         if enabled {
             self.clipped()
                 .shadow(color: color, radius: radius, x: offset, y: offset)

@@ -15,13 +15,13 @@ struct SaveTrainingView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
-                NavigationBar("Add Details", onXTapped: viewModel.xTapped)
+                NavigationBar(Localizable.add_details, onXTapped: viewModel.xTapped)
                 
                 content
             }
             .padding(.bottom, BigBottomButton.totalHeight)
             
-            BigBottomButton("Done", onTapped: viewModel.doneTapped)
+            BigBottomButton(Localizable.done, onTapped: viewModel.doneTapped)
                 .addShadow()
         }
         .setupView()
@@ -57,7 +57,7 @@ private extension SaveTrainingView {
     }
     
     var nameField: some View {
-        NamedContainer("Name", onEditTapped: viewModel.editNameTapped) {
+        NamedContainer(Localizable.name, onEditTapped: viewModel.editNameTapped) {
             HStack(spacing: 0) {
                 Text(viewModel.name)
                     .style(.roboto(.body, .regular), .black, .leading)
@@ -69,9 +69,9 @@ private extension SaveTrainingView {
     }
     
     var timeField: some View {
-        NamedContainer("Time") {
+        NamedContainer(Localizable.time) {
             HStack(spacing: 0) {
-                Text("01:05h")
+                Text(viewModel.activeTraining.time?.getFormatted(with: .hoursMinutesSeconds) ?? Localizable.not_available_abbr)
                     .style(.roboto(.body), .gray, .leading)
                 
                 Spacer(minLength: 0)

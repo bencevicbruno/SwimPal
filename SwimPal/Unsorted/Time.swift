@@ -11,7 +11,7 @@ struct Time: Hashable {
     private(set) var miliseconds: UInt
     
     init(_ value: UInt, _ unit: Time.Unit = .seconds) {
-        self.miliseconds = value * unit.rawValue
+        self.miliseconds = value * unit.inMiliseconds
     }
     
     private init(miliseconds: UInt) {
@@ -19,15 +19,15 @@ struct Time: Hashable {
     }
     
     func and(_ value: UInt, _ unit: Time.Unit) -> Time {
-        return Time(miliseconds: self.miliseconds + value * unit.rawValue)
+        return Time(miliseconds: self.miliseconds + value * unit.inMiliseconds)
     }
     
     func getFormatted(_ unit: Time.Unit) -> String {
-        return unit.format(miliseconds / unit.rawValue)
+        return unit.format(miliseconds / unit.inMiliseconds)
     }
     
     mutating func add(_ value: UInt, _ unit: Time.Unit) {
-        miliseconds += value * unit.rawValue
+        miliseconds += value * unit.inMiliseconds
     }
     
     func getFormatted(with format: Time.Format) -> String {
@@ -74,6 +74,10 @@ extension Time {
     
     var hours: UInt {
         (minutes / 60) % 24
+    }
+    
+    var totalhours: UInt {
+        minutes / 60
     }
 }
 

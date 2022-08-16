@@ -16,8 +16,14 @@ struct SheetTitle: View {
     }
     
     var body: some View {
-        Text(verbatim: title)
-            .style(.roboto(.headline2, .bold), .brand, .center)
+        HStack(spacing: 0) {
+            Spacer(minLength: 0)
+            
+            Text(verbatim: title)
+                .style(.roboto(.headline2, .bold), .brand, .center)
+            
+            Spacer(minLength: 0)
+        }
     }
 }
 

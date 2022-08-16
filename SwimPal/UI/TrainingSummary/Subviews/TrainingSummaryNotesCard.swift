@@ -16,7 +16,7 @@ struct TrainingSummaryNotesCard: View {
     }
     
     var body: some View {
-        TrainingSummaryCardBase("Notes", iconName: "icon_notes") {
+        TrainingSummaryCardBase(Localizable.notes, iconName: "icon_notes") {
             Text(notes)
                 .style(.roboto(.body, .medium), .black, .leading)
         }

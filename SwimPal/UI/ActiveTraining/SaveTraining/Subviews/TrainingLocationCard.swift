@@ -49,10 +49,16 @@ private extension TrainingLocationCard {
             
             if let latitude = location?.latitude,
                let longitude = location?.longitude {
-                Map(coordinateRegion: .constant(.init(center: .init(latitude: latitude, longitude: longitude), span: .init())))
-                    .aspectRatio(1.0, contentMode: .fit)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding(.bottom, 5)
+                ZStack {
+                    Map(coordinateRegion: .constant(.init(center: .init(latitude: latitude, longitude: longitude), span: .init(latitudeDelta: 0.5, longitudeDelta: 0.5))))
+                        .allowsHitTesting(false)
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding(.bottom, 5)
+                    
+                    Image("icon_location")
+                        .frameForIcon()
+                }
             }
         }
         .padding(10)

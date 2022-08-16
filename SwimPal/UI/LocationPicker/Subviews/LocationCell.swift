@@ -20,13 +20,14 @@ struct LocationCell: View {
     var body: some View {
         HStack(spacing: 0) {
             Text(name)
-                .style(.roboto(.body), .black, .leading)
+                .style(.roboto(.body, .medium), .black, .leading)
             
             Spacer(minLength: 0)
             
             Image("icon_action")
                 .frameForIcon()
         }
+        .padding(.leading, 10)
         .frame(maxWidth: .infinity, height: 50)
         .background(
             Rectangle()

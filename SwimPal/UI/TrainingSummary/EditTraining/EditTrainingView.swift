@@ -21,6 +21,7 @@ struct EditTrainingView: View {
                         .padding(10)
                 }
                 .frame(maxHeight: .infinity)
+                .activityIndicator(viewModel.isActivityRunning)
             }
             .padding(.bottom, BigBottomButton.totalHeight)
             
@@ -31,7 +32,7 @@ struct EditTrainingView: View {
         .onTapGesture {
             UIApplication.hideKeyboard()
         }
-        .textInputSheet($viewModel.textInputData).activityIndicator(viewModel.isActivityRunning)
+        .textInputSheet($viewModel.textInputData)
     }
 }
 

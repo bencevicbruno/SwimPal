@@ -65,7 +65,7 @@ final class ActiveTrainingViewModel: ObservableObject {
     func endTraining() {
         stopTimer()
         
-        confirmationData = ConfirmationData(title: "Cancel Training?", message: "No info will be saved and youll be redirected to home.", cancelTitle: "Keep Swimming", confirmTitle: "Cancel") { [weak self] in
+        confirmationData = ConfirmationData(title: Localizable.confirmation_cancel_training_title, message: Localizable.confirmation_cancel_training_message, cancelTitle: Localizable.no, confirmTitle: Localizable.yes) { [weak self] in
             self?.onTrainingEnded?()
         }
     }

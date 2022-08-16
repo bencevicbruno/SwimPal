@@ -1,44 +1,68 @@
 // MARK: - Common
 "cancel" = "Cancel";
+"category" = "Category";
 "clear" = "Clear";
+"discard" = "Discard";
+"distance" = "Distance";
+"done" = "Done";
+"confirm" = "Confirm";
 "log_out" = "Log Out";
+"name" = "Name";
 "no" = "No";
+"not_available_abbr" = "N/A";
 "other" = "Other";
+"select" = "Select";
+"time" = "Time";
 "yes" = "Yes";
 
+// MARK: - Authorization
+"welcome_to" = "Welcome to";
+"continue_with_google" = "Continue with Google";
+
 // MARK: - Miscellaneous
+"watch_wanna_do" = "Watcha wanna do?";
+"delete_training" = "Delete Training";
+"share_training" = "Share Training";
 "confirmation_log_out_title" = "Log Out";
 "confirmation_log_out_message" = "Are you sure you want to log out?";
-
-"start_training" = "Start Training";
+"no_internet" = "No Internet";
+"no_internet_msg" = "Sorry, but it seems there's no connection to the internet. Please try again.";
+"confirmation_delete_training_title" = "You're about to delete a training.";
+"confirmation_delete_training_message" = "Are you sure you want to do it?";
 
 // MARK: - Home
 "greeting_without_name" = "Hello!";
 "greeting_with_name" = "Hello, %s!";
+"start_training" = "Start Training";
 
-"welcome_to" = "Welcome to";
-"continue_with_google" = "Continue with Google";
-"about" = "About";
-"not_available_abbr" = "N/A";
-
-"language" = "Language";
-"unit_system" = "Unit System";
-"unit_system_option_metric" = "Metric";
-"unit_system_option_imperial" = "Imperial";
-
-"language_option_english" = "English";
-"language_option_croatian" = "Croatian";
-
-"no_internet" = "No Internet";
-"no_internet_msg" = "Sorry, but it seems there's no connection to the internet. Please try again.";
-"no_statistics" = "No Statistics available";
-"no_statistics_msg" = "There are no trainings recorded. Start a new training and track your progress!";
-"achievements" = "Achievements";
-"no_achievements" = "No Achivements available";
-"no_achievements_msg" = "Just keep swimmin', just keep swimmin'...";
-
+// MARK: - Trainings
 "training" = "Training";
 "trainings" = "Trainings";
+"are_you_ready" = "Are you ready?";
+"lets_go" = "Let's go";
+"tap_add_exercises" = "Tap on + to add Exercises";
+"what_youll_do" = "Waht you'll do:";
+"add_exercise" = "Add Exercise";
+"exercise" = "Exercise";
+"select_exercise" = "Select Exercise";
+"choose_distance" = "Choose Distance";
+"pick_time" = "Pick Time";
+"amount" = "Amount";
+"change" = "Change";
+"optional" = "Optional";
+"repetitions" = "Repetitions";
+"time_limit" = "Time Limitt";
+"no_limit" = "No Limitt";
+"meters" = "meters";
+"minute" = "minuet";
+"minutes" = "minutets";
+"confirmation_discard_training_title" = "Discard Training?";
+"confirmation_discard_training_message" = "It can not be undone.";
+"add_details" = "Add Details";
+"add_notes" = "Add Notes";
+"enter_name" = "Enter Name";
+"confirmation_cancel_training_title" = "Cancel Training?";
+"confirmation_cancel_training_message" = "Are you sure you want to cancel this training?";
 
 // MARK: - Training Category
 "training_category_lifeguard" = "Lifeguard";
@@ -54,11 +78,28 @@
 "training_category_random_description" = "Be aware that this training is randomly generated. It is not guaranteed that it's posibble to even complete it.";
 "training_category_custom_description" = "Create your own training. You can do whatever you want.";
 
+"exercise_style_freestyle" = "Freestyle";
+"exercise_style_backStroke" = "Back Stroke";
+"exercise_style_chestStroke" = "Chest Stroke";
+"exercise_style_butterfly" = "Butterfly";
+"exercise_style_dry" = "Dry";
+"exercise_style_rest" = "Rest";
+"exercise_style_stretching" = "Stretching";
+"exercise_style_diving" = "Diving";
+"exercise_style_sprint" = "Sprint";
 
+// MARK: - Training Summary
+"training_summary" = "Training Summary";
+"exercises" = "Exercises";
+"notes" = "Notes";
 
-
-
-
+// MARK: - Location Picker
+"location" = "Location";
+"pick_location" = "Pick Location";
+"tap_to_search" = "Tap to search";
+"no_result_found" = "No results found.";
+"search_on_map" = "Search on Map";
+"insert_location_name" = "Insert location name";
 
 // MARK: - Statistics
 "title_statistics" = "Statistics";

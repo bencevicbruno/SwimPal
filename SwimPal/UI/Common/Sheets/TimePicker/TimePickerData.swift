@@ -15,9 +15,9 @@ struct TimePickerData {
     let cancelTitle: String
     let action: ((Time) -> Void)?
     
-    init(title: String, startingTime: Time = .init(5, .minutes), options: Options, okTitle: String = Localizable.ok, cancelTitle: String = Localizable.cancel, action: ((Time) -> Void)? = nil) {
+    init(title: String, startingTime: Time? = nil, options: Options, okTitle: String = Localizable.ok, cancelTitle: String = Localizable.cancel, action: ((Time) -> Void)? = nil) {
         self.title = title
-        self.startingTime = startingTime
+        self.startingTime = startingTime ?? .zero
         self.options = options
         self.okTitle = okTitle
         self.cancelTitle = cancelTitle
@@ -32,21 +32,12 @@ struct TimePickerData {
 
 extension View {
     
-    func timePickerSheet(_ data: Binding<TimePickerData?>) -> some View {
-        let isVisible = Binding(
-            get: { data.wrappedValue != nil },
-            set: { value in
-                if !value {
-                    data.wrappedValue = nil
-                }
-            }
-        )
-        
-        return ZStack {
+    func timePickerSheet(_ dataBinding: Binding<TimePickerData?>) -> some View {
+        ZStack {
             self
             
-            if let data = data.wrappedValue {
-                TimePickerSheet(isVisible, data: data)
+            if let data = dataBinding.wrappedValue {
+                TimePickerSheet(.forVisibility(dataBinding), data: data)
             }
         }
     }

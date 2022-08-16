@@ -12,7 +12,8 @@ import MapKit
 final class MapLocationPickerViewModel: ObservableObject {
     
     var onDismissed: EmptyCallback?
-    var onExit: ((Training.Location) -> Void)?
+    var onDismissedAll: EmptyCallback?
+    var onLocationPicked: ((Training.Location) -> Void)?
     
     @Published var userLocation: CLLocationCoordinate2D = .init()
     @Published var region: MKCoordinateRegion = .init(center: .init(), span: .init(latitudeDelta: 0.001, longitudeDelta: 0.001))
@@ -32,14 +33,14 @@ final class MapLocationPickerViewModel: ObservableObject {
         onDismissed?()
     }
     
-    func selectTapped() {
-        fieldInputData = .init(title: "Insert location name", validators: [TextFieldValidator.length(30)]) { [weak self] locationName in
-            guard let self = self else { return }
-            self.onExit?(.init(latitude: self.userLocation.latitude, longitude: self.userLocation.longitude, name: locationName))
-        }
+    func dismissAll() {
+        onDismissedAll?()
     }
     
-    func exit() {
-//        onExit?()
+    func selectTapped() {
+        fieldInputData = .init(title: Localizable.insert_location_name, validators: [TextFieldValidator.length(30)]) { [weak self] locationName in
+            guard let self = self else { return }
+            self.onLocationPicked?(.init(latitude: self.region.center.latitude, longitude: self.region.center.longitude, name: locationName))
+        }
     }
 }

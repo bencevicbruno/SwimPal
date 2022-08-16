@@ -9,13 +9,15 @@ import SwiftUI
 
 struct TrainingsContentView: View {
     
+    let scrollingEnabled: Bool
     let headerData: TrainingHeaderData
     let trainings: [Training]
     let onTrainingCellTapped: UUIDCallback?
     let onTrainingCellOptionsTapped: UUIDCallback?
     let onStartTrainingTapped: EmptyCallback?
     
-    init(headerData: TrainingHeaderData, trainings: [Training], onTrainingCellTapped: UUIDCallback? = nil, onTrainingCellOptionsTapped: UUIDCallback? = nil, onStartTrainingTapped: EmptyCallback? = nil) {
+    init(scrollingEnabled: Bool = true, headerData: TrainingHeaderData, trainings: [Training], onTrainingCellTapped: UUIDCallback? = nil, onTrainingCellOptionsTapped: UUIDCallback? = nil, onStartTrainingTapped: EmptyCallback? = nil) {
+        self.scrollingEnabled = scrollingEnabled
         self.headerData = headerData
         self.trainings = trainings
         self.onTrainingCellTapped = onTrainingCellTapped
@@ -25,7 +27,7 @@ struct TrainingsContentView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            ScrollView(.vertical) {
+            ScrollView(scrollingEnabled ? .vertical : []) {
                 LazyVStack(spacing: 10) {
                     if trainings.count > 3 {
                         TrainingsHeader(headerData)

@@ -21,18 +21,17 @@ struct AddExerciseView: View {
             .padding(.bottom, BigBottomButton.totalHeight)
             
             VStack(spacing: 0) {
-                NavigationBar("Add Exercise", onXTapped: viewModel.dismiss)
-                    .addShadow()
+                NavigationBar(Localizable.add_exercise, onXTapped: viewModel.dismiss)
                 
                 Spacer()
                 
-                BigBottomButton("Add exercise", isEnabled: viewModel.isFormValid, onTapped: viewModel.addExerciseTapped)
+                BigBottomButton(Localizable.add_exercise, isEnabled: viewModel.isFormValid, onTapped: viewModel.addExerciseTapped)
                     .addShadow()
             }
         }
         .edgesIgnoringSafeArea(.bottom)
         .setupView()
-        .optionsSheet($viewModel.optionsData)
+        .newOptionsSheet($viewModel.optionsSheetData)
         .timePickerSheet($viewModel.timePickerData)
         .valuePickerSheet($viewModel.valuePickerData)
     }
@@ -58,13 +57,13 @@ private extension AddExerciseView {
     }
     
     var exerciseTypeCard: some View {
-        NamedContainer("Exercise") {
+        NamedContainer(Localizable.exercise) {
             HStack(spacing: 10) {
                 if let exerciseStyle = viewModel.exerciseStyle {
                     Text(exerciseStyle.title)
                         .style(.roboto(.body), .black)
                 } else {
-                    Text("Select an exercise")
+                    Text(Localizable.select_exercise)
                         .style(.roboto(.body), .black)
                 }
                 
@@ -90,19 +89,19 @@ private extension AddExerciseView {
         if let value = viewModel.value {
             return style.countsAsSwimming ? Distance.Unit.meters.format(amount: Float(value)) : Time.Unit.minutes.format(UInt(value))
         } else {
-            return style.countsAsSwimming ? "Choose distance" : "Pick time"
+            return style.countsAsSwimming ? Localizable.choose_distance : Localizable.pick_time
         }
     }
     
     var exerciseValueCard: some View {
-        NamedContainer(viewModel.exerciseStyle?.valueTitle ?? "Amount", color: conditionalColor) {
+        NamedContainer(viewModel.exerciseStyle?.valueTitle ?? Localizable.amount, color: conditionalColor) {
             HStack(spacing: 10) {
                 Text(exerciseValueTitle)
                     .style(.roboto(.body), .black)
                 
                 Spacer(minLength: 10)
                 
-                Text("Change")
+                Text(Localizable.change)
                     .style(.roboto(.caption), .brand)
                     .frame(height: 40)
             }
@@ -120,7 +119,7 @@ private extension AddExerciseView {
                 .fill(Color.gray142)
                 .frame(width: 20, height: 5)
             
-            Text("Optional")
+            Text(Localizable.optional)
                 .style(.roboto(.body, .bold), .gray142)
             
             Capsule()
@@ -130,8 +129,8 @@ private extension AddExerciseView {
     }
     
     var repetitions: some View {
-        NamedContainer("Repetitions", color: conditionalColor) {
-            Picker("Repetitions", selection: $viewModel.repetitions) {
+        NamedContainer(Localizable.repetitions, color: conditionalColor) {
+            Picker(Localizable.repetitions, selection: $viewModel.repetitions) {
                 ForEach(viewModel.availableRepetitions, id: \.self) { index in
                     HStack(spacing: 0) {
                         Text("\(index)")
@@ -154,9 +153,9 @@ private extension AddExerciseView {
     }
     
     var timeLimit: some View {
-        NamedContainer("Time Limit", color: conditionalColor) {
+        NamedContainer(Localizable.time_limit, color: conditionalColor) {
             HStack(spacing: 0) {
-                Text(viewModel.timeLimit?.getFormatted(with: .minutesSeconds) ?? "No Limit")
+                Text(viewModel.timeLimit?.getFormatted(with: .minutesSeconds) ?? Localizable.no_limit)
                     .frame(height: 40)
                 
                 Spacer(minLength: 10)

@@ -38,31 +38,39 @@ final class SaveTrainingViewModel: ObservableObject {
 extension SaveTrainingViewModel {
     
     func xTapped() {
+        guard !isActivityRunning else { return }
         UIApplication.hideKeyboard()
         
-        confirmationData = ConfirmationData(title: "Discard Training?", message: "No info will be saved.", confirmTitle: "Discard") { [weak self] in
+        confirmationData = ConfirmationData(title: Localizable.confirmation_discard_training_title, message: Localizable.confirmation_discard_training_message, confirmTitle: Localizable.discard) { [weak self] in
             self?.onDismissed?()
         }
     }
     
     func editNameTapped() {
-        fieldInputData = .init(title: "Enter name", preenteredText: name, validators: [TextFieldValidator.nonEmpty]) { [weak self] newName in
+        guard !isActivityRunning else { return }
+        
+        fieldInputData = .init(title: Localizable.enter_name, preenteredText: name, validators: [TextFieldValidator.nonEmpty]) { [weak self] newName in
             self?.name = newName
         }
     }
     
     func addLocationTapped() {
+        guard !isActivityRunning else { return }
+        
         onGoToLocationPicker?()
     }
     
     func addNotesTapped() {
-        textInputData = .init(title: "Add notes", text: notes, okTitle: "Done") { [weak self] newNotes in
-            self?.notes = newNotes
+        guard !isActivityRunning else { return }
+        
+        textInputData = .init(title: Localizable.add_notes, text: notes, okTitle: Localizable.done) { [weak self] newNotes in
+            self?.notes = newNotes.isEmpty ? nil : newNotes
         }
     }
     
     func doneTapped() {
-        guard let time = activeTraining.time else { return }
+        guard !isActivityRunning,
+              let time = activeTraining.time else { return }
         isActivityRunning = true
         
         let training = Training(name: name, time: time, location: location, category: activeTraining.category, exercises: activeTraining.excercises, notes: notes)

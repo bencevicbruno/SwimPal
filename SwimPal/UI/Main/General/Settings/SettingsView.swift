@@ -14,7 +14,7 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavigationBar(Localizable.settings, onBackTapped: viewModel.dismiss)
+            NavigationBar(Localizable.title_settings, onBackTapped: viewModel.dismiss)
             
             ScrollView(.vertical) {
                 LazyVStack(spacing: 15) {
@@ -28,7 +28,7 @@ struct SettingsView: View {
             }
         }
         .setupView()
-        .optionsSheet($viewModel.optionsData)
+        .newOptionsSheet($viewModel.optionsSheetData)
         .refreshable(using: refreshToken)
     }
 }

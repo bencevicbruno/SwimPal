@@ -92,7 +92,10 @@ final class ActiveTrainingCoordinator: ObservableObject {
         
         locationPickerCoordinator!.onDismissed = { [weak self] newLocation in
             self?.locationPickerCoordinator = nil
-            self?.saveTrainingViewModel?.location = newLocation
+            
+            if newLocation != nil {
+                self?.saveTrainingViewModel?.location = newLocation
+            }
         }
     }
 }

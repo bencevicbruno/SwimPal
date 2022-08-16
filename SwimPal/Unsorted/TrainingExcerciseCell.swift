@@ -42,9 +42,9 @@ private extension TrainingExcerciseCell {
     var timeLimit: some View {
         if let limit = excercise.timeLimit {
             HStack(spacing: 0) {
-                Image("icon_time")
+                Image("icon_time_white")
                     .resizable()
-                    .frameForIcon()
+                    .frameForIcon(size: isMinor ? 20 : 40)
                     .padding(.leading, 4)
                 
                 Text(verbatim: limit.getFormatted(.minutes))
@@ -89,10 +89,12 @@ private extension TrainingExcerciseCell {
 
 struct TrainingExcerciseCell_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingExcerciseCell(excercise: .init(style: .stretching, value: 5, numberOfRepetitions: 3))
-        
-        TrainingExcerciseCell(excercise: .init(style: .stretching, value: 5))
-        
-        TrainingExcerciseCell(excercise: .init(style: .stretching, value: 5, numberOfRepetitions: 3, timeLimit: Time(5, .minutes)))
+        VStack {
+            TrainingExcerciseCell(excercise: .init(style: .butterfly, value: 5, numberOfRepetitions: 3, timeLimit: .init(5, .minutes)))
+            
+            TrainingExcerciseCell(excercise: .init(style: .stretching, value: 5))
+            
+            TrainingExcerciseCell(excercise: .init(style: .stretching, value: 5, numberOfRepetitions: 3, timeLimit: Time(5, .minutes)))
+        }
     }
 }

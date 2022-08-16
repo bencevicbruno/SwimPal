@@ -16,7 +16,7 @@ struct TrainingSummaryExercisesCard: View {
     }
     
     var body: some View {
-        TrainingSummaryCardBase("Exercises", iconName: "icon_list") {
+        TrainingSummaryCardBase(Localizable.exercises, iconName: "icon_list") {
             ForEach(training.excercises) {
                 TrainingSummaryExerciseCell(excercise: $0)
             }

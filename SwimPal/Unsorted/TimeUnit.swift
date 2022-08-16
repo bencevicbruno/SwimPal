@@ -9,11 +9,24 @@ import Foundation
 
 extension Time {
     
-    enum Unit: UInt {
-        case miliseconds = 1
-        case seconds = 1_000
-        case minutes = 60_000
-        case hours = 3_600_000
+    enum Unit {
+        case miliseconds
+        case seconds
+        case minutes
+        case hours
+        
+        var inMiliseconds: UInt {
+            switch self {
+            case .miliseconds:
+                return 1
+            case .seconds:
+                return 1000
+            case .minutes:
+                return 60 * 1000
+            case .hours:
+                return 60 * 60 * 1000
+            }
+        }
         
         func format(_ value: UInt) -> String {
             switch self {

@@ -17,7 +17,7 @@ final class AddExerciseViewModel: ObservableObject {
     @Published var repetitions: Int = 1
     @Published var timeLimit: Time?
     
-    @Published var optionsData: OptionsData?
+    @Published var optionsSheetData: NewOptionsSheetData?
     @Published var timePickerData: TimePickerData?
     @Published var valuePickerData: ValuePickerData<Int>?
     
@@ -36,19 +36,19 @@ final class AddExerciseViewModel: ObservableObject {
     // MARK: - User Interactions
     
     func exerciseStyleTapped() {
-        let options = Training.Excercise.Style.allCases.map { OptionsData.Item(iconName: "", title: $0.title) }
+        let options = Training.Excercise.Style.allCases.map { NewOptionsSheetItem.radioButton(title: $0.title, isSelected: exerciseStyle == $0) }
         
-        optionsData = .init(title: "Pick an Exercise", items: options) { [weak self] index in
-            self?.exerciseStyle = Training.Excercise.Style.allCases[index]
-        }
+        optionsSheetData = .init(title: Localizable.select_exercise, options: options, onOptionSelected: { [weak self] option in
+            self?.exerciseStyle = Training.Excercise.Style.allCases[option]
+        })
     }
     
     func valueCardTapped() {
         guard let style = exerciseStyle else { return }
         
         if style.isMeasuredInMeters {
-            valuePickerData = ValuePickerData(title: "Pick distance",
-                                              items: stride(from: 25, to: 1025, by: 25).map { ValuePickerSheetItem(title: "\($0) meters", value: $0) }) { [weak self] newValue in
+            valuePickerData = ValuePickerData(title: Localizable.choose_distance,
+                                              items: stride(from: 25, to: 1025, by: 25).map { ValuePickerSheetItem(title: "\($0) \(Localizable.meters)", value: $0) }) { [weak self] newValue in
                 self?.value = newValue
             }
         } else {
@@ -58,8 +58,8 @@ final class AddExerciseViewModel: ObservableObject {
                 values.append(i)
             }
             
-            valuePickerData = ValuePickerData(title: "Pick time",
-                                              items: (1...30).map { ValuePickerSheetItem(title: "\($0) \($0 == 1 ? "minute" : "minutes")", value: $0) }) { [weak self] newValue in
+            valuePickerData = ValuePickerData(title: Localizable.pick_time,
+                                              items: (1...30).map { ValuePickerSheetItem(title: "\($0) \($0 == 1 ? Localizable.minute : Localizable.minutes)", value: $0) }) { [weak self] newValue in
                 self?.value = newValue
             }
         }
@@ -67,7 +67,8 @@ final class AddExerciseViewModel: ObservableObject {
     
     
     func timeLimitTapped() {
-        timePickerData = .init(title: "Time Limit", startingTime: timeLimit ?? .init(5, .seconds), options: .minutesAndSeconds) { [weak self] newTimeLimit in
+        timePickerData = .init(title: Localizable.time_limit, startingTime: timeLimit, options: .minutesAndSeconds) { [weak self] newTimeLimit in
+            
             self?.timeLimit = newTimeLimit
         }
     }

@@ -25,7 +25,8 @@ struct TimePickerTwoPickers: View {
                 }
             }
             .frame(width: (UIScreen.width - 50) / 2, height: 60)
-            .clipped()
+            .compositingGroup()
+            .clipped(antialiased: true)
             
             Capsule()
                 .fill(Color.gray242)
@@ -37,8 +38,8 @@ struct TimePickerTwoPickers: View {
                     ForEach(UInt(0)..<UInt(59), id: \.self) {
                         Text("\($0)")
                             .style(.roboto(.display1, .bold), .black)
-                            .tag($0)
-                            .id($0)
+                            .tag($0 + 60)
+                            .id($0 + 60)
                     }
                 }
             }
@@ -47,7 +48,8 @@ struct TimePickerTwoPickers: View {
         }
         .padding(.bottom, 10)
         .pickerStyle(.wheel)
-        .clipped()
+        .compositingGroup()
+        .clipped(antialiased: true)
     }
 }
 

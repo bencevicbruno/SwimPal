@@ -11,10 +11,28 @@ struct SwimPaltests: View {
     
     @State private var scrollViewOffset: CGPoint = .zero
     
-    @State private var text = "Lets go"
+    @State private var text = ""
+    @State private var response = ""
     
     var body: some View {
-        ActivityOverlay()
+        VStack {
+            TextField("prefix", text: $text)
+            
+            Button("Search") {
+                let service = GeoNamesService()
+                
+                service.fetchCities(prefixedWith: text) { result in
+                    switch result {
+                    case .success(let rr):
+                        response = "\(rr.locations)"
+                    case .failure(let error):
+                        response = "Failed due to \(error)"
+                    }
+                }
+            }
+            
+            Text(response)
+        }
     }
 }
 

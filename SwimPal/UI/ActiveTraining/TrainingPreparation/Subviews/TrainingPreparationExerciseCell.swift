@@ -46,10 +46,8 @@ private extension TrainingPreparationExerciseCell {
     var timeLimit: some View {
         if let limit = excercise.timeLimit {
             HStack(spacing: 0) {
-                Image("icon_time")
-                    .resizable()
+                Image("icon_time_white")
                     .frameForIcon()
-                    .foregroundColor(foregroundColor)
                     .padding(.leading, 4)
                 
                 Text(verbatim: limit.getFormatted(.minutes))

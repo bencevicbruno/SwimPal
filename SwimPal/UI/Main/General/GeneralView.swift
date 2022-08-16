@@ -21,7 +21,7 @@ struct GeneralView: View {
             }
             .padding(.top, MainTitle.totalHeight)
             
-            MainTitle(Localizable.about)
+            MainTitle(Localizable.title_about)
         }
         .setupView()
         .confirmationSheet($viewModel.confirmationData)
