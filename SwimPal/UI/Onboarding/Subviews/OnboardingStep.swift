@@ -40,7 +40,8 @@ struct OnboardingStep: View {
 
 struct OnboardingStep_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingStep(.init(title: Localizable.onboarding_step_1_title,
+        OnboardingStep(.init(id: 0,
+                             title: Localizable.onboarding_step_1_title,
                              message: Localizable.onboarding_step_1_message,
                              illustrationName: "illustration_error"))
     }

@@ -13,7 +13,7 @@ extension View {
     func addShadow(color: Color = .shadow, radius: CGFloat = 10, offset: CGFloat = 0, enabled: Bool = true) -> some View {
         if enabled {
             self.clipped()
-                .shadow(color: color, radius: radius, x: offset, y: offset)
+                .shadow(color: color, radius: radius, x: 0, y: offset)
         } else {
             self
         }

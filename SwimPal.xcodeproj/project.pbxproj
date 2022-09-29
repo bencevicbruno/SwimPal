@@ -48,7 +48,6 @@
 		8C21CF8E28998EDB0073F18B /* Notification.Name+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF8D28998EDB0073F18B /* Notification.Name+.swift */; };
 		8C21CF9028998F220073F18B /* View+Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF8F28998F220073F18B /* View+Notification.Name.swift */; };
 		8C21CF92289A4F390073F18B /* ErrorSnack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF91289A4F390073F18B /* ErrorSnack.swift */; };
-		8C21CF94289A527F0073F18B /* ErrorSnackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF93289A527F0073F18B /* ErrorSnackExtension.swift */; };
 		8C21CF96289A95680073F18B /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF95289A95680073F18B /* URL+.swift */; };
 		8C303F462882E5EA00E7FCFD /* View+ClipShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */; };
 		8C303F492883213700E7FCFD /* TimePickerTwoPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F482883213700E7FCFD /* TimePickerTwoPickers.swift */; };
@@ -148,7 +147,7 @@
 		8CBA6655289BD76600BF97AB /* TrainingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA6654289BD76600BF97AB /* TrainingServiceProtocol.swift */; };
 		8CBA6657289BD77C00BF97AB /* TrainingServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA6656289BD77C00BF97AB /* TrainingServiceError.swift */; };
 		8CBA6659289BD7A900BF97AB /* TestTrainingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA6658289BD7A900BF97AB /* TestTrainingService.swift */; };
-		8CBA665B289BDA6800BF97AB /* DependencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA665A289BDA6800BF97AB /* DependencyType.swift */; };
+		8CBA665B289BDA6800BF97AB /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA665A289BDA6800BF97AB /* ServiceType.swift */; };
 		8CBA665E289BE49000BF97AB /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA665D289BE49000BF97AB /* OnboardingStep.swift */; };
 		8CBA6661289BF20F00BF97AB /* String?+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA6660289BF20F00BF97AB /* String?+.swift */; };
 		8CBA6664289BFE8B00BF97AB /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA6663289BFE8B00BF97AB /* RefreshToken.swift */; };
@@ -195,7 +194,7 @@
 		8CE6C0B4283D63490037BB6E /* SwimPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */; };
 		8CE6C0B6283D63490037BB6E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */; };
 		8CE6C0B8283D634A0037BB6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6C0B7283D634A0037BB6E /* Assets.xcassets */; };
-		8CE6C0CA283D64E00037BB6E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0C9283D64E00037BB6E /* DependencyContainer.swift */; };
+		8CE6C0CA283D64E00037BB6E /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0C9283D64E00037BB6E /* ServiceContainer.swift */; };
 		8CE6C0CC283D65080037BB6E /* DependencyPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0CB283D65080037BB6E /* DependencyPropertyWrapper.swift */; };
 		8CE6C0D0283D659C0037BB6E /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0CF283D659C0037BB6E /* PersistenceServiceProtocol.swift */; };
 		8CE6C0D3283D65D30037BB6E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6C0D2283D65D30037BB6E /* UserData.swift */; };
@@ -264,7 +263,6 @@
 		8C21CF8D28998EDB0073F18B /* Notification.Name+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+.swift"; sourceTree = "<group>"; };
 		8C21CF8F28998F220073F18B /* View+Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Notification.Name.swift"; sourceTree = "<group>"; };
 		8C21CF91289A4F390073F18B /* ErrorSnack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSnack.swift; sourceTree = "<group>"; };
-		8C21CF93289A527F0073F18B /* ErrorSnackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSnackExtension.swift; sourceTree = "<group>"; };
 		8C21CF95289A95680073F18B /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ClipShape.swift"; sourceTree = "<group>"; };
 		8C303F482883213700E7FCFD /* TimePickerTwoPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerTwoPickers.swift; sourceTree = "<group>"; };
@@ -361,7 +359,7 @@
 		8CBA6654289BD76600BF97AB /* TrainingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingServiceProtocol.swift; sourceTree = "<group>"; };
 		8CBA6656289BD77C00BF97AB /* TrainingServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingServiceError.swift; sourceTree = "<group>"; };
 		8CBA6658289BD7A900BF97AB /* TestTrainingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrainingService.swift; sourceTree = "<group>"; };
-		8CBA665A289BDA6800BF97AB /* DependencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyType.swift; sourceTree = "<group>"; };
+		8CBA665A289BDA6800BF97AB /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		8CBA665D289BE49000BF97AB /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		8CBA6660289BF20F00BF97AB /* String?+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?+.swift"; sourceTree = "<group>"; };
 		8CBA6662289BFCC900BF97AB /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -411,7 +409,7 @@
 		8CE6C0B3283D63490037BB6E /* SwimPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimPalApp.swift; sourceTree = "<group>"; };
 		8CE6C0B5283D63490037BB6E /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		8CE6C0B7283D634A0037BB6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8CE6C0C9283D64E00037BB6E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		8CE6C0C9283D64E00037BB6E /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		8CE6C0CB283D65080037BB6E /* DependencyPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyPropertyWrapper.swift; sourceTree = "<group>"; };
 		8CE6C0CF283D659C0037BB6E /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
 		8CE6C0D2283D65D30037BB6E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -703,7 +701,6 @@
 				8C21CF892899837A0073F18B /* ActivityOverlay.swift */,
 				8CB0D71B289E98590034F31C /* ActivityIndicator.swift */,
 				8C21CF91289A4F390073F18B /* ErrorSnack.swift */,
-				8C21CF93289A527F0073F18B /* ErrorSnackExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1191,9 +1188,9 @@
 		8CE6C0C8283D64C50037BB6E /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
-				8CE6C0C9283D64E00037BB6E /* DependencyContainer.swift */,
+				8CE6C0C9283D64E00037BB6E /* ServiceContainer.swift */,
 				8CE6C0CB283D65080037BB6E /* DependencyPropertyWrapper.swift */,
-				8CBA665A289BDA6800BF97AB /* DependencyType.swift */,
+				8CBA665A289BDA6800BF97AB /* ServiceType.swift */,
 			);
 			path = "Dependency Injection";
 			sourceTree = "<group>";
@@ -1428,7 +1425,7 @@
 				8C18451A286B3D3800A35ADE /* SaveTrainingViewModel.swift in Sources */,
 				8CBA665E289BE49000BF97AB /* OnboardingStep.swift in Sources */,
 				8CFD3DC72849442900C684B4 /* TrainingsView.swift in Sources */,
-				8CBA665B289BDA6800BF97AB /* DependencyType.swift in Sources */,
+				8CBA665B289BDA6800BF97AB /* ServiceType.swift in Sources */,
 				8C69410F2844E05F005E64F9 /* View+Padding.swift in Sources */,
 				8C7F8683287D984E001D32A4 /* MapLocationPickerViewModel.swift in Sources */,
 				8C0DCA36289421DA00765B99 /* TrainingSummaryExerciseCell.swift in Sources */,
@@ -1473,7 +1470,6 @@
 				8C9684E62853D33F0070C6E2 /* LoginViewModel.swift in Sources */,
 				8C39FE79287EBAA7001033FF /* TrainingPreparationHeader.swift in Sources */,
 				8C9684D72853D0270070C6E2 /* GeneralCoordinator.swift in Sources */,
-				8C21CF94289A527F0073F18B /* ErrorSnackExtension.swift in Sources */,
 				8C51A0F12865CDE200DECD09 /* OnboardingViewModel.swift in Sources */,
 				8CC8BB8F286DCA21001131DF /* TrainingExcerciseCell.swift in Sources */,
 				8C7F8677287D9146001D32A4 /* Dictionary+.swift in Sources */,
@@ -1484,7 +1480,7 @@
 				8CC8BB95286E0B9C001131DF /* TimeFormat.swift in Sources */,
 				8CE6C104285A482D00343662 /* UIScreen+.swift in Sources */,
 				8C3D420C28815B9900AF95A4 /* TimePickerSheet.swift in Sources */,
-				8CE6C0CA283D64E00037BB6E /* DependencyContainer.swift in Sources */,
+				8CE6C0CA283D64E00037BB6E /* ServiceContainer.swift in Sources */,
 				8C20B0A7289005D1009D869B /* TrainingsContentView.swift in Sources */,
 				8C70105028841768009B1F98 /* ValuePickerData.swift in Sources */,
 				8CE6C0DD283D67C40037BB6E /* AuthorizationCoordinator.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 enum OnboardingFlow {
     case fromAppLaunch
@@ -13,11 +14,10 @@ enum OnboardingFlow {
 }
 
 struct OnboardingItem: Identifiable {
+    let id: Int
     let title: String
     let message: String
     let illustrationName: String
-    
-    var id: String { title }
 }
 
 final class OnboardingViewModel: ObservableObject {
@@ -35,13 +35,16 @@ final class OnboardingViewModel: ObservableObject {
     }
     
     let items: [OnboardingItem] = [
-        .init(title: Localizable.onboarding_step_1_title,
+        .init(id: 0,
+              title: Localizable.onboarding_step_1_title,
               message: Localizable.onboarding_step_1_message,
               illustrationName: "illustration_error"),
-        .init(title: Localizable.onboarding_step_2_title,
+        .init(id: 1,
+              title: Localizable.onboarding_step_2_title,
               message: Localizable.onboarding_step_2_message,
               illustrationName: "illustration_error"),
-        .init(title: Localizable.onboarding_step_3_title,
+        .init(id: 2,
+              title: Localizable.onboarding_step_3_title,
               message: Localizable.onboarding_step_3_message,
               illustrationName: "illustration_error")
     ]
@@ -59,6 +62,12 @@ extension OnboardingViewModel {
     }
     
     func nextTapped() {
+        if currentStep + 1 == items.count - 1 {
+            buttonTitle = Localizable.lets_go
+        } else {
+            buttonTitle = Localizable.next
+        }
+        
         if isLastStep {
             if flow == .fromAbout {
                 onDismissed?()
@@ -69,10 +78,6 @@ extension OnboardingViewModel {
         } else {
             withAnimation(.easeInOut) {
                 currentStep += 1
-            }
-            
-            if isLastStep {
-                buttonTitle = "Done"
             }
         }
     }

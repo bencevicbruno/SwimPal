@@ -13,7 +13,7 @@ final class TestTrainingService: TrainingsServiceProtocol {
     
     private let delayTime: Double
     
-    init(delayTime: Double = 1.5) {
+    init(delayTime: Double = 0.75) {
         self.delayTime = delayTime
     }
     

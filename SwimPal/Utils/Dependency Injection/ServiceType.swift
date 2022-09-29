@@ -1,5 +1,5 @@
 //
-//  DependencyType.swift
+//  ServiceType.swift
 //  SwimPal
 //
 //  Created by Bruno Benčević on 04.08.2022..
@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum DependencyType {
+enum ServiceType {
     case singleton
-    case `new`
+    case `newInstance`
+    case automatic
 }

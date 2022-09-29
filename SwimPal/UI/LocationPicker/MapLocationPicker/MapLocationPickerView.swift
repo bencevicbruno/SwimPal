@@ -45,7 +45,7 @@ private extension MapLocationPickerView {
 
 struct MapLocationPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        DependencyContainer.register(type: LocationService.self, LocationService())
+        ServiceContainer.register(type: LocationService.self, LocationService())
         
         return MapLocationPickerView(viewModel: .init())
     }

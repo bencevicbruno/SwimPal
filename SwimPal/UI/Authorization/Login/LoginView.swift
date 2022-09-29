@@ -18,9 +18,9 @@ struct LoginView: View {
             
             Spacer(minLength: 10)
             
-            Image("illustration_noInternet")
-                .resizable()
-                .scaledToFit()
+            Text("SwimPal")
+                .style(.roboto(.display1, .black), .brand, .center)
+                .scaleEffect(x: 2.5, y: 2.5)
                 .padding(.horizontal, 50)
             
             Spacer(minLength: 10)
@@ -55,6 +55,8 @@ private extension LoginView {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: .init())
+        Group {
+            LoginView(viewModel: .init())
+        }
     }
 }

@@ -25,6 +25,7 @@ struct OnboardingView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .allowsHitTesting(false)
             
             nextButton
                 .padding([.horizontal, .bottom], 10)
@@ -36,7 +37,7 @@ struct OnboardingView: View {
 private extension OnboardingView {
     
     var nextButton: some View {
-        Text(viewModel.buttonTitle)
+        Text(viewModel.buttonTitle.uppercased())
             .style(.roboto(.display1, .bold), .white, .center)
             .padding(8)
             .frame(maxWidth: .infinity)

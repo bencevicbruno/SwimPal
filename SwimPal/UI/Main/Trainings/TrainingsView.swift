@@ -50,7 +50,6 @@ private extension TrainingsView {
             }
         }
         .activityIndicator(viewModel.isActivityRunning)
-        .errorSnack($viewModel.error)
     }
 }
 
