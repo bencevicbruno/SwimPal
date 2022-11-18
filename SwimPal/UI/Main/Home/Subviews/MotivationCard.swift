@@ -67,6 +67,6 @@ private extension MotivationCard {
 
 struct MotivationCard_Previews: PreviewProvider {
     static var previews: some View {
-        MotivationCard(motivation: .sampleKarlo)
+        MotivationCard(motivation: .sampleBruno)
     }
 }

@@ -19,7 +19,7 @@ final class EditTrainingViewModel: ObservableObject {
     @Published var isActivityRunning = false
     @Published var textInputData: TextInputData?
     
-    @Dependency private var trainingService: TrainingsServiceProtocol
+    @Service private var trainingService: TrainingsServiceProtocol
     
     private let trainingID: UUID
     

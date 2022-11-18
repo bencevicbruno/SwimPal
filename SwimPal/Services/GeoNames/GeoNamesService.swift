@@ -9,7 +9,7 @@ import Foundation
 
 final class GeoNamesService: GeoNamesServiceProtocol {
     
-    @Dependency private var dataService: DataServiceProtocol
+    @Service private var dataService: DataServiceProtocol
     
     init() {
     }

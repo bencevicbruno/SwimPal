@@ -17,8 +17,8 @@ final class LoginViewModel: ObservableObject {
     @Published var hidePassword = true
     @Published var infoData: InfoData?
     
-    @Dependency private var authorizationService: AuthorizationServiceProtocol
-    @Dependency private var persistenceService: PersistenceServiceProtocol
+    @Service private var authorizationService: AuthorizationServiceProtocol
+    @Service private var persistenceService: PersistenceServiceProtocol
     
     init() {
         setupCallbacks()

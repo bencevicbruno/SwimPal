@@ -26,8 +26,8 @@ final class SaveTrainingViewModel: ObservableObject {
     
     let activeTraining: ActiveTraining
     
-    @Dependency var locationService: LocationService
-    @Dependency var trainingsService: TrainingsServiceProtocol
+    @Service var locationService: LocationService
+    @Service var trainingsService: TrainingsServiceProtocol
     
     init(activeTraining: ActiveTraining) {
         self.activeTraining = activeTraining

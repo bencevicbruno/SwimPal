@@ -9,8 +9,8 @@ import Foundation
 
 final class TrainingsService: TrainingsServiceProtocol {
     
-    @Dependency private var persistenceService: PersistenceServiceProtocol
-    @Dependency private var fileManagerSevice: FileManagerService
+    @Service private var persistenceService: PersistenceServiceProtocol
+    @Service private var fileManagerSevice: FileManagerService
     
     init() {
         fileManagerSevice.runCompletionOnMainThread = true

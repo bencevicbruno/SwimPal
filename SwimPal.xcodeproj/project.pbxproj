@@ -785,6 +785,25 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		8C6962332927AAF90093EE61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C21CF8B289986D30073F18B /* View+ActivityIndicator.swift */,
+				8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */,
+				8CC339452860F2A700AA5E0A /* View+Font.swift */,
+				8C0DCA1E2892991000765B99 /* View+Frame.swift */,
+				8CFD3DD2284946FD00C684B4 /* View+Navigation.swift */,
+				8C21CF8F28998F220073F18B /* View+Notification.Name.swift */,
+				8C69410E2844E05F005E64F9 /* View+Padding.swift */,
+				8C9E9B482897DA220072DAB6 /* View+RefreshToken.swift */,
+				8CD87086287EB4FA00BA5B9F /* View+Shadow.swift */,
+				8CA11FED291300BE003793AF /* View+SizeReader.swift */,
+				8C0DCA2228930C8100765B99 /* View+SwimPal.swift */,
+				8C9684F228548AAC0070C6E2 /* View+Utils.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8C70104E28841758009B1F98 /* ValuePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1070,7 +1089,6 @@
 			isa = PBXGroup;
 			children = (
 				8CD7F0482888616500B72D43 /* RoundedCorner.swift */,
-				8C0DCA1E2892991000765B99 /* View+Frame.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -1206,23 +1224,13 @@
 		8CE6C0C7283D647D0037BB6E /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8C6962332927AAF90093EE61 /* View */,
 				8CD7F0472888615B00B72D43 /* Shapes */,
 				8CE6C101285A431300343662 /* Color+.swift */,
-				8CFD3DD2284946FD00C684B4 /* View+Navigation.swift */,
-				8C9E9B482897DA220072DAB6 /* View+RefreshToken.swift */,
-				8C69410E2844E05F005E64F9 /* View+Padding.swift */,
-				8C9684F228548AAC0070C6E2 /* View+Utils.swift */,
-				8CA11FED291300BE003793AF /* View+SizeReader.swift */,
-				8CC339452860F2A700AA5E0A /* View+Font.swift */,
-				8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */,
 				8CC339472860F3CA00AA5E0A /* Font+.swift */,
 				8CAFFB4D286317580077D57A /* Image+.swift */,
-				8CD87086287EB4FA00BA5B9F /* View+Shadow.swift */,
 				8C3D42122881629000AF95A4 /* GeometryProxy+.swift */,
-				8C0DCA2228930C8100765B99 /* View+SwimPal.swift */,
 				8C0DCA2C28940BE600765B99 /* Binding+.swift */,
-				8C21CF8B289986D30073F18B /* View+ActivityIndicator.swift */,
-				8C21CF8F28998F220073F18B /* View+Notification.Name.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";

@@ -28,7 +28,7 @@ extension String {
     }
     
     func localized() -> String {
-        @Dependency var persistenceService: PersistenceServiceProtocol
+        @Service var persistenceService: PersistenceServiceProtocol
         
         let lang = persistenceService.language.rawValue
         

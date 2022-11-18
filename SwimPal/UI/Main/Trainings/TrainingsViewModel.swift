@@ -21,8 +21,8 @@ final class TrainingsViewModel: ObservableObject {
     var onGoToStartTraining: ((Training.Category) -> Void)?
     var onGoToTrainingSummary: ((UUID) -> Void)?
     
-    @Dependency private var persistenceService: PersistenceServiceProtocol
-    @Dependency private var trainingsService: TrainingsServiceProtocol
+    @Service private var persistenceService: PersistenceServiceProtocol
+    @Service private var trainingsService: TrainingsServiceProtocol
     
     private var cancellables: Set<AnyCancellable> = []
     

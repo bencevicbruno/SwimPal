@@ -15,7 +15,7 @@ final class HomeViewModel: ObservableObject {
     
     var motivations = Motivation.samples
     
-    @Dependency var persistenceService: PersistenceServiceProtocol
+    @Service var persistenceService: PersistenceServiceProtocol
     
     init() {
         changeMotivation()

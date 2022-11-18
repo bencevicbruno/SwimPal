@@ -20,7 +20,7 @@ final class GeneralViewModel: ObservableObject {
     @Published var confirmationData: ConfirmationData?
     @Published var confirmationDialog: ConfirmationDialog?
     
-    @Dependency var persistenceService: PersistenceServiceProtocol
+    @Service var persistenceService: PersistenceServiceProtocol
     
     init() {
         

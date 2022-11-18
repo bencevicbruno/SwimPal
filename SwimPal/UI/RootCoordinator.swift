@@ -13,7 +13,7 @@ final class RootCoordinator: ObservableObject {
     @Published var authorizationCoordinator: AuthorizationCoordinator?
     @Published var mainCoordinator: MainCoordinator?
     
-    @Dependency private var persistenceService: PersistenceServiceProtocol
+    @Service private var persistenceService: PersistenceServiceProtocol
     
     init() {
         if !persistenceService.didShowOnboarding {

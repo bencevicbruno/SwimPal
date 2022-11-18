@@ -20,7 +20,7 @@ final class MapLocationPickerViewModel: ObservableObject {
     
     @Published var fieldInputData: FieldInputData?
     
-    @Dependency var locationService: LocationService
+    @Service var locationService: LocationService
     
     init() {
         locationService.fetchLocation { [weak self] location in

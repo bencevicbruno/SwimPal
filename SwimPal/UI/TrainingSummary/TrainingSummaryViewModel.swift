@@ -18,7 +18,7 @@ final class TrainingSummaryViewModel: ObservableObject {
     
     @Published var isActivityRunning = false
     
-    @Dependency private var trainingsService: TrainingsServiceProtocol
+    @Service private var trainingsService: TrainingsServiceProtocol
     
     init(trainingID: UUID) {
         self.trainingID = trainingID

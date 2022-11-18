@@ -14,7 +14,7 @@ final class OnboardingCoordinator: ObservableObject {
     
     @Published var viewModel: OnboardingViewModel
     
-    @Dependency var persistenceService: PersistenceServiceProtocol
+    @Service var persistenceService: PersistenceServiceProtocol
     
     init(_ flow: OnboardingFlow) {
         viewModel = OnboardingViewModel(flow)

@@ -18,7 +18,7 @@ final class LocationPickerViewModel: ObservableObject {
     @Published var results: [String] = []
     @Published var isActivityRunning = false
     
-    @Dependency private var geoNamesService: GeoNamesServiceProtocol
+    @Service private var geoNamesService: GeoNamesServiceProtocol
     
     private var cancellables: Set<AnyCancellable> = []
     

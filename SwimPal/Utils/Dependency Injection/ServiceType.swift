@@ -9,6 +9,6 @@ import Foundation
 
 enum ServiceType {
     case singleton
-    case `newInstance`
+    case newInstance
     case automatic
 }

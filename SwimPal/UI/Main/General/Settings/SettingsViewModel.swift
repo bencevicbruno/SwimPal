@@ -14,7 +14,7 @@ final class SettingsViewModel: ObservableObject {
     
     @Published var optionsSheetData: NewOptionsSheetData?
     
-    @Dependency private var persistenceService: PersistenceServiceProtocol
+    @Service private var persistenceService: PersistenceServiceProtocol
     
     init() {
         
