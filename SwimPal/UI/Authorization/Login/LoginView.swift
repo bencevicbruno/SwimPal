@@ -11,6 +11,8 @@ struct LoginView: View {
     
     @ObservedObject var viewModel: LoginViewModel
     
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
         VStack(spacing: 0) {
             title
@@ -30,6 +32,9 @@ struct LoginView: View {
         }
         .padding(20)
         .background(Color.white)
+        .onChange(of: scenePhase) { phase in
+            print(phase)
+        }
     }
 }
 

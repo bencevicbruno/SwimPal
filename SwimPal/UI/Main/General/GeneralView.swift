@@ -26,6 +26,7 @@ struct GeneralView: View {
         .setupView()
         .confirmationSheet($viewModel.confirmationData)
         .refreshable(using: refreshToken)
+        .confirmationDialog($viewModel.confirmationDialog)
     }
     
     init(_ viewModel: GeneralViewModel) {

@@ -40,8 +40,8 @@ struct Time: Hashable {
             return "\(hours.asTwoDigit):\(minutes.asTwoDigit):\(seconds.asTwoDigit)"
         case .minutes:
             return "\(totalMinutes) min"
-        default:
-            return "Format not implemented"
+//        default:
+//            return "Format not implemented"
         }
     }
     

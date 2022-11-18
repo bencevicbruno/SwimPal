@@ -18,6 +18,7 @@ final class GeneralViewModel: ObservableObject {
     var onLoggedOut: EmptyCallback?
     
     @Published var confirmationData: ConfirmationData?
+    @Published var confirmationDialog: ConfirmationDialog?
     
     @Dependency var persistenceService: PersistenceServiceProtocol
     
@@ -52,9 +53,20 @@ final class GeneralViewModel: ObservableObject {
     }
     
     func logOut() {
-        confirmationData = .init(title: Localizable.confirmation_log_out_title, message: Localizable.confirmation_log_out_message, cancelTitle: Localizable.cancel, confirmTitle: Localizable.log_out, action: { [weak self] in
-            self?.onLoggedOut?()
-            self?.persistenceService.user = nil
+//        confirmationData = .init(title: Localizable.confirmation_log_out_title, message: Localizable.confirmation_log_out_message, cancelTitle: Localizable.cancel, confirmTitle: Localizable.log_out, action: { [weak self] in
+//            self?.onLoggedOut?()
+//            self?.persistenceService.user = nil
+//        })
+        
+        confirmationDialog = .init(
+            title: Localizable.confirmation_log_out_title,
+            message: Localizable.confirmation_log_out_message,
+            confirmTitle: Localizable.log_out,
+            declineTitle: Localizable.cancel,
+        confirmAction: { [weak self] in
+            guard let self = self else { return }
+            self.onLoggedOut?()
+            self.persistenceService.user = nil
         })
     }
 }

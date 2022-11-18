@@ -12,7 +12,7 @@ struct Dependency<Service> {
     
     var service: Service
     
-    init(_ dependencyType: ServiceType = .singleton) {
+    init(_ dependencyType: ServiceType = .newInstance) {
         guard let service = ServiceContainer.resolve(dependencyType: dependencyType, Service.self) else {
             fatalError("No dependency of type \(String(describing: Service.self)) registered!")
         }

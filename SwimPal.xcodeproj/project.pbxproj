@@ -47,7 +47,6 @@
 		8C21CF8C289986D30073F18B /* View+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF8B289986D30073F18B /* View+ActivityIndicator.swift */; };
 		8C21CF8E28998EDB0073F18B /* Notification.Name+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF8D28998EDB0073F18B /* Notification.Name+.swift */; };
 		8C21CF9028998F220073F18B /* View+Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF8F28998F220073F18B /* View+Notification.Name.swift */; };
-		8C21CF92289A4F390073F18B /* ErrorSnack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF91289A4F390073F18B /* ErrorSnack.swift */; };
 		8C21CF96289A95680073F18B /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21CF95289A95680073F18B /* URL+.swift */; };
 		8C303F462882E5EA00E7FCFD /* View+ClipShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */; };
 		8C303F492883213700E7FCFD /* TimePickerTwoPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303F482883213700E7FCFD /* TimePickerTwoPickers.swift */; };
@@ -123,6 +122,13 @@
 		8C9E9B452897C2DF0072DAB6 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E9B442897C2DF0072DAB6 /* Array+.swift */; };
 		8C9E9B472897D4EF0072DAB6 /* EditTrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E9B462897D4EF0072DAB6 /* EditTrainingModel.swift */; };
 		8C9E9B492897DA220072DAB6 /* View+RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E9B482897DA220072DAB6 /* View+RefreshToken.swift */; };
+		8CA11FE62912FF64003793AF /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA11FE52912FF64003793AF /* ConfirmationDialog.swift */; };
+		8CA11FE82912FF7F003793AF /* ConfirmationDialogSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA11FE72912FF7F003793AF /* ConfirmationDialogSheet.swift */; };
+		8CA11FEA2912FFA2003793AF /* View+ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA11FE92912FFA2003793AF /* View+ConfirmationDialog.swift */; };
+		8CA11FEC29130051003793AF /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA11FEB29130051003793AF /* BlurredView.swift */; };
+		8CA11FEE291300BE003793AF /* View+SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA11FED291300BE003793AF /* View+SizeReader.swift */; };
+		8CA1201729140C8A003793AF /* NewDialogSheetBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1201629140C8A003793AF /* NewDialogSheetBase.swift */; };
+		8CA1201929140E12003793AF /* SheetDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1201829140E12003793AF /* SheetDialog.swift */; };
 		8CAFFB4C286316550077D57A /* TrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFFB4B286316550077D57A /* TrainingCell.swift */; };
 		8CAFFB4E286317580077D57A /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFFB4D286317580077D57A /* Image+.swift */; };
 		8CAFFB512863920A0077D57A /* TrainingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFFB502863920A0077D57A /* TrainingCard.swift */; };
@@ -262,7 +268,6 @@
 		8C21CF8B289986D30073F18B /* View+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		8C21CF8D28998EDB0073F18B /* Notification.Name+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+.swift"; sourceTree = "<group>"; };
 		8C21CF8F28998F220073F18B /* View+Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Notification.Name.swift"; sourceTree = "<group>"; };
-		8C21CF91289A4F390073F18B /* ErrorSnack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSnack.swift; sourceTree = "<group>"; };
 		8C21CF95289A95680073F18B /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ClipShape.swift"; sourceTree = "<group>"; };
 		8C303F482883213700E7FCFD /* TimePickerTwoPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerTwoPickers.swift; sourceTree = "<group>"; };
@@ -335,6 +340,13 @@
 		8C9E9B442897C2DF0072DAB6 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		8C9E9B462897D4EF0072DAB6 /* EditTrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrainingModel.swift; sourceTree = "<group>"; };
 		8C9E9B482897DA220072DAB6 /* View+RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RefreshToken.swift"; sourceTree = "<group>"; };
+		8CA11FE52912FF64003793AF /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
+		8CA11FE72912FF7F003793AF /* ConfirmationDialogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogSheet.swift; sourceTree = "<group>"; };
+		8CA11FE92912FFA2003793AF /* View+ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ConfirmationDialog.swift"; sourceTree = "<group>"; };
+		8CA11FEB29130051003793AF /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
+		8CA11FED291300BE003793AF /* View+SizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+SizeReader.swift"; sourceTree = "<group>"; };
+		8CA1201629140C8A003793AF /* NewDialogSheetBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDialogSheetBase.swift; sourceTree = "<group>"; };
+		8CA1201829140E12003793AF /* SheetDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDialog.swift; sourceTree = "<group>"; };
 		8CAFFB4B286316550077D57A /* TrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCell.swift; sourceTree = "<group>"; };
 		8CAFFB4D286317580077D57A /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		8CAFFB502863920A0077D57A /* TrainingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCard.swift; sourceTree = "<group>"; };
@@ -692,6 +704,7 @@
 		8C69410B2844DF92005E64F9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8CA11FE32912FF3A003793AF /* NewSheets */,
 				8CCEE4702896CE5D0042EBE1 /* Screens */,
 				8C51A0F22868CA0400DECD09 /* MainTabBar */,
 				8CC3394B286101FB00AA5E0A /* Error */,
@@ -700,7 +713,6 @@
 				8CC8BB96286E1493001131DF /* TrainingExcerciseList.swift */,
 				8C21CF892899837A0073F18B /* ActivityOverlay.swift */,
 				8CB0D71B289E98590034F31C /* ActivityIndicator.swift */,
-				8C21CF91289A4F390073F18B /* ErrorSnack.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -836,6 +848,35 @@
 				8C9685032854E3020070C6E2 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		8CA11FE32912FF3A003793AF /* NewSheets */ = {
+			isa = PBXGroup;
+			children = (
+				8CA1201529140C77003793AF /* Common */,
+				8CA11FE42912FF59003793AF /* Confirmation */,
+				8CA11FEB29130051003793AF /* BlurredView.swift */,
+			);
+			path = NewSheets;
+			sourceTree = "<group>";
+		};
+		8CA11FE42912FF59003793AF /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				8CA11FE52912FF64003793AF /* ConfirmationDialog.swift */,
+				8CA1201829140E12003793AF /* SheetDialog.swift */,
+				8CA11FE72912FF7F003793AF /* ConfirmationDialogSheet.swift */,
+				8CA11FE92912FFA2003793AF /* View+ConfirmationDialog.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		8CA1201529140C77003793AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8CA1201629140C8A003793AF /* NewDialogSheetBase.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		8CAFFB4F286391ED0077D57A /* Subviews */ = {
@@ -1171,6 +1212,7 @@
 				8C9E9B482897DA220072DAB6 /* View+RefreshToken.swift */,
 				8C69410E2844E05F005E64F9 /* View+Padding.swift */,
 				8C9684F228548AAC0070C6E2 /* View+Utils.swift */,
+				8CA11FED291300BE003793AF /* View+SizeReader.swift */,
 				8CC339452860F2A700AA5E0A /* View+Font.swift */,
 				8C303F452882E5EA00E7FCFD /* View+ClipShape.swift */,
 				8CC339472860F3CA00AA5E0A /* Font+.swift */,
@@ -1393,6 +1435,7 @@
 				8CB13958288AFA96008681BA /* Date+.swift in Sources */,
 				8CC8BB97286E1493001131DF /* TrainingExcerciseList.swift in Sources */,
 				8CCEE46F28969D5C0042EBE1 /* MainTitle.swift in Sources */,
+				8CA11FEC29130051003793AF /* BlurredView.swift in Sources */,
 				8CFD3DD3284946FD00C684B4 /* View+Navigation.swift in Sources */,
 				8CD7F0492888616500B72D43 /* RoundedCorner.swift in Sources */,
 				8CEBB9B028A108EB0045FE10 /* NewOptionsSheetData.swift in Sources */,
@@ -1418,6 +1461,7 @@
 				8CB0D724289EDA700034F31C /* DataServiceProtocol.swift in Sources */,
 				8CAFFB5728639A4F0077D57A /* TrainingSelection.swift in Sources */,
 				8CE6C0D9283D66530037BB6E /* PersistenceKey.swift in Sources */,
+				8CA1201729140C8A003793AF /* NewDialogSheetBase.swift in Sources */,
 				8C51A10B286996C900DECD09 /* AuthorizationService.swift in Sources */,
 				8CE6C0D0283D659C0037BB6E /* PersistenceServiceProtocol.swift in Sources */,
 				8CC8BB99286E3639001131DF /* UInt+.swift in Sources */,
@@ -1436,6 +1480,7 @@
 				8CE6C0E1283D68F90037BB6E /* MainCoordinator.swift in Sources */,
 				8C20B0AD2890079E009D869B /* CaseIterable+.swift in Sources */,
 				8CE6C0DF283D68BD0037BB6E /* OnboardingCoordinator.swift in Sources */,
+				8CA11FE82912FF7F003793AF /* ConfirmationDialogSheet.swift in Sources */,
 				8C0DCA3C289428DA00765B99 /* TrainingSummaryNotesCard.swift in Sources */,
 				8C51A109286996BF00DECD09 /* AuthorizationServiceProtocol.swift in Sources */,
 				8CBA6666289C008800BF97AB /* UnitSystem.swift in Sources */,
@@ -1450,6 +1495,7 @@
 				8C0DCA4528967F1700765B99 /* TrainingLocationCard.swift in Sources */,
 				8CC8BB93286E05AF001131DF /* TimeUnit.swift in Sources */,
 				8C3D42182881660E00AF95A4 /* AdvancedScrollView.swift in Sources */,
+				8CA1201929140E12003793AF /* SheetDialog.swift in Sources */,
 				8CB13956288AF11A008681BA /* Speed.swift in Sources */,
 				8C21CF8C289986D30073F18B /* View+ActivityIndicator.swift in Sources */,
 				8C3D420F28815BB000AF95A4 /* TimePickerData.swift in Sources */,
@@ -1459,7 +1505,6 @@
 				8C9684FE2854E2870070C6E2 /* AchievementsView.swift in Sources */,
 				8C0DCA292893FFB500765B99 /* TextInputData.swift in Sources */,
 				8C20B0AB289005E1009D869B /* TrainingsErrorView.swift in Sources */,
-				8C21CF92289A4F390073F18B /* ErrorSnack.swift in Sources */,
 				8CC339462860F2A700AA5E0A /* View+Font.swift in Sources */,
 				8CC8BB86286DBE65001131DF /* TrainingExcercise.swift in Sources */,
 				8C9685062854E7100070C6E2 /* NavigationBar.swift in Sources */,
@@ -1527,14 +1572,17 @@
 				8CE6C0CC283D65080037BB6E /* DependencyPropertyWrapper.swift in Sources */,
 				8CB0D71C289E98590034F31C /* ActivityIndicator.swift in Sources */,
 				8C9685042854E3020070C6E2 /* SettingsViewModel.swift in Sources */,
+				8CA11FEA2912FFA2003793AF /* View+ConfirmationDialog.swift in Sources */,
 				8CCEE4722896CE660042EBE1 /* WIPScreen.swift in Sources */,
 				8C0DCA2B2894014A00765B99 /* SPTextEditor.swift in Sources */,
 				8C51A0FA2868D34200DECD09 /* AboutView.swift in Sources */,
+				8CA11FEE291300BE003793AF /* View+SizeReader.swift in Sources */,
 				8C39FE7B287EBC24001033FF /* TrainingPreparationExerciseCell.swift in Sources */,
 				8CC3391F286092E200AA5E0A /* InfoData.swift in Sources */,
 				8CD7F046288859A500B72D43 /* TextFieldValidator.swift in Sources */,
 				8C184516286B3CFC00A35ADE /* TrainingPerparationViewModel.swift in Sources */,
 				8CC3394D2861020900AA5E0A /* ErrorData.swift in Sources */,
+				8CA11FE62912FF64003793AF /* ConfirmationDialog.swift in Sources */,
 				8CAFFB602863A99D0077D57A /* TrainingSelectionData.swift in Sources */,
 				8CAFFB512863920A0077D57A /* TrainingCard.swift in Sources */,
 				8C184518286B3D2400A35ADE /* ActiveTrainingViewModel.swift in Sources */,
@@ -1680,18 +1728,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 6P46HLU94P;
+				DEVELOPMENT_TEAM = 4WJNF6ZYQ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwimPal/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SwimPal;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Gib location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1713,18 +1763,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 6P46HLU94P;
+				DEVELOPMENT_TEAM = 4WJNF6ZYQ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwimPal/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SwimPal;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Gib location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

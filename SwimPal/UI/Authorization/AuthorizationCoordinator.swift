@@ -29,10 +29,8 @@ struct AuthorizationCoordinatorView: View {
     @ObservedObject var coordinator: AuthorizationCoordinator
     
     var body: some View {
-        NavigationView {
-            LoginView(viewModel: coordinator.viewModel)
-                .removeNavigationBar()
-        }
+        LoginView(viewModel: coordinator.viewModel)
+            .removeNavigationBar()
     }
     
     init(_ coordinator: AuthorizationCoordinator) {

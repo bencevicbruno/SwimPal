@@ -22,6 +22,14 @@ extension View {
     func addShadow(_ style: ShadowStyle, enabled: Bool = true) -> some View {
         self.addShadow(color: style.color, radius: style.radius, offset: style.offset)
     }
+    
+    func dropShadow(_ color: Color, size: CGFloat = 8, blurRadius: CGFloat = 16) -> some View {
+        self.background(
+            color
+                .padding(-size)
+                .blur(radius: blurRadius)
+        )
+    }
 }
 
 enum ShadowStyle {

@@ -30,9 +30,9 @@ private extension AppDelegate {
     func setupDependencyContainer() {
         ServiceContainer.register(type: DataServiceProtocol.self, DataService())
         ServiceContainer.register(type: FileManagerService.self, FileManagerService())
-        ServiceContainer.register(type: AuthorizationServiceProtocol.self, AuthorizationService())
+        ServiceContainer.register(type: AuthorizationServiceProtocol.self, as: .singleton, AuthorizationService())
         ServiceContainer.register(type: LocationService.self, LocationService())
-        ServiceContainer.register(type: PersistenceServiceProtocol.self, PersistenceService())
+        ServiceContainer.register(type: PersistenceServiceProtocol.self, as: .singleton, PersistenceService())
         ServiceContainer.register(type: TrainingsServiceProtocol.self, TestTrainingService())
         ServiceContainer.register(type: GeoNamesServiceProtocol.self, GeoNamesService())
     }
