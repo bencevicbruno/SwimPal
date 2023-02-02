@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol TrainingsServiceProtocol {
     
     func fetchTrainings(_ completion: @escaping (Result<[Training], Error>) -> Void)
